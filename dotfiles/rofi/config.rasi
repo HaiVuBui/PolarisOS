@@ -1,0 +1,8 @@
+
+inputbar {
+  children: [ entry ];
+}
+
+entry {
+  horizontal-align: 0.45;
+}

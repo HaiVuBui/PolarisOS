@@ -1,0 +1,27 @@
+return {
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  opts = {
+    ensure_installed = {
+      "c",
+      "cpp",
+      "python",
+      "lua",
+      "vim",
+      "vimdoc",
+      "query",
+      "elixir",
+      "heex",
+      "javascript",
+      "html",
+      "markdown",
+      "markdown_inline",
+      "latex",
+    },
+    highlight = { enable = true },
+    indent = { enable = true },
+  },
+  config = function(_, opts)
+    require("nvim-treesitter.configs").setup(opts)
+  end,
+}
