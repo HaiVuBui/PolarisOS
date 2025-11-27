@@ -10,9 +10,13 @@
       CPU_SCALING_GOVERNOR_ON_BAT = "performance"; # Optional, for systems with battery
       CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
       CPU_ENERGY_PERF_POLICY_ON_BAT = "performance";
-      CPU_MIN_PERF_ON_AC = 0;
+      CPU_HWP_DYN_BOOST_ON_AC = 1; # Enable Intel HWP dynamic boost
+      CPU_HWP_DYN_BOOST_ON_BAT = 1;
+      CPU_HWP_ON_AC = "performance";
+      CPU_HWP_ON_BAT = "performance";
+      CPU_MIN_PERF_ON_AC = 100; # Keep CPU at max performance states
       CPU_MAX_PERF_ON_AC = 100;
-      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MIN_PERF_ON_BAT = 100;
       CPU_MAX_PERF_ON_BAT = 100;
       CPU_BOOST_ON_AC = 1; # Enable CPU boost
       CPU_BOOST_ON_BAT = 1;
@@ -36,6 +40,10 @@
       # PCIe Active State Power Management
       PCIE_ASPM_ON_AC = "performance"; # Disable PCIe power saving
       PCIE_ASPM_ON_BAT = "performance";
+
+      # Platform profiles: lock to performance
+      PLATFORM_PROFILE_ON_AC = "performance";
+      PLATFORM_PROFILE_ON_BAT = "performance";
 
       # USB settings
       USB_AUTOSUSPEND = 0; # Disable USB autosuspend
