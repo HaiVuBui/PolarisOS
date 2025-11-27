@@ -12,6 +12,7 @@ rm -rf ~/.vimrc
 rm -rf ~/.config/Code/User/settings.json
 rm -rf ~/.config/Code/User/keybindings.json
 rm -rf ~/.config/rofi
+rm -rf ~/.config/htop
 
 cp -r dotfiles/hypr ~/.config/
 cp -r dotfiles/niri ~/.config/
@@ -24,6 +25,7 @@ cp dotfiles/.vimrc ~/.vimrc
 cp dotfiles/settings.json ~/.config/Code/User/
 cp dotfiles/keybindings.json ~/.config/Code/User/
 cp -r dotfiles/rofi ~/.config/
+cp -r dotfiles/htop ~/.config/
 
 mkdir -p ~/.config/scripts/
 cp scripts/logout.sh ~/.config/scripts/
