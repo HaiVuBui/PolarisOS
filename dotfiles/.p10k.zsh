@@ -292,23 +292,10 @@ ff() {
 
 }
 
+# startup
 nitch
 
-# Random startup banner
-# choice=$((RANDOM % 2))
-
-# case $choice in
-#   0)
-#     fortune | cowsay
-#     ;;
-#   1)
-#     nitch
-#     ;;
-#   # 2)
-#   #   figlet "Spell Book" | lolcat
-#   #   ;;
-# esac
-
+# env var
 
 
 

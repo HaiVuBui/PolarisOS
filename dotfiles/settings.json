@@ -13,4 +13,9 @@
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "~/.vimrc",
   "vim.useSystemClipboard": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
 }
+
+
