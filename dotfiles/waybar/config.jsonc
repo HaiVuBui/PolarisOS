@@ -7,6 +7,7 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
+        "custom/nixos",
         "clock",
         "niri/workspaces"
     ],
@@ -22,11 +23,11 @@
         "pulseaudio#microphone"
     ],
 
-    "hyprland/window": {
-        "format": "󰣇 {}"
+    "niri/window": {
+        "format": "  {}"
     },
     
-    "hyprland/workspaces": {
+    "niri/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate"
@@ -36,6 +37,11 @@
     "tray": {
         "icon-size": 13,
         "spacing": 10
+    },
+
+    "custom/nixos": {
+        "format": " ",
+        "tooltip": false
     },
 
     "clock": {
