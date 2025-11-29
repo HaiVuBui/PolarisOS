@@ -45,8 +45,6 @@ in
     mangohud
     vulkan-tools
     cabextract # needed by winetricks to extract MS cab files
-    p7zip
-    unzip
     dxvk
     vkd3d
   ];

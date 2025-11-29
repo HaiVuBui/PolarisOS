@@ -14,7 +14,6 @@
     # AI shits
     gemini-cli
     opencode
-    # codex
     codeium
 
     # cli funshits
@@ -33,15 +32,27 @@
     eza # file lister for zsh
     oh-my-zsh # plugin manager for zsh
     zsh-powerlevel10k # theme for zsh
-    starship # customizable shell prompt
+    # starship # customizable shell prompt
     git # distributed version control system
-    fzf # command line fuzzy finder
-    fd # simple, fast and user-friendly alternative to find
-    ripgrep # search tool
     yazi # cli files manager
     bottom # monitors tool
 	  tldr
     htop # monitors tool
+
+    #dependencies
+    ffmpeg
+    p7zip
+    jq
+    poppler
+    fzf # command line fuzzy finder
+    fd # simple, fast and user-friendly alternative to find
+    ripgrep # search tool
+    zoxide
+    resvg
+    imagemagick
+    zip
+    unzip
+
 
     # UI tools
     waybar
@@ -52,18 +63,10 @@
     wlogout
     udiskie
     xwayland-satellite
-    # kdePackages.dolphin
-    # thurnar
-
-    #cli tools
-    zip
-    unzip
-	  bleachbit
 
     # apps
     obsidian
-
-    
+	  bleachbit
   ];
 }
 
