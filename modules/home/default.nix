@@ -19,6 +19,7 @@
     # ./pixi.nix
     ./gaming.nix
     ./applications.nix
+    ./mpd.nix
     ./stylix.nix
     ./qt.nix
     ./gtk.nix

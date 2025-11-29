@@ -2,14 +2,12 @@
   home.packages = with pkgs; [
     # web browsers
     firefox
-    librewolf
-    # brave
 
     #terminals
     kitty
 
     # editors
-    sublime
+    # sublime
 
     # AI shits
     gemini-cli
@@ -39,21 +37,6 @@
 	  tldr
     htop # monitors tool
 
-    #dependencies
-    ffmpeg
-    p7zip
-    jq
-    poppler
-    fzf # command line fuzzy finder
-    fd # simple, fast and user-friendly alternative to find
-    ripgrep # search tool
-    zoxide
-    resvg
-    imagemagick
-    zip
-    unzip
-
-
     # UI tools
     waybar
     tofi
@@ -63,6 +46,10 @@
     wlogout
     udiskie
     xwayland-satellite
+
+    # mucis
+    rmpc
+    yt-dlp
 
     # apps
     obsidian

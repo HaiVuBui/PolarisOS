@@ -357,6 +357,16 @@ window-rule {
 }
 
 window-rule {
+    match app-id="brave-browser"  
+    opacity 0.99
+    border {
+        off
+    }
+    geometry-corner-radius 15
+    clip-to-geometry true
+}
+
+window-rule {
     draw-border-with-background false
 }
 

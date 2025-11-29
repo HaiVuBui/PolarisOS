@@ -42,6 +42,21 @@
     playerctl # media controller
     vim # editor
     greetd.tuigreet
+
+    #dependencies
+    ffmpeg
+    p7zip
+    jq
+    poppler
+    fzf # command line fuzzy finder
+    fd # simple, fast and user-friendly alternative to find
+    ripgrep # search tool
+    zoxide
+    resvg
+    imagemagick
+    zip
+    unzip
+    mpv
   ];
 }
 
