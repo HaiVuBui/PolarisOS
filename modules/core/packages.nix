@@ -41,7 +41,7 @@
     mako # notifications daemon
     playerctl # media controller
     vim # editor
-    greetd.tuigreet
+    tuigreet
 
     #dependencies
     ffmpeg

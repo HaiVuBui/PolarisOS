@@ -28,5 +28,5 @@ in
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-  system.stateVersion = "25.05"; # Do not change!
+  system.stateVersion = "25.11"; # Do not change!
 }

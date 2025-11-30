@@ -40,7 +40,7 @@
     # UI tools
     waybar
     tofi
-    rofi-wayland
+    rofi
     hyprlock
     swww
     wlogout

@@ -151,5 +151,5 @@
   programs.zsh.enable = true;
 
   # ===== System Version =====
-  system.stateVersion = "25.05"; # Don't change this
+  system.stateVersion = "25.11"; # Don't change this
 }
