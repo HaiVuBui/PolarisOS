@@ -56,10 +56,7 @@ window#waybar {
     margin: 3px 0px;
     margin-top: 5px;
     /* border: 1px solid #181825; */
-}
-
-#backlight {
-    border-radius: 10px 0px 0px 10px;
+    /* border-radius: 10px 0px 0px 10px; */
 }
 
 #tray {

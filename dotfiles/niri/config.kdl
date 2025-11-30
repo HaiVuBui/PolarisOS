@@ -454,9 +454,9 @@ binds {
     F11 allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
     F10 allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
-    F8 allow-when-locked=true {spawn-sh "playerctl play-pause";}
-    F7 allow-when-locked=true {spawn-sh "playerctl previous";}
-    F9 allow-when-locked=true {spawn-sh "playerctl next";}
+    F8 allow-when-locked=true {spawn-sh "rmpc togglepause";}
+    F7 allow-when-locked=true {spawn-sh "rmpc seek -5";}
+    F9 allow-when-locked=true {spawn-sh "rmpc seek +5";}
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),

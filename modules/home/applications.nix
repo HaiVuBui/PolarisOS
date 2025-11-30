@@ -50,6 +50,7 @@
     # mucis
     rmpc
     yt-dlp
+    mkvtoolnix
 
     # apps
     obsidian
