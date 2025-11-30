@@ -20,7 +20,8 @@ in
     ./greetd.nix
     ./security.nix
     ./services.nix
-    # ./stylix.nix
+    ./stylix.nix
+    inputs.stylix.nixosModules.stylix
     ./system.nix
     ./thunar.nix
     ./user.nix

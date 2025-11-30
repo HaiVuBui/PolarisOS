@@ -16,7 +16,7 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  "window.menuBarVisibility": "compact",
+  "window.menuBarVisibility": "toggle",
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
   "chat.commandCenter.enabled": false,

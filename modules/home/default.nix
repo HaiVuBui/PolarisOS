@@ -20,7 +20,7 @@
     ./gaming.nix
     ./applications.nix
     ./mpd.nix
-    # ./stylix.nix
+    ./stylix.nix
     ./qt.nix
     ./gtk.nix
     ./brave.nix
