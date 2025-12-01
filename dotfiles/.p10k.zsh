@@ -200,26 +200,50 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
 
 # ---- user config ----
-#
-#
+
+## startup
+nitch
+
 ## env var
 export NIXPKGS_ALLOW_UNFREE=1
 
 ## line arrow
 typeset -g P9K_ARROW=$'\uF0A9'  # 
+# typeset -g P9K_ARROW=$'\uF120'  # 
 typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_{VIINS,VICMD,VIVIS,VIOWR}_CONTENT_EXPANSION=$P9K_ARROW
-typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=300
-typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=250
+typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=#BCBCBC
+typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=#BCBCBC
+
+## prompt tweaks
+# Show a home icon instead of ~ when in $HOME.
+typeset -g POWERLEVEL9K_DIR_CONTENT_EXPANSION='${P9K_CONTENT/#\~/󰋜}'
+
+
+
+# Ensure eza aliases override any later defaults (e.g., from oh-my-zsh).
+autoload -Uz add-zsh-hook
+_p10k_eza_aliases() {
+  alias ls='eza -1 --icons=always'
+  alias l='eza -lh --icons=always'
+  alias ll='eza -lha --icons=always --sort=name --group-directories-first'
+  alias ld='eza -lhD --icons=always'
+  alias lt='eza --icons=always --tree'
+  add-zsh-hook -d precmd _p10k_eza_aliases 2>/dev/null
+}
+add-zsh-hook precmd _p10k_eza_aliases
 
 ## aliases
+alias ..='cd ..'
+alias mkdir='mkdir -p'
+alias n='nvim'
 alias vs='code'
 alias c='clear' # clear terminal
-alias l='eza -lh --icons=auto' # long list
-alias ls='eza -1 --icons=auto' # short list
-alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
-alias ld='eza -lhD --icons=auto' # long list dirs
-alias lt='eza --icons=auto --tree' # list folder as tree
-alias y='yazi' # clear terminal
+alias l='eza -lh --icons=always' # long list
+alias ls='eza -1 --icons=always' # short list with directory icons
+alias ll='eza -lha --icons=always --sort=name --group-directories-first' # long list all
+alias ld='eza -lhD --icons=always' # long list dirs
+alias lt='eza --icons=always --tree' # list folder as tree
+alias y='yazi' 
 alias m='rmpc'
 
 
@@ -230,7 +254,6 @@ alias gl='git log'
 alias gp='git push'
 alias flake='cd ~/PolarisOS'
 alias ws='cd ~/PolarisSpace'
-# alias note='tmux has-session -t Notes 2>/dev/null || tmux new -ds Notes "cd ~/GrandArchive && nvim Polaris.md"; tmux attach -t Notes'
 alias np='nix profile'
 alias tm='tmux'
 alias ta='tmux a'
@@ -292,12 +315,5 @@ ff() {
   [ -n "$pick" ] && echo "$pick"
 
 }
-
-# startup
-nitch
-
-# env var
-
-
 
 

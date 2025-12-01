@@ -13,6 +13,7 @@ rm -rf ~/.config/Code/User/settings.json
 rm -rf ~/.config/Code/User/keybindings.json
 rm -rf ~/.config/rofi
 rm -rf ~/.config/htop
+rm -rf ~/.config/rmpc
 
 cp -r dotfiles/hypr ~/.config/
 cp -r dotfiles/niri ~/.config/
@@ -26,6 +27,7 @@ cp dotfiles/settings.json ~/.config/Code/User/
 cp dotfiles/keybindings.json ~/.config/Code/User/
 cp -r dotfiles/rofi ~/.config/
 cp -r dotfiles/htop ~/.config/
+cp -r dotfiles/rmpc ~/.config/
 
 mkdir -p ~/.config/scripts/
 cp scripts/logout.sh ~/.config/scripts/

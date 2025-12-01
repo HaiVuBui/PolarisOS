@@ -10,6 +10,10 @@ in
   stylix = {
     enable = true;
     image = stylixImage;
+    targets.plymouth.enable = true;
+
+    # targets.console.enable = false; # avoid theming the TTY greetd/tuigreet runs on
+
   #   base16Scheme = {
   #   base00 = "fbf1c7"; # background (light0)
   #   base01 = "f2e5bc"; # lighter background (light0_soft)
@@ -58,4 +62,3 @@ in
     };
   };
 }
-

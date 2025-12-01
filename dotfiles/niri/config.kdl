@@ -1,4 +1,4 @@
-// This config is in the KDL format: https://kdl.dev
+/// This config is in the KDL format: https://kdl.dev
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
@@ -457,6 +457,8 @@ binds {
     F8 allow-when-locked=true {spawn-sh "rmpc togglepause";}
     F7 allow-when-locked=true {spawn-sh "rmpc seek -5";}
     F9 allow-when-locked=true {spawn-sh "rmpc seek +5";}
+    Mod+n allow-when-locked=true {spawn-sh "rmpc next";}
+    Mod+p allow-when-locked=true {spawn-sh "rmpc prev";}
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),

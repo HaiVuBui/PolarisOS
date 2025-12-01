@@ -76,8 +76,8 @@
   # stylixImage = ../../wallpapers/Random/fireplace.gif;
   # stylixImage = ../../wallpapers/Random/white_woman.png;
   # stylixImage = ../../wallpapers/Selected/greenbus.jpg;
-  # stylixImage = ../../wallpapers/Selected/angel-warior.jpg;
-  stylixImage = ../../wallpapers/Selected/red_hair.png;
+  stylixImage = ../../wallpapers/Selected/angel-warior.jpg;
+  # stylixImage = ../../wallpapers/Selected/red_hair.png;
   # stylixImage = ../../wallpapers/Selected/cartoon-castle.png;
 
   # # Set Waybar
