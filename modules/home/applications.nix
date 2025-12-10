@@ -55,6 +55,7 @@
     # apps
     obsidian
 	  bleachbit
+
   ];
 }
 

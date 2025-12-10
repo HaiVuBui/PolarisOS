@@ -14,6 +14,7 @@ rm -rf ~/.config/Code/User/keybindings.json
 rm -rf ~/.config/rofi
 rm -rf ~/.config/htop
 rm -rf ~/.config/rmpc
+# rm -rf ~/Music
 
 cp -r dotfiles/hypr ~/.config/
 cp -r dotfiles/niri ~/.config/
@@ -28,6 +29,7 @@ cp dotfiles/keybindings.json ~/.config/Code/User/
 cp -r dotfiles/rofi ~/.config/
 cp -r dotfiles/htop ~/.config/
 cp -r dotfiles/rmpc ~/.config/
+# cp -r Music ~/
 
 mkdir -p ~/.config/scripts/
 cp scripts/logout.sh ~/.config/scripts/
