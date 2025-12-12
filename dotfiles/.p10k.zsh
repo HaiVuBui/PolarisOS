@@ -206,6 +206,7 @@ nitch
 
 ## env var
 export NIXPKGS_ALLOW_UNFREE=1
+source ~/.env.sh
 
 ## line arrow
 typeset -g P9K_ARROW=$'\uF0A9'  # 
@@ -315,5 +316,4 @@ ff() {
   [ -n "$pick" ] && echo "$pick"
 
 }
-
 
