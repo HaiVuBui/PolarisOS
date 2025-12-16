@@ -56,6 +56,10 @@
     obsidian
 	  bleachbit
 
+    #jailbreak
+    libimobiledevice
+    libusbmuxd
+    usbmuxd
   ];
 }
 

@@ -9,6 +9,7 @@
     tumbler.enable = true; # Image/video preview
     gnome.gnome-keyring.enable = true;
     upower.enable = true; # Power management (required for DMS battery monitoring)
+    usbmuxd.enable = true;
 
     smartd = {
       enable =
@@ -25,6 +26,7 @@
       wireplumber.enable = true;  # Enable WirePlumber session manager
     };
   };
+
 
 
 }
