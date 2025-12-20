@@ -1,5 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "master", -- pin to the stable API (new default branch is an incompatible rewrite)
   build = ":TSUpdate",
   opts = {
     ensure_installed = {

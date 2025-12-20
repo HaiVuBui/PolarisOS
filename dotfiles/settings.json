@@ -21,6 +21,7 @@
   "workbench.layoutControl.enabled": false,
   "chat.commandCenter.enabled": false,
   "github.copilot.nextEditSuggestions.enabled": true,
+  "geminicodeassist.project": "alien-winter-qbjf5",
 }
 
 
