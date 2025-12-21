@@ -49,6 +49,7 @@ in {
 
       # Java/JS
       nodejs
+      yarn
 
       #Python
       basedpyright
