@@ -36,6 +36,8 @@
     bottom # monitors tool
 	  tldr
     htop # monitors tool
+    curl
+    wget
 
     # UI tools
     waybar
