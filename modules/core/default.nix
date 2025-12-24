@@ -29,5 +29,6 @@ in
     ./nopass.nix
     ./docker.nix
     ./nixld.nix
+    ./kmscon.nix
   ];
 }
