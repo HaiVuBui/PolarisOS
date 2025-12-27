@@ -26,8 +26,5 @@
       wireplumber.enable = true;  # Enable WirePlumber session manager
     };
   };
-
-
-
 }
 

@@ -21,6 +21,7 @@ in
     ./tuigreet.nix
     ./security.nix
     ./services.nix
+    ./tailscale.nix
     ./stylix.nix
     inputs.stylix.nixosModules.stylix
     ./system.nix
