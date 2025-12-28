@@ -1,12 +1,18 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   boot = {
     kernelPackages = pkgs.linuxPackages;
-    loader.systemd-boot.enable = true;
+    
+    loader.systemd-boot = {
+      enable = true;
+      # Optional: explicitly allow editing kernel params in the boot menu
+      # just in case you need to debug later
+      editor = true; 
+    };
 
     plymouth.enable = true;
-    plymouth.theme = "stylix"; # match Stylix theming
+    plymouth.theme = "stylix";
 
     kernelParams = [
       "quiet"
@@ -18,5 +24,15 @@
     ];
 
     consoleLogLevel = 3;
+  };
+
+  # --- THE "BIOS BYPASS" MAGIC ---
+  # This script runs every time you rebuild. 
+  # It forces the EFI Shell binary into your boot partition.
+  system.activationScripts.installEfiShell = {
+    text = ''
+      # Copy the shell binary to the specific name systemd-boot looks for
+      cp -f ${pkgs.edk2-uefi-shell}/shell.efi /boot/shellx64.efi
+    '';
   };
 }
