@@ -1,14 +1,8 @@
-{ ... }: {
-  fileSystems."/home/hai/Backup" = {
-    device = "/dev/disk/by-uuid/165cf380-9f13-4d83-9915-c57288e1e64a";
-    fsType = "ext4";
-    options = [ "nofail" ];
-  };
-
+{ lib, ... }: {
   fileSystems."/home/hai/Storage" = {
-    device = "/dev/disk/by-uuid/8433d491-2a37-48bb-b0e7-5e739f972814";
-    fsType = "ext4";
-    options = [ "nofail" ];
+    device = "/dev/disk/by-uuid/e973dce2-7d2e-412f-ba99-722ed58dbd55";
+    fsType = "btrfs";
+    options = [ "compress=zstd:3" "autodefrag" "noatime"]; 
   };
 
   fileSystems."/home/hai/Win" = {
@@ -16,4 +10,8 @@
     fsType = "ntfs-3g";
     options = [ "nofail" "rw" "uid=1000" "gid=1000" "windows_names" ];
   };
+
+  fileSystems."/".options = lib.mkForce [ "subvol=root" "compress=zstd" ];
+  fileSystems."/home".options = lib.mkForce [ "subvol=home" "compress=zstd" ];
+  fileSystems."/nix".options = lib.mkForce [ "subvol=nix" "compress=zstd" "noatime" ];
 }
