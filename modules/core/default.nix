@@ -31,5 +31,6 @@ in
     ./docker.nix
     ./nixld.nix
     ./kmscon.nix
+    ./syncthing.nix
   ];
 }
