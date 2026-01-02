@@ -53,10 +53,26 @@
     ripgrep # search tool
     zoxide
     resvg
-    imagemagick
+    imagemagick 
     zip
     unzip
     mpv
+
+    # shells tools
+    tmux #window multiplier
+    eza # file lister for zsh
+    git # distributed version control system
+    yazi # cli files manager
+    bottom # monitors tool
+	  tldr # summarize man pages
+    htop # monitors tool
+    curl # download tool
+    wget # download tool
+
+    #jailbreak
+    libimobiledevice
+    libusbmuxd
+    usbmuxd
   ];
 }
 

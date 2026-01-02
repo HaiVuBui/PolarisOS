@@ -6,9 +6,6 @@
     #terminals
     kitty
 
-    # editors
-    # sublime
-
     # AI shits
     gemini-cli
     opencode
@@ -26,18 +23,8 @@
     tty-clock
 
     #shell
-    tmux #window multiplier
-    eza # file lister for zsh
     oh-my-zsh # plugin manager for zsh
     zsh-powerlevel10k # theme for zsh
-    # starship # customizable shell prompt
-    git # distributed version control system
-    yazi # cli files manager
-    bottom # monitors tool
-	  tldr
-    htop # monitors tool
-    curl
-    wget
 
     # UI tools
     waybar
@@ -53,16 +40,10 @@
     # mucis
     rmpc
     yt-dlp
-    mkvtoolnix
 
     # apps
     obsidian
 	  bleachbit
-
-    #jailbreak
-    libimobiledevice
-    libusbmuxd
-    usbmuxd
   ];
 }
 
