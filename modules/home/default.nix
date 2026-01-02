@@ -24,7 +24,7 @@
     ./qt.nix
     ./gtk.nix
     ./brave.nix
-    ./zen.nix
+    # ./zen.nix
     ./symlinks.nix
   ];
 }
