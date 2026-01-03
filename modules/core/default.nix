@@ -16,8 +16,6 @@ in
     ./network.nix
     ./keyboard.nix
     ./packages.nix
-    # (if vars.displayManager == "tui" then ./greetd.nix else ./sddm.nix)
-    # (import ./tuigreet.nix {inherit host;})
     ./tuigreet.nix
     ./security.nix
     ./services.nix
