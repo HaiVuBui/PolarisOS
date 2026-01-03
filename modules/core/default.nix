@@ -30,5 +30,6 @@ in
     ./nixld.nix
     ./kmscon.nix
     ./syncthing.nix
+    ./snapper.nix
   ];
 }
