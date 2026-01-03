@@ -1,42 +1,61 @@
-rm -rf ~/.config/hypr
-rm -rf ~/.config/niri
-rm -rf ~/.config/nvim
-rm -rf ~/.config/kitty
-rm -rf ~/.config/tmux
-rm -rf ~/.config/waybar
-rm -rf ~/.config/fastfetch
-rm -rf ~/.config/scripts/logout.sh
-rm -rf ~/.config/scripts/wppicker.sh
-rm -rf ~/Wallpapers
-rm -rf ~/.vimrc
-rm -rf ~/.config/Code/User/settings.json
-rm -rf ~/.config/Code/User/keybindings.json
-rm -rf ~/.config/rofi
-rm -rf ~/.config/htop
-rm -rf ~/.config/rmpc
-# rm -rf ~/Music
+#!/usr/bin/env bash
 
-cp -r dotfiles/hypr ~/.config/
-cp -r dotfiles/niri ~/.config/
-cp -r dotfiles/nvim ~/.config/
-cp -r dotfiles/kitty ~/.config/
-cp -r dotfiles/tmux ~/.config/
-cp -r dotfiles/waybar ~/.config/
-cp -r dotfiles/fastfetch ~/.config/
-cp dotfiles/.vimrc ~/.vimrc
-cp dotfiles/settings.json ~/.config/Code/User/
-cp dotfiles/keybindings.json ~/.config/Code/User/
-cp -r dotfiles/rofi ~/.config/
-cp -r dotfiles/htop ~/.config/
-cp -r dotfiles/rmpc ~/.config/
-# cp -r Music ~/
+# Define Paths
+DOTFILES_DIR="dotfiles"
+CONFIG_DIR="$HOME/.config"
+CODE_DIR="$CONFIG_DIR/Code/User"
+SCRIPTS_DIR="$CONFIG_DIR/scripts"
 
-mkdir -p ~/.config/scripts/
-cp scripts/logout.sh ~/.config/scripts/
-cp scripts/wppicker.sh ~/.config/scripts/
-cp dotfiles/.p10k.zsh ~/
+# ---------------------------------------------------------
+# 1. Standard Config Folders
+# ---------------------------------------------------------
+APPS=(
+    "hypr"
+    "niri"
+    "nvim"
+    "kitty"
+    "tmux"
+    "waybar"
+    "fastfetch"
+    "rofi"
+    "htop"
+    "rmpc"
+)
 
-mkdir -p ~/Wallpapers
-cp -r wallpapers/Selected/* ~/Wallpapers
+echo ">>> Syncing Config Apps..."
+for app in "${APPS[@]}"; do
+    mkdir -p "$CONFIG_DIR/$app"
+    # Note: '-a' keeps archive mode. '-q' adds quiet mode.
+    rsync -aq --delete "$DOTFILES_DIR/$app/" "$CONFIG_DIR/$app/"
+done
 
+# ---------------------------------------------------------
+# 2. Individual Files
+# ---------------------------------------------------------
+echo ">>> Syncing Individual Dotfiles..."
+rsync -aq "$DOTFILES_DIR/.vimrc" "$HOME/.vimrc"
+rsync -aq "$DOTFILES_DIR/.p10k.zsh" "$HOME/.p10k.zsh"
 
+# ---------------------------------------------------------
+# 3. VS Code Settings
+# ---------------------------------------------------------
+echo ">>> Syncing VS Code..."
+mkdir -p "$CODE_DIR"
+rsync -aq "$DOTFILES_DIR/settings.json" "$CODE_DIR/"
+rsync -aq "$DOTFILES_DIR/keybindings.json" "$CODE_DIR/"
+
+# ---------------------------------------------------------
+# 4. Scripts
+# ---------------------------------------------------------
+echo ">>> Syncing Scripts..."
+mkdir -p "$SCRIPTS_DIR"
+rsync -aq --delete "scripts/" "$SCRIPTS_DIR/"
+
+# ---------------------------------------------------------
+# 5. Wallpapers
+# ---------------------------------------------------------
+echo ">>> Syncing Wallpapers..."
+mkdir -p "$HOME/Wallpapers"
+rsync -aq --delete "wallpapers/Selected/" "$HOME/Wallpapers/"
+
+echo ">>> Dotfiles installation complete!"
