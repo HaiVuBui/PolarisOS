@@ -18,14 +18,6 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Hypersysinfo  (Optional)
-    #hyprsysteminfo.url = "github:hyprwm/hyprsysteminfo";
-
-    # QuickShell (optional add quickshell to outputs to enable)
-    #quickshell = {
-    #  url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
   };
 
   outputs =

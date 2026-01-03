@@ -73,6 +73,18 @@
     libimobiledevice
     libusbmuxd
     usbmuxd
+
+    # cli funshits
+    fastfetch # system information fetch tool
+    cava
+    cmatrix
+    nitch
+    lolcat
+    figlet
+    cowsay
+    fortune
+    tty-clock
+    (pkgs.callPackage ./packages/momoisay.nix {})
   ];
 }
 

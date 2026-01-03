@@ -11,17 +11,6 @@
     opencode
     codeium
 
-    # cli funshits
-    fastfetch # system information fetch tool
-    cava
-    cmatrix
-    nitch
-    lolcat
-    figlet
-    cowsay
-    fortune
-    tty-clock
-
     #shell
     oh-my-zsh # plugin manager for zsh
     zsh-powerlevel10k # theme for zsh
