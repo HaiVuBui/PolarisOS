@@ -32,6 +32,7 @@
     # apps
     obsidian
 	  bleachbit
+    codex
   ];
 }
 

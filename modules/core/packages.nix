@@ -10,6 +10,7 @@
       defaultEditor = true;
     };
     lazygit.enable = true;
+    kdeconnect.enable = true;
     firefox.enable = false; # Firefox is not installed by default
     niri = {
       enable = true; # set this so desktop file is created

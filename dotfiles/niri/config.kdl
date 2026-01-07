@@ -280,6 +280,7 @@ spawn-at-startup "swww-daemon"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--primary" "--watch" "cliphist" "store"
+spawn-at-startup "kdeconnectd"
 spawn-at-startup "fcitx5" "-d"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:

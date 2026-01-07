@@ -254,7 +254,7 @@ alias gc='git commit'
 alias gs='git status -s'
 alias gl='git log'
 alias gp='git push'
-alias lg='lazygit'
+alias lzg='lazygit'
 alias lzd='lazydocker'
 
 alias flake='cd ~/PolarisOS'
