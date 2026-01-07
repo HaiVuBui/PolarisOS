@@ -11,7 +11,6 @@ opt.shiftwidth = 2
 opt.number = true
 opt.relativenumber = true
 opt.conceallevel = 0
-opt.autoread = true
 opt.clipboard = "unnamedplus" -- share yanks with the system clipboard
 
 -- start: line numbers color
@@ -32,15 +31,19 @@ api.nvim_create_autocmd("ColorScheme", {
 })
 -- end: line numbers color
 
-api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+-- 1. Enable autoread
+vim.o.autoread = true
+
+-- 2. Create an autocommand to trigger the reload immediately
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
   pattern = "*",
   command = "if mode() != 'c' | checktime | endif",
 })
 
-vim.keymap.set("n", "<leader>b", "<cmd>w<CR><cmd>!make<CR>", {
-  desc = "Build project",
-  noremap = true,
-  silent = false,
+-- 3. Notification (Optional: lets you know it happened)
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  pattern = "*",
+  command = "echomsg 'File changed on disk. Buffer reloaded.'",
 })
 
 require("config.lazy")
