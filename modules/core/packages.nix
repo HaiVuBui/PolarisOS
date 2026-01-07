@@ -9,6 +9,7 @@
       enable = true;
       defaultEditor = true;
     };
+    lazygit.enable = true;
     firefox.enable = false; # Firefox is not installed by default
     niri = {
       enable = true; # set this so desktop file is created
@@ -68,6 +69,7 @@
     htop # monitors tool
     curl # download tool
     wget # download tool
+    lazydocker
 
     #jailbreak
     libimobiledevice

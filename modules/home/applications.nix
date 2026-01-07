@@ -17,7 +17,6 @@
 
     # UI tools
     waybar
-    nautilus
     tofi
     rofi
     hyprlock

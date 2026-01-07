@@ -248,11 +248,15 @@ alias y='yazi'
 alias m='rmpc'
 
 
+# git alias
 alias ga='git add'
 alias gc='git commit'
 alias gs='git status -s'
 alias gl='git log'
 alias gp='git push'
+alias lg='lazygit'
+alias lzd='lazydocker'
+
 alias flake='cd ~/PolarisOS'
 alias ws='cd ~/PolarisSpace'
 alias np='nix profile'
@@ -262,9 +266,7 @@ alias notesync='cd ~/GrandArchive && \
                      git add . && \
                      git commit -m "$(date)" && \
                      git push origin main --force'
-alias notevs='code ~/GrandArchive'
 
-alias notec='code -r ~/GrandArchive/Polaris.md'
 note() {
   local session="Notes"
   local dir="$HOME/GrandArchive"   # adjust if needed
