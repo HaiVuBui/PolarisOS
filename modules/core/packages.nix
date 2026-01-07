@@ -66,6 +66,7 @@
     git # distributed version control system
     yazi # cli files manager
     bottom # monitors tool
+    nvitop # monitors tool for nvidia
 	  tldr # summarize man pages
     htop # monitors tool
     curl # download tool
