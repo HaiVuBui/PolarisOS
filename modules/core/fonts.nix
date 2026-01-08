@@ -12,25 +12,25 @@
 
       nerd-fonts.symbols-only
 
-      # font-awesome
-      # hackgen-nf-font
-      # ibm-plex
-      # inter
-      # material-icons
-      # maple-mono.NF
-      # minecraftia
-      # nerd-fonts.im-writing
-      # nerd-fonts.blex-mono
-      # noto-fonts
-      # noto-fonts-color-emoji
+      font-awesome
+      hackgen-nf-font
+      ibm-plex
+      inter
+      material-icons
+      maple-mono.NF
+      minecraftia
+      nerd-fonts.im-writing
+      nerd-fonts.blex-mono
+      noto-fonts
+      noto-fonts-color-emoji
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
-      # noto-fonts-monochrome-emoji
-      # powerline-fonts
-      # roboto
-      # roboto-mono
-      # symbola
-      # terminus_font
+      noto-fonts-monochrome-emoji
+      powerline-fonts
+      roboto
+      roboto-mono
+      symbola
+      terminus_font
     ];
   };
 }
