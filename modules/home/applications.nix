@@ -12,8 +12,8 @@
     codeium
 
     #shell
-    oh-my-zsh # plugin manager for zsh
-    zsh-powerlevel10k # theme for zsh
+    # oh-my-zsh # plugin manager for zsh
+    # zsh-powerlevel10k # theme for zsh
 
     # UI tools
     waybar

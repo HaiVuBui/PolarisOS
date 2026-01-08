@@ -13,7 +13,8 @@
 # in
 {
   imports = [
-    ./zsh.nix
+    # ./zsh.nix
+    # ./fish.nix
     ./vscode.nix
     ./git.nix
     # ./pixi.nix
