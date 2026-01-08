@@ -20,7 +20,7 @@ APPS=(
     "rofi"
     "htop"
     "rmpc"
-    # "fish"
+    "mako"
 )
 
 echo ">>> Syncing Config Apps..."

@@ -9,6 +9,7 @@ if status is-interactive
     abbr --add n nvim
     abbr --add vs code
     abbr --add c clear
+    abbr --add csync 'bash ~/PolarisOs/scripts/sync.sh'
     
     # Eza (List)
     abbr --add l 'eza -lh --icons=always'
