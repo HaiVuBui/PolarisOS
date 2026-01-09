@@ -1,5 +1,4 @@
 set -g fish_greeting 
-nitch
 if status is-interactive
     # --- ALIASES (Converted to Abbreviations) ---
     
