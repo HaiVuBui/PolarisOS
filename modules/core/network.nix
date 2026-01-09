@@ -30,5 +30,6 @@ in
   };
 
   environment.systemPackages = with pkgs; [ networkmanagerapplet ];
+  hardware.enableRedistributableFirmware = true;
 }
 
