@@ -1,11 +1,9 @@
-{ userConfig, pkgs, lib ? pkgs.lib, ... }:
+{ pkgs, lib ? pkgs.lib, username, ... }:
 
 let
-  cDevLibs = with pkgs; [
-    zlib
-    openssl
-    # cudatoolkit
-  ];
+  cDevLibs = with pkgs; [ zlib openssl ];
+
+  cCudaLibs = with pkgs; [ cudatoolkit ];
 
   cDevTools = with pkgs; [
     llvmPackages_latest.clang
@@ -27,10 +25,10 @@ let
     gnumake
   ];
 
-  cRuntimeLibs = cDevLibs ++ (with pkgs; [
-    stdenv.cc.cc
-    llvmPackages_latest.libcxx
-  ]);
+  cRuntimeLibs = cDevLibs
+    ++ (with pkgs; [ stdenv.cc.cc llvmPackages_latest.libcxx ]) 
+    # ++ cCudaLibs
+    ;
 
   mkColonPath = paths: lib.concatStringsSep ":" (lib.filter (s: s != "") paths);
 
@@ -38,42 +36,40 @@ let
   pkgConfigPath = lib.makeSearchPathOutput "dev" "lib/pkgconfig" cDevLibs;
   runtimeLibPath = lib.makeLibraryPath cRuntimeLibs;
 in {
-  environment.systemPackages =
-    (with pkgs; [
-      # nix lsp
-      nixd
-      nixfmt-classic
+  environment.systemPackages = (with pkgs; [
+    # nix lsp
+    nixd
+    nixfmt-classic
 
-      #nvim
-      tree-sitter
+    #nvim
+    tree-sitter
 
-      # Java/JS
-      nodejs
-      yarn
+    # Java/JS
+    nodejs
+    yarn
 
-      #Python
-      basedpyright
-      python310
-      pixi
-      black
+    #Python
+    basedpyright
+    python310
+    pixi
+    black
 
-      # Haskell
-      cabal-install
-      ormolu
-      haskell-language-server
-      ghc
-      stack
+    # Haskell
+    cabal-install
+    ormolu
+    haskell-language-server
+    ghc
+    stack
 
-      #Nvim
-      rsync
+    #Nvim
+    rsync
 
-      # latex
-      texlab
-      texliveFull
-      latexminted
-    ])
-    ++ cDevTools
-    ++ cDevLibs;
+    # latex
+    texlab
+    texliveFull
+  ]) ++ cDevTools ++ cDevLibs
+    # ++ cCudaLibs
+  ;
 
   programs.ccache.enable = true;
 
@@ -85,38 +81,19 @@ in {
     "x-scheme-handler/unknown" = "firefox.desktop";
   };
 
-  environment.variables =
-    let
-      baseSessionVars = {
-        XDG_PICTURES_DIR = "$HOME/randomShits/Pictures";
-        MOZ_ENABLE_WAYLAND = "1";
-        NIXOS_OZONE_WL = "1";
-        OZONE_PLATFORM = "wayland";
-      };
+  environment.variables = let
+    baseSessionVars = {
+      # XDG_PICTURES_DIR = "/home/${username}/randomShits/Pictures";
+      MOZ_ENABLE_WAYLAND = "1";
+      NIXOS_OZONE_WL = "1";
+      OZONE_PLATFORM = "wayland";
+    };
 
-      cSessionVars = {
-        PKG_CONFIG_PATH = mkColonPath [
-          pkgConfigPath
-          "$PKG_CONFIG_PATH"
-        ];
-
-        CPATH = mkColonPath [
-          includePath
-          "$CPATH"
-        ];
-
-        LIBRARY_PATH = mkColonPath [
-          runtimeLibPath
-          "$LIBRARY_PATH"
-        ];
-
-        LD_LIBRARY_PATH = mkColonPath [
-          runtimeLibPath
-          "/run/opengl-driver/lib"
-          "$LD_LIBRARY_PATH"
-        ];
-      };
-    in
-    baseSessionVars // cSessionVars;
+    cSessionVars = {
+      PKG_CONFIG_PATH = pkgConfigPath;
+      CPATH = includePath;
+      LIBRARY_PATH = runtimeLibPath;
+      LD_LIBRARY_PATH = mkColonPath [ runtimeLibPath "/run/opengl-driver/lib" ];
+    };
+  in baseSessionVars // cSessionVars;
 }
-

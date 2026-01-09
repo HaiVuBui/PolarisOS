@@ -76,7 +76,8 @@ in {
     ])
     ++ cDevTools
     ++ cDevLibs
-    ++ cCudaLibs;
+    ++ cCudaLibs
+    ;
 
   programs.ccache.enable = true;
 
