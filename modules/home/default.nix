@@ -14,7 +14,7 @@
 {
   imports = [
     # ./zsh.nix
-    # ./fish.nix
+    ./fish.nix
     ./vscode.nix
     ./git.nix
     # ./pixi.nix

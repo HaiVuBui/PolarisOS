@@ -11,6 +11,7 @@ in
     enable = true;
     image = stylixImage;
     targets.plymouth.enable = true;
+    targets.fish.enable = false;
 
     # targets.console.enable = false; # avoid theming the TTY greetd/tuigreet runs on
 

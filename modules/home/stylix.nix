@@ -6,7 +6,7 @@ _: {
     hyprlock.enable = false;
     ghostty.enable = false;
     vscode.enable = false;
-    # firefox.enable = false;
+    fish.enable = false;
     qt = {
       enable = true;
       platform = "qtct";
