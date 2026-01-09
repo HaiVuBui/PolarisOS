@@ -2,7 +2,13 @@
   fileSystems."/home/hai/Storage" = {
     device = "/dev/disk/by-uuid/f7ed8d00-bcb0-44bc-ab00-2fc383b45926";
     fsType = "btrfs";
-    options = [ "compress=zstd:3" "autodefrag" "noatime"]; 
+    options = [ "subvol=storage" "compress=zstd:3" "autodefrag" "noatime"]; 
+  };
+
+  fileSystems."/home/hai/Backup" = {
+    device = "/dev/disk/by-uuid/f7ed8d00-bcb0-44bc-ab00-2fc383b45926";
+    fsType = "btrfs";
+    options = [ "subvol=backup" "compress=zstd:3" "autodefrag" "noatime"]; 
   };
 
   # fileSystems."/home/hai/Win" = {
