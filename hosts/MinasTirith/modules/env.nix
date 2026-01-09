@@ -1,9 +1,12 @@
-{ userConfig, pkgs, lib ? pkgs.lib, ... }:
+{ pkgs, lib ? pkgs.lib, username, ... }:
 
 let
   cDevLibs = with pkgs; [
     zlib
     openssl
+  ];
+
+  cCudaLibs = with pkgs; [
     cudatoolkit
   ];
 
@@ -30,7 +33,7 @@ let
   cRuntimeLibs = cDevLibs ++ (with pkgs; [
     stdenv.cc.cc
     llvmPackages_latest.libcxx
-  ]);
+  ]) ++ cCudaLibs;
 
   mkColonPath = paths: lib.concatStringsSep ":" (lib.filter (s: s != "") paths);
 
@@ -70,10 +73,10 @@ in {
       # latex
       texlab
       texliveFull
-      latexminted
     ])
     ++ cDevTools
-    ++ cDevLibs;
+    ++ cDevLibs
+    ++ cCudaLibs;
 
   programs.ccache.enable = true;
 
@@ -88,32 +91,19 @@ in {
   environment.variables =
     let
       baseSessionVars = {
-        XDG_PICTURES_DIR = "$HOME/randomShits/Pictures";
+        # XDG_PICTURES_DIR = "/home/${username}/randomShits/Pictures";
         MOZ_ENABLE_WAYLAND = "1";
         NIXOS_OZONE_WL = "1";
         OZONE_PLATFORM = "wayland";
       };
 
       cSessionVars = {
-        PKG_CONFIG_PATH = mkColonPath [
-          pkgConfigPath
-          "$PKG_CONFIG_PATH"
-        ];
-
-        CPATH = mkColonPath [
-          includePath
-          "$CPATH"
-        ];
-
-        LIBRARY_PATH = mkColonPath [
-          runtimeLibPath
-          "$LIBRARY_PATH"
-        ];
-
+        PKG_CONFIG_PATH = pkgConfigPath;
+        CPATH = includePath;
+        LIBRARY_PATH = runtimeLibPath;
         LD_LIBRARY_PATH = mkColonPath [
           runtimeLibPath
           "/run/opengl-driver/lib"
-          "$LD_LIBRARY_PATH"
         ];
       };
     in
