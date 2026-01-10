@@ -11,6 +11,7 @@
     };
     fish.enable = true;
     lazygit.enable = true;
+    zoxide.enable = true;
     kdeconnect.enable = true;
     firefox.enable = false; # Firefox is not installed by default
     niri = {

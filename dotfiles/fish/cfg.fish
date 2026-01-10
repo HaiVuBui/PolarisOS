@@ -31,8 +31,8 @@ if status is-interactive
     abbr --add gp 'git push'
     
     # Navigation & Nix
-    abbr --add flake 'cd ~/PolarisOS'
-    abbr --add ws 'cd ~/PolarisSpace'
+    abbr --add os 'cd ~/PolarisOS'
+    abbr --add ws 'cd ~/Workspace'
     abbr --add np 'nix profile'
     abbr --add tm tmux
     abbr --add ta 'tmux a'
