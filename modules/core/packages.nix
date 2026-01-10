@@ -44,7 +44,7 @@
     mako # notifications daemon
     playerctl # media controller
     vim # editor
-    tuigreet
+    tuigreet # greeter
 
     #dependencies
     ffmpeg
@@ -72,7 +72,9 @@
     htop # monitors tool
     curl # download tool
     wget # download tool
-    lazydocker
+    lazydocker # docker tui
+    bluetui # bluetooth tui
+    ncdu # disk usage tool
 
     #jailbreak
     libimobiledevice
