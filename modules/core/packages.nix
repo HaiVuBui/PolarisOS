@@ -26,10 +26,10 @@
     mtr.enable = true;
     adb.enable = true;
     # hyprlock.enable = true;
-    # gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
