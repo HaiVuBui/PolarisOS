@@ -33,7 +33,7 @@
         },
         {
             "type": "display",
-            "key": "   Display",
+            "key": "   Display",
             "keyColor": "green"
         },
         {
@@ -79,7 +79,7 @@
         },
         {
             "type": "memory",
-            "key": "  ﬙ Memory",
+            "key": "   Memory",
             "keyColor": "magenta"
         },
         {

@@ -44,15 +44,15 @@ in
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrains Mono";
+        name = "JetBrainsMono Nerd Font Mono";
       };
       sansSerif = {
         package = pkgs.montserrat;
-        name = "Montserrat";
+        name = "Noto Serif";
       };
       serif = {
         package = pkgs.montserrat;
-        name = "Montserrat";
+        name = "Inter";
       };
       sizes = {
         applications = 12;

@@ -2,35 +2,28 @@
 {
   fonts = {
     packages = with pkgs; [
-      # dejavu_fonts
-      fira-code
-      fira-code-symbols
-      nerd-fonts.fira-code
+      # --- The Big Three (Your Defaults) ---
+      nerd-fonts.jetbrains-mono  # Main Terminal/Code font
+      inter                      # Main UI/Sans font
+      noto-fonts                 # Main Serif/Book font
 
-      jetbrains-mono
-      nerd-fonts.jetbrains-mono
+      # --- Icons & Symbols ---
+      nerd-fonts.symbols-only    # The "Glue" that fixes missing icons
+      font-awesome               # Common backup for Polybar/Waybar icons
 
-      nerd-fonts.symbols-only
-
-      font-awesome
-      hackgen-nf-font
-      ibm-plex
-      inter
-      material-icons
-      maple-mono.NF
-      minecraftia
-      nerd-fonts.im-writing
-      nerd-fonts.blex-mono
-      noto-fonts
-      noto-fonts-color-emoji
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      noto-fonts-monochrome-emoji
-      powerline-fonts
-      roboto
-      roboto-mono
-      symbola
-      terminus_font
+      # --- Language & Emoji Support (Essential) ---
+      noto-fonts-color-emoji     # Standard colored emojis
+      noto-fonts-cjk-sans        # Asian characters (Japanese/Chinese/Korean)
+      noto-fonts-cjk-serif       # Asian characters (Serif variant)
     ];
   };
+
+  fonts.fontconfig = {
+  enable = true;
+  defaultFonts = {
+    monospace = [ "JetBrainsMono Nerd Font Mono" ];
+    serif = [ "Inter" ];
+    sansSerif = [ "Noto Serif" ];
+  };
+};
 }
