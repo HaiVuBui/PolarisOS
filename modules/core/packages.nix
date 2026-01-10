@@ -39,13 +39,16 @@
     cliphist # clipboard history
     wl-clipboard # clipboard 
     pavucontrol # audio controller
-    pamixer # audi controller
     brightnessctl # light controller
     libnotify # For Notifications
     mako # notifications daemon
     playerctl # media controller
     vim # editor
     tuigreet # greeter
+    bluetui # bluetooth tui
+    ncdu # disk usage tool
+    impala # wifi manager
+    wiremix # audio mixer
 
     #dependencies
     ffmpeg
@@ -74,8 +77,6 @@
     curl # download tool
     wget # download tool
     lazydocker # docker tui
-    bluetui # bluetooth tui
-    ncdu # disk usage tool
 
     #jailbreak
     libimobiledevice

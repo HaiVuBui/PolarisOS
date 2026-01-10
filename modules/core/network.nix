@@ -10,7 +10,13 @@ in
   networking = {
     hostName = "${host}";
     # hostId = hostId;
-    networkmanager.enable = true;
+    networkmanager.enable = false;
+    # useDHCP = false;
+    # useNetworkd = true;
+    wireless.iwd = {
+      enable = true;
+      settings.General.EnableNetworkConfiguration = true; # Allows iwd to assign IP addresses
+    };
     # timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
     # firewall = {
     #   enable = true;
@@ -29,7 +35,14 @@ in
     # };
   };
 
-  environment.systemPackages = with pkgs; [ networkmanagerapplet ];
-  hardware.enableRedistributableFirmware = true;
-}
+  # systemd.network = {
+  #   enable = true;
+  #   networks."10-wired" = {
+  #     matchConfig.Name = "en*"; # Matches "enp3s0", "eth0", etc.
+  #     networkConfig.DHCP = "yes";
+  #   };
+  #   wait-online.enable = false;
+  # };
 
+  environment.systemPackages = with pkgs; [ networkmanagerapplet ];
+}

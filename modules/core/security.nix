@@ -1,6 +1,6 @@
 {...} : {
   security = {
-    # rtkit.enable = true;
+    rtkit.enable = true;
     polkit = {
       enable = true;
       # extraConfig = ''
