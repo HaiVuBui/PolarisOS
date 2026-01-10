@@ -65,26 +65,30 @@ return {
         table.insert(themes, theme)
       end
 
-      local gruvbox_contrasts = { "soft", "medium", "hard" }
-      for _, contrast in ipairs(gruvbox_contrasts) do
+      local function add_gruvbox(background, contrast)
         add_theme({
-          name = "Gruvbox Material Dark " .. capitalize(contrast),
+          name = string.format("Gruvbox Material %s %s", capitalize(background), capitalize(contrast)),
           colorscheme = "gruvbox-material",
           before = lines({
-            [[vim.o.background = "dark"]],
+            string.format([[vim.o.background = "%s"]], background),
             string.format([[vim.g.gruvbox_material_background = "%s"]], contrast),
             [[vim.g.gruvbox_material_foreground = "material"]],
           }),
         })
       end
-      for _, contrast in ipairs(gruvbox_contrasts) do
+
+      for _, background in ipairs({ "dark", "light" }) do
+        for _, contrast in ipairs({ "soft", "medium", "hard" }) do
+          add_gruvbox(background, contrast)
+        end
+      end
+
+      local function add_catppuccin(flavour, background)
         add_theme({
-          name = "Gruvbox Material Light " .. capitalize(contrast),
-          colorscheme = "gruvbox-material",
+          name = "Catppuccin " .. capitalize(flavour),
+          colorscheme = string.format("catppuccin-%s", flavour),
           before = lines({
-            [[vim.o.background = "light"]],
-            string.format([[vim.g.gruvbox_material_background = "%s"]], contrast),
-            [[vim.g.gruvbox_material_foreground = "material"]],
+            string.format([[vim.o.background = "%s"]], background),
           }),
         })
       end
@@ -96,14 +100,7 @@ return {
         { flavour = "mocha", background = "dark" },
       }
       for _, flavour in ipairs(catppuccin_flavours) do
-        add_theme({
-          name = "Catppuccin " .. capitalize(flavour.flavour),
-          colorscheme = "catppuccin",
-          before = lines({
-            string.format([[vim.o.background = "%s"]], flavour.background),
-            string.format([[vim.g.catppuccin_flavour = "%s"]], flavour.flavour),
-          }),
-        })
+        add_catppuccin(flavour.flavour, flavour.background)
       end
 
       add_theme({
@@ -122,18 +119,22 @@ return {
         colorscheme = "nightfox",
       })
 
+      local function add_everforest(background, contrast)
+        add_theme({
+          name = string.format("Everforest %s %s", capitalize(background), capitalize(contrast)),
+          colorscheme = "everforest",
+          before = lines({
+            string.format([[vim.o.background = "%s"]], background),
+            string.format([[vim.g.everforest_background = "%s"]], contrast),
+            [[vim.g.everforest_better_performance = 1]],
+          }),
+        })
+      end
+
       local everforest_contrasts = { "soft", "medium", "hard" }
       for _, background in ipairs({ "dark", "light" }) do
         for _, contrast in ipairs(everforest_contrasts) do
-          add_theme({
-            name = string.format("Everforest %s %s", capitalize(background), capitalize(contrast)),
-            colorscheme = "everforest",
-            before = lines({
-              string.format([[vim.o.background = "%s"]], background),
-              string.format([[vim.g.everforest_background = "%s"]], contrast),
-              [[vim.g.everforest_better_performance = 1]],
-            }),
-          })
+          add_everforest(background, contrast)
         end
       end
 
