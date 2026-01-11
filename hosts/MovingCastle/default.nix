@@ -1,7 +1,8 @@
 { ... }: {
   imports = [
+    ./modules/default.nix
     ./hardware.nix
-    ./host-packages.nix
+    ./storage.nix
   ];
 }
 

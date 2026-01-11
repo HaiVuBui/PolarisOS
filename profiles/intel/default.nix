@@ -1,7 +1,6 @@
 { host, ... }: {
   imports = [
     ../../hosts/${host}
-    ../../hosts/${host}/modules/default.nix
     ../../modules/core
   ];
   # Enable GPU Drivers
