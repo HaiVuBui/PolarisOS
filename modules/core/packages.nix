@@ -47,7 +47,6 @@
     tuigreet # greeter
     bluetui # bluetooth tui
     ncdu # disk usage tool
-    impala # wifi manager
     wiremix # audio mixer
 
     #dependencies

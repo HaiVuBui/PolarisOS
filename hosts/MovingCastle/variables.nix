@@ -6,4 +6,5 @@
   thunarEnable = true;
   stylixImage = ../../wallpapers/Selected/angel-warior.jpg;
   nopasswdSudo = true;
+  network = "iwd";
 }
