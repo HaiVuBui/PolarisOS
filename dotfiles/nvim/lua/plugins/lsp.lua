@@ -27,6 +27,7 @@ return {
           },
         },
         nixd = {},
+        gopls = {},
       }
 
       vim.o.signcolumn = "yes"

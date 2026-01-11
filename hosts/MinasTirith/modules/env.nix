@@ -67,6 +67,11 @@ in {
       ghc
       stack
 
+      # Go 
+      go
+      gopls
+      gofumpt
+
       #Nvim
       rsync
 

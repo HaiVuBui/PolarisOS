@@ -17,6 +17,7 @@ return {
       sh = { "shfmt" },
       haskell = { "ormolu" },
       latex = { "latexindent" },
+      go = {"gofumpt"}
     },
     format_on_save = false,
   },
