@@ -5,7 +5,7 @@
     fstrim.enable = true; # SSD Optimizer
     gvfs.enable = true; # For Mounting USB & More
     openssh.enable = true; # Enable SSH
-    blueman.enable = true; # Bluetooth Support
+    blueman.enable = false; # Bluetooth Support
     tumbler.enable = true; # Image/video preview
     gnome.gnome-keyring.enable = true;
     upower.enable = true; # Power management (required for DMS battery monitoring)
