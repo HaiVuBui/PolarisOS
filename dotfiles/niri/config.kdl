@@ -110,6 +110,11 @@ output "HDMI-A-1" {
     mode "1920x1080@100"
 }
 
+debug {
+    // frequent fix for nvidia flickering/glitches
+    wait-for-frame-completion-before-queueing
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
