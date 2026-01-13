@@ -15,5 +15,6 @@
     ./brave.nix
     # ./zen.nix
     ./symlinks.nix
+    ./home-vars.nix
   ];
 }
