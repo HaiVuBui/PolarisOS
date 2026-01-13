@@ -22,6 +22,7 @@ if status is-interactive
     abbr --add m rmpc
     abbr --add lzg lazygit
     abbr --add lzd lazydocker
+    abbr --add chat codex
     
     # Git
     abbr --add ga 'git add'
