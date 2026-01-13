@@ -31,5 +31,6 @@ in
     ./kmscon.nix
     ./syncthing.nix
     ./snapper.nix
+    ./zram.nix
   ];
 }
