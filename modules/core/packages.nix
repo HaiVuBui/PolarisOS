@@ -1,9 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
-{
+{ pkgs, inputs, username, ... }: {
   programs = {
     neovim = {
       enable = true;
@@ -30,6 +25,12 @@
       enable = true;
       enableSSHSupport = true;
     };
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 4d --keep 3";
+      flake = "/home/${username}/PolarisOS";
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -37,7 +38,7 @@
   environment.systemPackages = with pkgs; [
     # essentials
     cliphist # clipboard history
-    wl-clipboard # clipboard 
+    wl-clipboard # clipboard
     pavucontrol # audio controller
     brightnessctl # light controller
     libnotify # For Notifications
@@ -59,19 +60,19 @@
     ripgrep # search tool
     zoxide
     resvg
-    imagemagick 
+    imagemagick
     zip
     unzip
     mpv
 
     # shells tools
-    tmux #window multiplier
+    tmux # window multiplier
     eza # file lister for zsh
     git # distributed version control system
     yazi # cli files manager
     bottom # monitors tool
     nvitop # monitors tool for nvidia
-	  tldr # summarize man pages
+    tldr # summarize man pages
     htop # monitors tool
     curl # download tool
     wget # download tool
@@ -92,7 +93,7 @@
     cowsay
     fortune
     tty-clock
-    (pkgs.callPackage ./packages/momoisay.nix {})
+    (pkgs.callPackage ./packages/momoisay.nix { })
   ];
 }
 
