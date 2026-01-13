@@ -17,7 +17,10 @@ in
     backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs username host profile gpuProfile; };
     users.${username} = {
-      imports = [ ./../home/default.nix ];
+      imports = [ 
+      ./../home/default.nix 
+      inputs.nix-index-database.homeModules.nix-index
+      ];
       home = {
         username = "${username}";
         homeDirectory = "/home/${username}";
