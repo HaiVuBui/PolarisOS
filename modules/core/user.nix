@@ -3,6 +3,7 @@
 , username
 , host
 , profile
+, gpuProfile
 , ...
 }:
 let
@@ -14,7 +15,7 @@ in
     useUserPackages = true;
     useGlobalPkgs = false;
     backupFileExtension = "backup";
-    extraSpecialArgs = { inherit inputs username host profile; };
+    extraSpecialArgs = { inherit inputs username host profile gpuProfile; };
     users.${username} = {
       imports = [ ./../home/default.nix ];
       home = {
@@ -43,4 +44,3 @@ in
   };
   nix.settings.allowed-users = [ "${username}" ];
 }
-

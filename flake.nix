@@ -45,7 +45,7 @@
       mkNixosConfig = { host, profile ? "default", gpuProfile }: nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit inputs username host profile;
+          inherit inputs username host profile gpuProfile;
         };
         modules = [
           ./profiles/${gpuProfile}
