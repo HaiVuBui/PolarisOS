@@ -31,6 +31,7 @@
       clean.extraArgs = "--keep-since 4d --keep 3";
       flake = "/home/${username}/PolarisOS";
     };
+    nix-index.enable = true;
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -64,6 +65,7 @@
     zip
     unzip
     mpv
+    comma
 
     # shells tools
     tmux # window multiplier
