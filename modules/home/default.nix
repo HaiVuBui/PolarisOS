@@ -16,5 +16,6 @@
     # ./zen.nix
     ./symlinks.nix
     ./home-vars.nix
+    ./direnv.nix
   ];
 }
