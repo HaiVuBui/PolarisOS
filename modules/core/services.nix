@@ -1,4 +1,4 @@
-{profile, ...}: {
+{ ... }: {
   # Services to start
   services = {
     libinput.enable = true; # Input Handling
@@ -12,10 +12,7 @@
     usbmuxd.enable = true;
 
     smartd = {
-      enable =
-        if profile == "vm"
-        then false
-        else true;
+      enable = true;
       autodetect = true;
     };
     pipewire = {
@@ -27,4 +24,3 @@
     };
   };
 }
-

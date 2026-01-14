@@ -1,5 +1,4 @@
 {
-  profile,
   pkgs,
   lib,
   inputs,
@@ -24,4 +23,3 @@
       ublock-origin
   ];
 }
-

@@ -1,7 +1,6 @@
-{username, gpuProfile, host,...}:
+{username, host,...}:
 {
   home.sessionVariables = {
-    FLAKE = "${host}-${gpuProfile}";
+    FLAKE = "${host}";
   };
 }
-

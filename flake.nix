@@ -30,43 +30,24 @@
       username = "hai";
       lib = nixpkgs.lib;
 
-      hostProfiles = {
-        MovingCastle = {
-          profile = "default";
-          gpuProfiles = [ "intel" ];
-        };
-        MinasTirith = {
-          profile = "default";
-          gpuProfiles = [ "nvidia" ];
-        };
-      };
-
-      mkNixosConfig = { host, profile ? "default", gpuProfile }:
+      mkNixosConfig = { host }:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
-            inherit inputs username host profile gpuProfile;
+            inherit inputs username host;
             pkgs-unstable = import nixpkgs-unstable {
               inherit system;
               config.allowUnfree = true;
             };
           };
-          modules =
-            [ ./profiles/${gpuProfile} nix-flatpak.nixosModules.nix-flatpak ];
+          modules = [
+            ./hosts/${host}
+            nix-flatpak.nixosModules.nix-flatpak
+          ];
         };
 
-      hostEntries = lib.concatMap (hostDef:
-        let cfg = hostDef.cfg;
-        in map (gpuProfile: {
-          name = "${hostDef.host}-${gpuProfile}";
-          value = mkNixosConfig {
-            inherit gpuProfile;
-            host = hostDef.host;
-            profile = cfg.profile or "default";
-          };
-        }) cfg.gpuProfiles)
-        (lib.mapAttrsToList (host: cfg: { inherit host cfg; }) hostProfiles);
+      hosts = [ "MovingCastle" "MinasTirith" ];
 
-      nixosConfigurations = lib.listToAttrs hostEntries;
+      nixosConfigurations = lib.genAttrs hosts (host: mkNixosConfig { inherit host; });
     in { inherit nixosConfigurations; };
 }

@@ -2,8 +2,6 @@
 , inputs
 , username
 , host
-, profile
-, gpuProfile
 , ...
 }:
 let
@@ -15,7 +13,7 @@ in
     useUserPackages = true;
     useGlobalPkgs = false;
     backupFileExtension = "backup";
-    extraSpecialArgs = { inherit inputs username host profile gpuProfile; };
+    extraSpecialArgs = { inherit inputs username host; };
     users.${username} = {
       imports = [ 
       ./../home/default.nix 
