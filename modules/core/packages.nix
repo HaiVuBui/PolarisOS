@@ -1,4 +1,4 @@
-{ pkgs, inputs, username, ... }: {
+{ pkgs, pkgs-unstable, username, ... }: {
   programs = {
     neovim = {
       enable = true;
@@ -35,7 +35,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     # essentials
     cliphist # clipboard history
     wl-clipboard # clipboard
@@ -98,6 +98,7 @@
     fortune
     tty-clock
     (pkgs.callPackage ./packages/momoisay.nix { })
-  ];
+  ]) ++ (with pkgs-unstable; [
+    codex
+  ]);
 }
-

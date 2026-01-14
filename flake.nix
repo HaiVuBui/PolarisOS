@@ -7,6 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,7 +24,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nix-flatpak, ... }@inputs:
+  outputs = { nixpkgs, nixpkgs-unstable, nix-flatpak, ... }@inputs:
     let
       system = "x86_64-linux";
       username = "hai";
@@ -43,12 +44,15 @@
       mkNixosConfig = { host, profile ? "default", gpuProfile }:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs username host profile gpuProfile; };
+          specialArgs = {
+            inherit inputs username host profile gpuProfile;
+            pkgs-unstable = import nixpkgs-unstable {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          };
           modules =
-            [ 
-            ./profiles/${gpuProfile} 
-            nix-flatpak.nixosModules.nix-flatpak 
-            ];
+            [ ./profiles/${gpuProfile} nix-flatpak.nixosModules.nix-flatpak ];
         };
 
       hostEntries = lib.concatMap (hostDef:
