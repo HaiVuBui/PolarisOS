@@ -70,7 +70,6 @@
 
     # shells tools
     fish
-    tmux # window multiplier
     eza # file lister for zsh
     git # distributed version control system
     yazi # cli files manager

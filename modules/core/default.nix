@@ -30,5 +30,6 @@ in
     ./syncthing.nix
     ./snapper.nix
     ./virtualization.nix
+    ./tmux.nix
   ];
 }
