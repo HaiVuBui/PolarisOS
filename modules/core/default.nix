@@ -31,5 +31,6 @@ in
     ./snapper.nix
     ./virtualization.nix
     ./tmux.nix
+    ./nix.nix
   ];
 }
