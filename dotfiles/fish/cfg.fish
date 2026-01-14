@@ -10,6 +10,7 @@ if status is-interactive
     abbr --add c clear
     abbr --add csync 'bash ~/PolarisOs/scripts/sync.sh'
     abbr --add _ sudo
+    abbr --add clean 'bash ~/.config/scripts/clean.sh'
     
     # Eza (List)
     abbr --add l 'eza -lh --icons=always'
