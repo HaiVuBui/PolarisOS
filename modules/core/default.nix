@@ -26,11 +26,9 @@ in
     ./thunar.nix
     ./user.nix
     ./nopass.nix
-    ./docker.nix
-    ./nixld.nix
     ./kmscon.nix
     ./syncthing.nix
     ./snapper.nix
-    ./zram.nix
+    ./virtualization.nix
   ];
 }

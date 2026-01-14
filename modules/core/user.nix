@@ -41,6 +41,7 @@ in
       "scanner"
       "wheel" #subdo access
       "vboxusers" #Virtual Box
+      "podman"
     ];
     shell = pkgs.fish;
     ignoreShellProgramCheck = true;
