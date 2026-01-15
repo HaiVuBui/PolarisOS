@@ -28,9 +28,19 @@ return {
         },
         nixd = {},
         gopls = {},
+        rust_analyzer = {},
       }
 
       vim.o.signcolumn = "yes"
+
+      vim.diagnostic.config({
+        virtual_text = {
+          spacing = 2,
+          prefix = ">",
+        },
+        float = { source = "always", border = "rounded" },
+        severity_sort = true,
+      })
 
       vim.lsp.config("*", { capabilities = capabilities })
 
@@ -44,6 +54,9 @@ return {
       map("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename symbol" })
       map("n", "K", vim.lsp.buf.hover, { desc = "Show hover info" })
       map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Show code actions" })
+      map("n", "gl", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
+      map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+      map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
     end,
   },
 }

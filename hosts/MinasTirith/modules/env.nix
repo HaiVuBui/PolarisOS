@@ -72,6 +72,12 @@ in {
       gopls
       gofumpt
 
+      # rust
+      cargo 
+      rustc 
+      rustfmt 
+      rust-analyzer
+
       #Nvim
       rsync
 

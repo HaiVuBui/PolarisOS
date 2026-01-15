@@ -18,6 +18,7 @@ return {
       haskell = { "ormolu" },
       latex = { "latexindent" },
       go = {"gofumpt"}
+      rust = {"rustfmt"}
     },
     format_on_save = false,
   },
