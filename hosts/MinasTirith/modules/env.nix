@@ -12,8 +12,7 @@ let
 
   cDevTools = with pkgs; [
     llvmPackages_latest.clang
-    llvmPackages_latest.libcxx
-    llvmPackages_latest.lld
+    llvmPackages_latest.libcxx llvmPackages_latest.lld
     llvmPackages_latest.lldb
     gcc
     gdb
@@ -47,6 +46,9 @@ in {
       nixd
       nixfmt-classic
 
+      #lua 
+      stylua
+
       #nvim
       tree-sitter
 
@@ -61,20 +63,20 @@ in {
       black
 
       # Haskell
-      cabal-install
+      # cabal-install
+      # stack
+      # ghc
       ormolu
       haskell-language-server
-      ghc
-      stack
 
       # Go 
-      go
+      # go
       gopls
       gofumpt
 
       # rust
-      cargo 
-      rustc 
+      # cargo 
+      # rustc 
       rustfmt 
       rust-analyzer
 
