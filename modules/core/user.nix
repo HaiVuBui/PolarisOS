@@ -1,23 +1,16 @@
-{ pkgs
-, inputs
-, username
-, host
-, ...
-}:
-let
-  inherit (import ../../hosts/${host}/variables.nix) gitUsername;
-in
-{
+{ pkgs, pkgs-unstable, inputs, username, host, ... }:
+let inherit (import ../../hosts/${host}/variables.nix) gitUsername;
+in {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = false;
     backupFileExtension = "backup";
-    extraSpecialArgs = { inherit inputs username host; };
+    extraSpecialArgs = { inherit inputs username host pkgs-unstable; };
     users.${username} = {
-      imports = [ 
-      ./../home/default.nix 
-      inputs.nix-index-database.homeModules.nix-index
+      imports = [
+        ./../home/default.nix
+        inputs.nix-index-database.homeModules.nix-index
       ];
       home = {
         username = "${username}";
@@ -32,13 +25,13 @@ in
     description = "${gitUsername}";
     extraGroups = [
       "adbusers"
-      "docker" #access to docker as non-root
-      "libvirtd" #Virt manager/QEMU access
+      "docker" # access to docker as non-root
+      "libvirtd" # Virt manager/QEMU access
       "lp"
       "networkmanager"
       "scanner"
-      "wheel" #subdo access
-      "vboxusers" #Virtual Box
+      "wheel" # subdo access
+      "vboxusers" # Virtual Box
       "podman"
     ];
     shell = pkgs.fish;

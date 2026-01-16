@@ -5,12 +5,11 @@ if status is-interactive
     # General
     abbr --add .. 'cd ..'
     abbr --add mkdir 'mkdir -p'
-    abbr --add n nvim
-    abbr --add vs code
-    abbr --add c clear
     abbr --add csync 'bash ~/PolarisOs/scripts/sync.sh'
     abbr --add _ sudo
     abbr --add clean 'bash ~/.config/scripts/clean.sh'
+    abbr --add rust ./target/release/rust
+
     
     # Eza (List)
     abbr --add l 'eza -lh --icons=always'
@@ -25,6 +24,8 @@ if status is-interactive
     abbr --add lzg lazygit
     abbr --add lzd lazydocker
     abbr --add chat codex
+    abbr --add n nvim
+    abbr --add c clear
     
     # Git
     abbr --add ga 'git add'

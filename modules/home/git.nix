@@ -33,6 +33,7 @@ in {
       "*.swp" # Optional: vim swap files
       ".DS_Store" # Optional: macos junk
       ".pixi"
+      "__pycache__"
     ];
   };
 }

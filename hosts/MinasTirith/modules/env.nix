@@ -59,7 +59,7 @@ in {
       #Python
       basedpyright
       python310
-      pixi
+      # pixi
       black
 
       # Haskell

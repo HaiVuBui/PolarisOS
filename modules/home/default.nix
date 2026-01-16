@@ -17,5 +17,6 @@
     ./symlinks.nix
     ./home-vars.nix
     ./direnv.nix
+    # ./yazi.nix
   ];
 }

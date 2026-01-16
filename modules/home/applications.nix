@@ -1,38 +1,80 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
-    # web browsers
-    firefox
+{ pkgs, pkgs-unstable, ... }: {
+  home.packages = with pkgs;
+    [
+      # apps
+      obsidian
+      bleachbit
+      firefox
 
-    #terminals
-    kitty
+      # system
+      cliphist # clipboard history
+      wl-clipboard # clipboard
+      pavucontrol # audio controller
+      brightnessctl # light controller
+      libnotify # For Notifications
+      mako # notifications daemon
+      playerctl # media controller
+      tuigreet # greeter
+      bluetui # bluetooth tui
+      ncdu # disk usage tool
+      wiremix # audio mixer
+      xwayland-satellite
+      udiskie
 
-    # AI shits
-    gemini-cli
-    opencode
-    codeium
+      # AI shits
+      gemini-cli
+      opencode
+      codeium
 
-    #shell
-    # oh-my-zsh # plugin manager for zsh
-    # zsh-powerlevel10k # theme for zsh
+      # GUI tools
+      waybar
+      tofi
+      rofi
+      hyprlock
+      swww
+      # wlogout
 
-    # UI tools
-    waybar
-    tofi
-    rofi
-    hyprlock
-    swww
-    wlogout
-    udiskie
-    xwayland-satellite
+      # terminal ricing
+      kitty
+      fastfetch # system information fetch tool
+      cava
+      cmatrix
+      nitch
+      lolcat
+      figlet
+      cowsay
+      fortune
+      tty-clock
+      (pkgs.callPackage ./packages/momoisay.nix { })
 
-    # mucis
-    rmpc
-    yt-dlp
+      #dependencies
+      ffmpeg
+      yt-dlp
+      p7zip
+      jq
+      fzf # command line fuzzy finder
+      fd # fuzzy file
+      ripgrep # search tool
+      poppler
+      zoxide
+      resvg
+      mpv
+      nix-output-monitor
+      nvd
+      imagemagick
 
-    # apps
-    obsidian
-	  bleachbit
-  ];
+      # cli/tui tools
+      comma 
+      eza # file lister for zsh
+      yazi # cli files manager
+      bottom # monitors tool
+      nvitop # monitors tool for nvidia
+      tldr # summarize man pages
+      htop # monitors tool
+      curl # download tool
+      wget # download tool
+      lazydocker # docker tui
+      rmpc
+    ] ++ (with pkgs-unstable; [ codex ]);
 }
-
 
