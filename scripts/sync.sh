@@ -21,6 +21,8 @@ APPS=(
     "htop"
     "rmpc"
     "mako"
+    "lazygit"
+    "lazydocker"
 )
 
 echo ">>> Syncing Config Apps..."

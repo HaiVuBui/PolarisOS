@@ -36,16 +36,19 @@ return {
       styles = {
         transparency = false,
       },
-      highlight_groups = {
-        -- Soften contrast for Dawn to reduce eye strain.
-        Normal = { bg = "#f0e9e0", fg = "#5f586e" },
-        NormalFloat = { bg = "#ede5db", fg = "#5f586e" },
-        CursorLine = { bg = "#e6dfd6" },
-        Visual = { bg = "#ddd6cd" },
-        LineNr = { fg = "#8f879d" },
-        CursorLineNr = { fg = "#6f6885" },
-      },
     },
+    config = function(_, opts)
+      require("rose-pine").setup(opts)
+
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "rose-pine-dawn",
+        callback = function()
+          -- Override Dawn background to requested value.
+          vim.api.nvim_set_hl(0, "Normal", { bg = "#FBF1E9" })
+          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#FBF1E9" })
+        end,
+      })
+    end,
   },
   {
     "EdenEast/nightfox.nvim",
