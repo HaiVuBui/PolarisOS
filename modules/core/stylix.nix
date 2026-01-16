@@ -29,6 +29,7 @@ in {
     #   base0E = "8f3f71"; # purple
     #   base0F = "d65d0e"; # brown / extra accent
     # };
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
 
     polarity = "light";
     opacity.terminal = 1.0;
