@@ -1,0 +1,23 @@
+gui:
+  theme:
+    activeBorderColor:
+      - "#286983" # pine
+      - bold
+    inactiveBorderColor:
+      - "#9893a5" # muted
+    optionsTextColor:
+      - "#907aa9" # iris
+    selectedLineBgColor:
+      - "#f2e9e1" # overlay
+    selectedRangeBgColor:
+      - "#f2e9e1" # overlay
+    cherryPickedCommitBgColor:
+      - "#d7827e" # rose
+    cherryPickedCommitFgColor:
+      - "#575279" # text
+    unstagedChangesColor:
+      - "#b4637a" # love
+    defaultFgColor:
+      - "#575279" # text
+    searchingActiveBorderColor:
+      - "#ea9d34" # gold
