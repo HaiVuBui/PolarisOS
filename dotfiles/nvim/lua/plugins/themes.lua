@@ -36,6 +36,15 @@ return {
       styles = {
         transparency = false,
       },
+      highlight_groups = {
+        -- Soften contrast for Dawn to reduce eye strain.
+        Normal = { bg = "#f0e9e0", fg = "#5f586e" },
+        NormalFloat = { bg = "#ede5db", fg = "#5f586e" },
+        CursorLine = { bg = "#e6dfd6" },
+        Visual = { bg = "#ddd6cd" },
+        LineNr = { fg = "#8f879d" },
+        CursorLineNr = { fg = "#6f6885" },
+      },
     },
   },
   {
@@ -44,6 +53,10 @@ return {
   },
   {
     "sainnhe/everforest",
+    lazy = true,
+  },
+  {
+    "kepano/flexoki-neovim",
     lazy = true,
   },
   {
@@ -115,8 +128,25 @@ return {
       })
 
       add_theme({
+        name = "Rose Pine Dawn",
+        colorscheme = "rose-pine-dawn",
+        before = [[vim.o.background = "light"]],
+      })
+      add_theme({
         name = "Nightfox",
         colorscheme = "nightfox",
+      })
+
+      add_theme({
+        name = "Flexoki Dark",
+        colorscheme = "flexoki-dark",
+        before = [[vim.o.background = "dark"]],
+      })
+
+      add_theme({
+        name = "Flexoki Light",
+        colorscheme = "flexoki-light",
+        before = [[vim.o.background = "light"]],
       })
 
       local function add_everforest(background, contrast)
