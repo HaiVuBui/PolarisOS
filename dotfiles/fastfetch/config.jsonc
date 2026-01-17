@@ -71,55 +71,55 @@
     {
     "type": "host",
     "key": "󰌢 SYSTEM",
-    "keyColor": "green"
+    "keyColor": "cyan"
     },
     {
     "type": "cpu",
     "key": "│ ├󰻠",
-    "keyColor": "green"
+    "keyColor": "cyan"
     },
     {
     "type": "gpu",
     "key": "│ ├󰻑",
     "format": "{2}",
-    "keyColor": "green"
+    "keyColor": "cyan"
     },
     {
             "type": "display",
     "key": "│ ├󰍹",
-    "keyColor": "green",
+    "keyColor": "cyan",
     "compactType": "original-with-refresh-rate"
     },
     {
     "type": "memory",
     "key": "│ ├󰾆",
-    "keyColor": "green"
+    "keyColor": "cyan"
     },
     {
     "type": "disk",
     "key": "│ ├󰋊" ,
-    "keyColor": "green"
+    "keyColor": "cyan"
     },
     {
     "type": "swap",
     "key": "│ ├󰓡",
-    "keyColor": "green"
+    "keyColor": "cyan"
     },
     {
     "type": "uptime",
     "key": "│ ├󰅐",
-    "keyColor": "green"
+    "keyColor": "cyan"
     },
     {
     "type": "command",
     "key": "│ ├󱦟",
-    "keyColor": "green",
+    "keyColor": "cyan",
     "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
     },
     {
     "type": "display",
     "key": "│ └󰍹",
-    "keyColor": "green"
+    "keyColor": "cyan"
     },
     {
     "type": "sound",

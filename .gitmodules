@@ -1,6 +1,0 @@
-[submodule "wallpapers/walls"]
-	path = wallpapers/walls
-	url = https://github.com/dharmx/walls.git
-[submodule "wallpapers/walls-catppuccin-mocha"]
-	path = wallpapers/walls-catppuccin-mocha
-	url = https://github.com/orangci/walls-catppuccin-mocha.git

@@ -21,7 +21,7 @@ ROFI_CMD=(
     # -p "Deactivating $(hostname)" \
     -l 6 \
     -theme-str '
-    window { width: 20%; }
+    window { width: 10%; }
     '
 )
 
@@ -30,10 +30,10 @@ ROFI_CMD=(
 
 options=(
   "  Lock"
-  "󰍃  Logout"   # <--- Updated here
+  "󰍃  Logout"   
+  "  Suspend"
   "  Reboot"
   "  Shutdown"
-  "  Suspend"
   "󰤄  Hibernate"
 )
 

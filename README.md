@@ -3,11 +3,11 @@
 Flake-based NixOS configuration for hai's machines, with per-host settings, GPU-specific profiles, and bundled dotfiles/scripts for day-to-day setup.
 
 ## Layout
-- `flake.nix` – defines inputs (home-manager, Stylix, nix-flatpak, zen-browser) and exports NixOS configurations for `MovingCastle-intel` and `MinasTirith-nvidia`.
-- `profiles/` – GPU profiles that compose host configs with shared core modules.
+- `flake.nix` – defines inputs (home-manager, Stylix, nix-flatpak, zen-browser, nix-index-database) and exports NixOS configurations for `MovingCastle` and `MinasTirith`.
+- `profiles/` – GPU profiles (`intel`, `nvidia`) that compose host configs with shared core modules.
 - `hosts/` – hardware configs, host-specific modules, and package lists.
-- `modules/core` – common NixOS modules (network, security, stylix, flatpak, docker, gaming, etc.).
-- `modules/home` – home-manager modules for apps and theming.
+- `modules/core/` – common NixOS modules (network, security, stylix, flatpak, docker, gaming, etc.).
+- `modules/home/` – home-manager modules for apps and theming.
 - `dotfiles/` – editor/terminal/WM settings; `scripts/` – helper scripts; `wallpapers/` – curated wallpaper sets.
 
 ## Prerequisites
@@ -15,10 +15,10 @@ Flake-based NixOS configuration for hai's machines, with per-host settings, GPU-
 - Run commands from the repo root (`/home/hai/PolarisOS`).
 
 ## Deploy
-- Choose a host/GPU target defined in `flake.nix` (e.g., `MovingCastle-intel`, `MinasTirith-nvidia`).
+- Choose a host target defined in `flake.nix` (e.g., `MovingCastle`, `MinasTirith`).
 - Rebuild/switch the system:
   ```bash
-  sudo nixos-rebuild switch --flake .#MovingCastle-intel
+  sudo nixos-rebuild switch --flake .#MovingCastle
   ```
 - Inspect available outputs:
   ```bash

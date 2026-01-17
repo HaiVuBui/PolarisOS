@@ -33,6 +33,7 @@
       hyprlock
       swww
       # wlogout
+      kdePackages.dolphin
 
       # terminal ricing
       kitty

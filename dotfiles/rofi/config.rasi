@@ -1,8 +1,21 @@
-
-inputbar {
-  children: [ entry ];
+configuration {
+    /* General settings */
+    // font: "Cartograph CF 12";
+    // show-icons: true;
 }
 
-entry {
-  horizontal-align: 0.45;
+@theme "rose-pine-dawn"
+
+#inputbar {
+    /* Forces the blank bar (removes prompt and colon) */
+    children: [ entry ];
+    padding: 1px;
+}
+
+#entry {
+    /* Forces centered text */
+    horizontal-align: 0.5;
+    
+    /* REMOVES "Type to filter" text */
+    placeholder: ""; 
 }
