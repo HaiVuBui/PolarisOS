@@ -1,10 +1,10 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs, ... }:
 
 pkgs.stdenv.mkDerivation {
   pname = "momoisay";
   version = "0.1.0";
 
-  src =pkgs.fetchFromGitHub {
+  src = pkgs.fetchFromGitHub {
     owner = "Mon4sm";
     repo = "momoisay";
     rev = "001f4a6";

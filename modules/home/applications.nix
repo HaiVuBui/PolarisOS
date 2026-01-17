@@ -34,6 +34,7 @@
       swww
       # wlogout
       kdePackages.dolphin
+      (pkgs.callPackage ./packages/evercal.nix { inherit pkgs; }) # calendar
 
       # terminal ricing
       kitty
@@ -46,7 +47,7 @@
       cowsay
       fortune
       tty-clock
-      (pkgs.callPackage ./packages/momoisay.nix { })
+      (pkgs.callPackage ./packages/momoisay.nix { inherit pkgs; })
 
       #dependencies
       ffmpeg
@@ -65,7 +66,7 @@
       imagemagick
 
       # cli/tui tools
-      comma 
+      comma
       eza # file lister for zsh
       yazi # cli files manager
       bottom # monitors tool

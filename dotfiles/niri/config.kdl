@@ -362,6 +362,12 @@ window-rule {
     geometry-corner-radius 15
     clip-to-geometry true
 }
+window-rule {
+  match app-id="org.kde.dolphin"
+  border {
+    off
+  }
+}
 
 window-rule {
     match app-id="brave-browser"  

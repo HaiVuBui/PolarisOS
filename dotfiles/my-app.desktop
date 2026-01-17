@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=EveCal
+Comment=evercal
+# IMPORTANT: Use the absolute path to the binary
+Exec=/etc/profiles/per-user/hai/bin/evercal
+# IMPORTANT: Since it's a GUI, this must be false
+Terminal=false
+Icon=utilities-terminal
+Categories=Utility;
