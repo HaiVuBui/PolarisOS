@@ -18,5 +18,6 @@
     ./home-vars.nix
     ./direnv.nix
     # ./yazi.nix
+    ./vdirsyncer.nix
   ];
 }

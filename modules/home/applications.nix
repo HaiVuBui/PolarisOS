@@ -77,6 +77,7 @@
       wget # download tool
       lazydocker # docker tui
       rmpc
+      khal 
     ] ++ (with pkgs-unstable; [ codex ]);
 }
 

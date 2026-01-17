@@ -370,6 +370,13 @@ window-rule {
 }
 
 window-rule {
+  match app-id="com.snes.evercal"
+  open-floating true
+  default-column-width { proportion 0.5; }
+  default-window-height { proportion 0.5; }
+}
+
+window-rule {
     match app-id="brave-browser"  
     opacity 0.99
     border {

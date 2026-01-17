@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Name=EveCal
+Name=EverCal
 Comment=evercal
 # IMPORTANT: Use the absolute path to the binary
-Exec=/etc/profiles/per-user/hai/bin/evercal
+Exec=/home/hai/.config/scripts/calendar.sh
 # IMPORTANT: Since it's a GUI, this must be false
 Terminal=false
 Icon=utilities-terminal

@@ -48,6 +48,7 @@
         "format": "{:%A    %B-%d-%Y    %I:%M:%S %p}",
         "interval": 1,
         "rotate": 0,
+        "on-click": "bash /home/hai/PolarisOS/scripts/calendar.sh",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
