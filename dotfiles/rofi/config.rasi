@@ -4,7 +4,7 @@ configuration {
     // show-icons: true;
 }
 
-@theme "rose-pine-dawn"
+@theme "theme"
 
 #inputbar {
     /* Forces the blank bar (removes prompt and colon) */

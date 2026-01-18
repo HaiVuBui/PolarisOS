@@ -10,6 +10,27 @@ let
   fontSize = if cfg.hwRender then "16" else "14";
 in
 {
+  console = {
+    colors = [
+      "272e33"
+      "e67e80"
+      "a7c080"
+      "dbbc7f"
+      "7fbbb3"
+      "d699b6"
+      "83c092"
+      "d3c6aa"
+      "7a8478"
+      "e69875"
+      "a7c080"
+      "dbbc7f"
+      "7fbbb3"
+      "d699b6"
+      "83c092"
+      "d3c6aa"
+    ];
+  };
+
   services.kmscon = {
     enable = true;
     extraConfig = ''

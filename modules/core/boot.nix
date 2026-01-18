@@ -6,13 +6,11 @@
     
     loader.systemd-boot = {
       enable = true;
-      # Optional: explicitly allow editing kernel params in the boot menu
-      # just in case you need to debug later
       editor = true; 
     };
 
-    plymouth.enable = true;
-    plymouth.theme = "stylix";
+    # plymouth.enable = true;
+    # plymouth.theme = "stylix";
 
     kernelParams = [
       "quiet"

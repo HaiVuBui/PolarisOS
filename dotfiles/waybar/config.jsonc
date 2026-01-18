@@ -14,8 +14,9 @@
     "modules-center": ["niri/window"],
     "modules-right": [
         "tray",
-        "memory",
         "cpu",
+        "custom/nvidia",
+        "memory",
         "network",
         "battery",
         "backlight",
@@ -24,7 +25,7 @@
     ],
 
     "niri/window": {
-        "format": "  {}"
+        "format": "<span font_desc='Symbols Nerd Font 12'></span>  {}"
     },
     
     "niri/workspaces": {
@@ -40,12 +41,21 @@
     },
 
     "custom/nixos": {
-        "format": " ",
+        "format": "<span font_desc='Symbols Nerd Font 12'></span>",
         "tooltip": false
     },
 
+    "custom/nvidia": {
+        "exec": "bash /home/hai/PolarisOS/scripts/waybar-nvidia.sh",
+        "interval": 10,
+        "format": "<span font_desc='Symbols Nerd Font 12'>󰾲</span> {}",
+        "tooltip": true,
+        "tooltip-format": "GPU: {}",
+        "on-click": "bash /home/hai/PolarisOS/scripts/waybar-nvidia.sh toggle"
+    },
+
     "clock": {
-        "format": "{:%A    %B-%d-%Y    %I:%M:%S %p}",
+        "format": "{:%A  <span font_desc='Symbols Nerd Font 11'></span>  %B-%d-%Y  <span font_desc='Symbols Nerd Font 11'></span>  %I:%M:%S %p}",
         "interval": 1,
         "rotate": 0,
         "on-click": "bash /home/hai/PolarisOS/scripts/calendar.sh",
@@ -67,7 +77,11 @@
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "format-icons": [
+            "<span font_desc='Symbols Nerd Font 12'>󰃞</span>",
+            "<span font_desc='Symbols Nerd Font 12'>󰃟</span>",
+            "<span font_desc='Symbols Nerd Font 12'>󰃠</span>"
+        ],
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-",
         "min-length": 6
@@ -80,35 +94,52 @@
             "critical": 20
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format-charging": "<span font_desc='Symbols Nerd Font 12'></span> {capacity}%",
+        "format-plugged": "<span font_desc='Symbols Nerd Font 12'></span> {capacity}%",
         "format-alt": "{time} {icon}",
-        "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "format-icons": [
+            "<span font_desc='Symbols Nerd Font 12'>󰂃</span>",
+            "<span font_desc='Symbols Nerd Font 12'>󰁺</span>",
+            "<span font_desc='Symbols Nerd Font 12'>󰁻</span>",
+            "<span font_desc='Symbols Nerd Font 12'>󰁼</span>",
+            "<span font_desc='Symbols Nerd Font 12'>󰁽</span>",
+            "<span font_desc='Symbols Nerd Font 12'>󰁾</span>",
+            "<span font_desc='Symbols Nerd Font 12'>󰁿</span>",
+            "<span font_desc='Symbols Nerd Font 12'>󰂀</span>",
+            "<span font_desc='Symbols Nerd Font 12'>󰂁</span>",
+            "<span font_desc='Symbols Nerd Font 12'>󰂂</span>",
+            "<span font_desc='Symbols Nerd Font 12'>󰁹</span>"
+        ]
     },
 
     "pulseaudio": {
         "format": "{icon}  {volume}%",
         "tooltip": false,
-        "format-muted": "  Muted",
+        "format-muted": "<span font_desc='Symbols Nerd Font 12'></span>  Muted",
         "on-click": "pamixer -t",
         "on-scroll-up": "pamixer -i 1",
         "on-scroll-down": "pamixer -d 1",
         "scroll-step": 5,
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["","", "", ""]
+            "headphone": "<span font_desc='Symbols Nerd Font 10'></span>",
+            "hands-free": "<span font_desc='Symbols Nerd Font 10'></span>",
+            "headset": "<span font_desc='Symbols Nerd Font 10'></span>",
+            "phone": "<span font_desc='Symbols Nerd Font 12'></span>",
+            "portable": "<span font_desc='Symbols Nerd Font 12'></span>",
+            "car": "<span font_desc='Symbols Nerd Font 12'></span>",
+            "default": [
+                "<span font_desc='Symbols Nerd Font 12'></span>",
+                "<span font_desc='Symbols Nerd Font 12'></span>",
+                "<span font_desc='Symbols Nerd Font 12'></span>",
+                "<span font_desc='Symbols Nerd Font 12'></span>"
+            ]
         }
     },
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "  Muted",
+        "format-source": "<span font_desc='Symbols Nerd Font 10'></span> {volume}%",
+        "format-source-muted": "<span font_desc='Symbols Nerd Font 10'></span>  Muted",
         "on-click": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
@@ -122,33 +153,33 @@
             "m": 30 // medium
         },
         "interval": 10,
-        "format": "󰾆 {used}GB",
-        "format-m": "󰾅 {used}GB",
-        "format-h": "󰓅 {used}GB",
-        "format-c": " {used}GB",
-        "format-alt": "󰾆 {percentage}%",
+        "format": "<span font_desc='Symbols Nerd Font 12'>󰾆</span> {used}GB",
+        "format-m": "<span font_desc='Symbols Nerd Font 12'>󰾅</span> {used}GB",
+        "format-h": "<span font_desc='Symbols Nerd Font 12'>󰓅</span> {used}GB",
+        "format-c": "<span font_desc='Symbols Nerd Font 12'></span> {used}GB",
+        "format-alt": "<span font_desc='Symbols Nerd Font 12'>󰾆</span> {percentage}%",
         "max-length": 10,
         "tooltip": true,
-        "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
+        "tooltip-format": "󰾆 RAM {percentage}%\n {used:0.1f} / {total:0.1f} GB"
     },
 
     "cpu": {
-        "interval": 1,
-        "format": "󰍛 {usage}%",
+        "interval": 10,
+        "format": "<span font_desc='Symbols Nerd Font 12'>󰍛</span> {usage}%",
         "format-alt": "{icon0}{icon1}{icon2}{icon3}",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
     },
 
     "network": {
         "tooltip": true,
-        "format-wifi": "  {essid}",
-        "format-ethernet": "󰈀 ",
+        "format-wifi": "<span font_desc='Symbols Nerd Font 12'></span>  {essid}",
+        "format-ethernet": "<span font_desc='Symbols Nerd Font 12'>󰈀</span>",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-        "format-linked": "󰈀 {ifname} (No IP)",
-        "format-disconnected": "󰖪 ",
+        "format-linked": "<span font_desc='Symbols Nerd Font 12'>󰈀</span> {ifname} (No IP)",
+        "format-disconnected": "<span font_desc='Symbols Nerd Font 12'>󰖪</span>",
         "tooltip-format-disconnected": "Disconnected",
-        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
-        "interval": 2,
+        "format-alt": "<span foreground='#99ffdd'><span font_desc='Symbols Nerd Font 12'></span> {bandwidthDownBytes}</span> <span foreground='#ffcc66'><span font_desc='Symbols Nerd Font 12'></span> {bandwidthUpBytes}</span>",
+        "interval": 2
         // "on-click": "rofi-network-manager"
     }
 }

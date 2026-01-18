@@ -1,146 +1,119 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  
-  "logo": {
-      "source": "$HOME/.config/fastfetch/nixos.txt",
-      // "height": 20,
-      "position": "top",
-      "padding": {
-        "top": 1,
-        "left": 1,
-        "right": 1
-      }
-  },
-
-  "display": {
-    "separator": " 󰑃  "
-  },
-
-  "modules": [
-    "break",
-    {
-      "type": "os",
-      "key": " DISTRO",
-      "keyColor": "yellow"
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "$HOME/.config/fastfetch/nixos.txt",
+        // "height": 20,
+        "position": "top",
+        "padding": {
+          "top": 1,
+          "left": 1,
+          "right": 1
+        }
     },
-    {
-      "type": "kernel",
-      "key": "│ ├",
-      "keyColor": "yellow"
+    "display": {
+        "separator": " : "
     },
-    {
-    "type": "packages",
-    "key": "│ ├󰏖",
-    "keyColor": "yellow"
-    },
-    {
-    "type": "shell",
-    "key": "│ └",
-    "keyColor": "yellow"
-    },
-    {
-    "type": "wm",
-    "key": " DE/WM",
-    "keyColor": "blue"
-    },
-    {
-    "type": "wmtheme",
-    "key": "│ ├󰉼",
-    "keyColor": "blue"
-    },
-    {
-    "type": "icons",
-    "key": "│ ├󰀻",
-    "keyColor": "blue"
-    },
-    {
-        "type": "cursor",
-        "key": "│ ├",
-        "keyColor": "blue",
-    },
-    {
-        "type": "terminalfont",
-        "key": "│ ├",
-        "keyColor": "blue",
-    },
-    {
-    "type": "terminal",
-    "key": "│ └",
-    "keyColor": "blue"
-    },
-    {
-    "type": "host",
-    "key": "󰌢 SYSTEM",
-    "keyColor": "cyan"
-    },
-    {
-    "type": "cpu",
-    "key": "│ ├󰻠",
-    "keyColor": "cyan"
-    },
-    {
-    "type": "gpu",
-    "key": "│ ├󰻑",
-    "format": "{2}",
-    "keyColor": "cyan"
-    },
-    {
+    "modules": [
+        {
+            "type": "custom",
+            "format": "\u001b[36m    コンピューター"
+        },
+        {
+            "type": "custom",
+            "format": "┌──────────────────────────────────────────┐"
+        },
+        {
+            "type": "os",
+            "key": "   OS",
+            "keyColor": "red"
+        },
+        {
+            "type": "kernel",
+            "key": "   Kernel",
+            "keyColor": "red"
+        },
+        {
+            "type": "packages",
+            "key": "   Packages",
+            "keyColor": "green"
+        },
+        {
             "type": "display",
-    "key": "│ ├󰍹",
-    "keyColor": "cyan",
-    "compactType": "original-with-refresh-rate"
-    },
-    {
-    "type": "memory",
-    "key": "│ ├󰾆",
-    "keyColor": "cyan"
-    },
-    {
-    "type": "disk",
-    "key": "│ ├󰋊" ,
-    "keyColor": "cyan"
-    },
-    {
-    "type": "swap",
-    "key": "│ ├󰓡",
-    "keyColor": "cyan"
-    },
-    {
-    "type": "uptime",
-    "key": "│ ├󰅐",
-    "keyColor": "cyan"
-    },
-    {
-    "type": "command",
-    "key": "│ ├󱦟",
-    "keyColor": "cyan",
-    "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
-    },
-    {
-    "type": "display",
-    "key": "│ └󰍹",
-    "keyColor": "cyan"
-    },
-    {
-    "type": "sound",
-    "key": " AUDIO",
-    "format": "{2}",
-    "keyColor": "magenta"
-    },
-    {
-    "type": "player",
-    "key": "│ ├󰥠",
-    "keyColor": "magenta"
-    },
-    {
-    "type": "media",
-    "key": "│ └󰝚",
-    "keyColor": "magenta"
-    },
-    {
-    "type": "custom",
-    "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  "
-    },
-    "break",
+            "key": "   Display",
+            "keyColor": "green"
+        },
+        {
+            "type": "wm",
+            "key": "   WM",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "terminal",
+            "key": "   Terminal",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "custom",
+            "format": "└──────────────────────────────────────────┘"
+        },
+        "break",
+        {
+            "type": "title",
+            "key": "  "
+        },
+        {
+            "type": "custom",
+            "format": "┌──────────────────────────────────────────┐"
+        },
+        {
+            "type": "cpu",
+            "format": "{1}",
+            "key": "   CPU",
+            "keyColor": "blue"
+        },
+        {
+            "type": "gpu",
+            "format": "{2}",
+            "key": "   GPU",
+            "keyColor": "blue"
+        },
+        {
+            "type": "gpu",
+            "format": "{3}",
+            "key": "   GPU Driver",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "memory",
+            "key": "   Memory",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "disk",
+            "key": "  󰋊 Disk (/)",
+            "folders": "/",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "command",
+            "key": "  󱦟 OS Age ",
+            "keyColor": "31",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+        },
+        {
+            "type": "uptime",
+            "key": "  󱫐 Uptime ",
+            "keyColor": "red"
+        },
+        {
+            "type": "custom",
+            "format": "└──────────────────────────────────────────┘"
+        },
+        {
+            "type": "colors",
+            "paddingLeft": 2,
+            "symbol": "circle"
+        },
+        "break"
     ]
 }

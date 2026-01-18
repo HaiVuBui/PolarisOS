@@ -370,6 +370,13 @@ window-rule {
 }
 
 window-rule {
+  match app-id="org.gnome.Nautilus"
+  border {
+    off
+  }
+}
+
+window-rule {
   match app-id="com.snes.evercal"
   open-floating true
   default-column-width { proportion 0.5; }

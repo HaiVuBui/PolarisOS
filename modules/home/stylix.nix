@@ -7,10 +7,8 @@ _: {
     ghostty.enable = false;
     vscode.enable = false;
     fish.enable = false;
-    qt = {
-      enable = true;
-      platform = "qtct";
-    };
+    qt.enable = true;
+    gtk.enable = true;
   };
 }
 
