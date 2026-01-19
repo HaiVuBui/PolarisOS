@@ -25,13 +25,14 @@ in
     ./system.nix
     # ./thunar.nix
     ./user.nix
-    ./nopass.nix
+    # ./nopass.nix
     ./kmscon.nix
     ./syncthing.nix
     ./snapper.nix
     ./virtualization.nix
     # ./tmux.nix
     ./nix.nix
+    ./nix-ld.nix
     ./pixi.nix
     ./zram.nix
   ];

@@ -348,7 +348,7 @@ window-rule {
 window-rule {
     match app-id="^kitty$"   
     opacity 0.95
-    geometry-corner-radius 7
+    geometry-corner-radius 15
     clip-to-geometry true
 }
 
@@ -412,6 +412,12 @@ window-rule {
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
+}
+
+window-rule {
+  border {
+    off
+  }
 }
 
 // Example: block out two password managers from screen capture.
