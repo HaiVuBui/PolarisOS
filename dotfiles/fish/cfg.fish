@@ -8,7 +8,6 @@ if status is-interactive
     abbr --add csync 'bash ~/PolarisOs/scripts/sync.sh'
     abbr --add _ sudo
     abbr --add clean 'bash ~/.config/scripts/clean.sh'
-    abbr --add rust ./target/release/rust
 
     
     # Eza (List)

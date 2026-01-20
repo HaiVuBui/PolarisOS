@@ -347,7 +347,7 @@ window-rule {
 // kitty
 window-rule {
     match app-id="^kitty$"   
-    opacity 0.95
+    opacity 0.9
     geometry-corner-radius 15
     clip-to-geometry true
 }
