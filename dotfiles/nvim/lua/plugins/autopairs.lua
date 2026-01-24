@@ -13,7 +13,7 @@ return {
     -- Enable angle bracket pairing (useful for tags and generics).
     local Rule = require("nvim-autopairs.rule")
     npairs.add_rules({
-      Rule("<", ">"),
+      -- Rule("<", ">"),
     })
   end,
 }

@@ -1,14 +1,18 @@
 { pkgs, lib ? pkgs.lib, username, ... }:
 
 let
-  cDevLibs = with pkgs; [ zlib openssl ];
+  cDevLibs = with pkgs; [
+    zlib
+    openssl
+  ];
 
-  cCudaLibs = with pkgs; [ cudatoolkit ];
+  cCudaLibs = with pkgs; [
+    cudatoolkit
+  ];
 
   cDevTools = with pkgs; [
     llvmPackages_latest.clang
-    llvmPackages_latest.libcxx
-    llvmPackages_latest.lld
+    llvmPackages_latest.libcxx llvmPackages_latest.lld
     llvmPackages_latest.lldb
     gcc
     gdb
@@ -25,10 +29,10 @@ let
     gnumake
   ];
 
-  cRuntimeLibs = cDevLibs
-    ++ (with pkgs; [ stdenv.cc.cc llvmPackages_latest.libcxx ]) 
-    # ++ cCudaLibs
-    ;
+  cRuntimeLibs = cDevLibs ++ (with pkgs; [
+    stdenv.cc.cc
+    llvmPackages_latest.libcxx
+  ]);
 
   mkColonPath = paths: lib.concatStringsSep ":" (lib.filter (s: s != "") paths);
 
@@ -36,45 +40,56 @@ let
   pkgConfigPath = lib.makeSearchPathOutput "dev" "lib/pkgconfig" cDevLibs;
   runtimeLibPath = lib.makeLibraryPath cRuntimeLibs;
 in {
-  environment.systemPackages = (with pkgs; [
-    # nix lsp
-    nixd
-    nixfmt-classic
+  environment.systemPackages =
+    (with pkgs; [
+      # nix lsp
+      nixd
+      nixfmt-classic
 
-    #nvim
-    tree-sitter
+      #lua 
+      stylua
 
-    # Java/JS
-    nodejs
-    yarn
+      #nvim
+      tree-sitter
 
-    #Python
-    basedpyright
-    python310
-    # pixi
-    black
+      # Java/JS
+      nodejs
+      yarn
 
-    # Haskell
-    cabal-install
-    ormolu
-    haskell-language-server
-    ghc
-    stack
+      #Python
+      basedpyright
+      python310
+      # pixi
+      black
 
-    # Go 
-    go
-    gopls
-    gofumpt
+      # Haskell
+      # cabal-install
+      # stack
+      # ghc
+      ormolu
+      haskell-language-server
 
-    #Nvim
-    rsync
+      # Go 
+      # go
+      gopls
+      gofumpt
 
-    # latex
-    texlab
-    texliveFull
-  ]) ++ cDevTools ++ cDevLibs
-    # ++ cCudaLibs
-  ;
+      # rust
+      # cargo 
+      # rustc 
+      rustfmt 
+      rust-analyzer
+
+      #Nvim
+      rsync
+
+      # latex
+      texlab
+      texliveFull
+    ])
+    ++ cDevTools
+    ++ cDevLibs
+    ;
 
   programs.ccache.enable = true;
 
@@ -86,19 +101,24 @@ in {
     "x-scheme-handler/unknown" = "firefox.desktop";
   };
 
-  environment.variables = let
-    baseSessionVars = {
-      # XDG_PICTURES_DIR = "/home/${username}/randomShits/Pictures";
-      MOZ_ENABLE_WAYLAND = "1";
-      NIXOS_OZONE_WL = "1";
-      OZONE_PLATFORM = "wayland";
-    };
+  environment.variables =
+    let
+      baseSessionVars = {
+        # XDG_PICTURES_DIR = "/home/${username}/randomShits/Pictures";
+        MOZ_ENABLE_WAYLAND = "1";
+        NIXOS_OZONE_WL = "1";
+        OZONE_PLATFORM = "wayland";
+      };
 
-    cSessionVars = {
-      PKG_CONFIG_PATH = pkgConfigPath;
-      CPATH = includePath;
-      LIBRARY_PATH = runtimeLibPath;
-      LD_LIBRARY_PATH = mkColonPath [ runtimeLibPath "/run/opengl-driver/lib" ];
-    };
-  in baseSessionVars // cSessionVars;
+      cSessionVars = {
+        PKG_CONFIG_PATH = pkgConfigPath;
+        CPATH = includePath;
+        LIBRARY_PATH = runtimeLibPath;
+        LD_LIBRARY_PATH = mkColonPath [
+          runtimeLibPath
+          "/run/opengl-driver/lib"
+        ];
+      };
+    in
+    baseSessionVars // cSessionVars;
 }

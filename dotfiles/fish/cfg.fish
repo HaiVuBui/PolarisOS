@@ -9,6 +9,7 @@ if status is-interactive
     abbr --add _ sudo
     abbr --add clean 'bash ~/.config/scripts/clean.sh'
     abbr --add rust 'cargo run --release'
+    abbr --add server 'ssh hai@MinasTirith'
     
     # Eza (List)
     abbr --add l 'eza -lh --icons=always'
