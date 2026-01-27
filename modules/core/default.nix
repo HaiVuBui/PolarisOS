@@ -35,5 +35,6 @@ in
     ./nix-ld.nix
     ./pixi.nix
     ./zram.nix
+    ./xdg.nix
   ];
 }

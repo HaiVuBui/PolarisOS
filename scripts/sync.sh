@@ -7,6 +7,12 @@ CODE_DIR="$CONFIG_DIR/Code/User"
 SCRIPTS_DIR="$CONFIG_DIR/scripts"
 
 # ---------------------------------------------------------
+# 0. Custom  
+# ---------------------------------------------------------
+rsync -aq --delete "$DOTFILES_DIR/aerc/" "$CONFIG_DIR/aerc/" --exclude 'accounts.conf'
+
+
+# ---------------------------------------------------------
 # 1. Standard Config Folders
 # ---------------------------------------------------------
 APPS=(
@@ -24,6 +30,7 @@ APPS=(
     "lazygit"
     "lazydocker"
     "khal"
+    "btop"
 )
 
 echo ">>> Syncing Config Apps..."
@@ -39,7 +46,7 @@ done
 echo ">>> Syncing Individual Dotfiles..."
 rsync -aq "$DOTFILES_DIR/.vimrc" "$HOME/.vimrc"
 # rsync -aq "$DOTFILES_DIR/.p10k.zsh" "$HOME/.p10k.zsh"
-rsync -aq "$DOTFILES_DIR/fish/cfg.fish" "$HOME/.config/fish/cfg.fish"
+rsync -aq "$DOTFILES_DIR/fish/cfg.fish" "$DOTFILES_DIR/fish/cfg.fish"
 rsync -aq "$DOTFILES_DIR/my-app.desktop" "$HOME/.local/share/applications/my-app.desktop" 
 rsync -aq "$DOTFILES_DIR/.cache/quickshell/theme_mode" "$HOME/.cache/quickshell/theme_mode" 
 

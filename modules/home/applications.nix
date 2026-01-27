@@ -79,6 +79,7 @@
       lazydocker # docker tui
       rmpc
       khal 
+      aerc
     ] ++ (with pkgs-unstable; [ codex ]);
 }
 

@@ -94,18 +94,9 @@ in {
 
   programs.ccache.enable = true;
 
-  xdg.mime.defaultApplications = {
-    "text/html" = "firefox.desktop";
-    "x-scheme-handler/http" = "firefox.desktop";
-    "x-scheme-handler/https" = "firefox.desktop";
-    "x-scheme-handler/about" = "firefox.desktop";
-    "x-scheme-handler/unknown" = "firefox.desktop";
-  };
-
   environment.variables =
     let
       baseSessionVars = {
-        # XDG_PICTURES_DIR = "/home/${username}/randomShits/Pictures";
         MOZ_ENABLE_WAYLAND = "1";
         NIXOS_OZONE_WL = "1";
         OZONE_PLATFORM = "wayland";

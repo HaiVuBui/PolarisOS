@@ -1,0 +1,113 @@
+# vim: ft=dosini
+#
+# aerc everforest-dark-hard styleset
+#
+# Palette source: palette.md (dark hard)
+#
+
+*.default=true
+*.normal=true
+
+# Base
+*.fg=#d3c6aa
+*.bg=#272e33
+
+# Titles and borders
+border.fg=#495156
+border.bold=false
+
+# Header/title bars
+header.fg=#7fbbb3
+header.bold=true
+
+title.bg=#374145
+title.fg=#d3c6aa
+title.bold=true
+
+# Tabs
+# inactive tab defaults to base bg/fg
+
+tab.selected.bg=#3c4841
+tab.selected.fg=#d3c6aa
+tab.selected.bold=true
+
+# Status line
+statusline_default.bg=#2e383c
+statusline_default.fg=#d3c6aa
+statusline_error.fg=#e67e80
+statusline_warning.fg=#e69875
+statusline_success.fg=#a7c080
+
+# Alerts
+*error.bold=true
+*error.fg=#e67e80
+*warning.fg=#e69875
+*success.fg=#a7c080
+
+# Selection
+*.selected.bg=#374145
+*.selected.fg=#d3c6aa
+
+# Directory list
+
+dirlist*.selected.bg=#374145
+dirlist*.selected.fg=#d3c6aa
+dirlist_unread.fg=#a7c080
+dirlist_recent.fg=#dbbc7f
+
+# Message list
+msglist_unread.fg=#a7c080
+msglist_unread.bold=true
+msglist_deleted.fg=#859289
+msglist_result.bg=#384b55
+msglist_flagged.fg=#dbbc7f
+msglist_flagged.bold=true
+msglist_marked.bg=#3c4841
+msglist_marked.fg=#d3c6aa
+msglist_marked.selected.bg=#425047
+msglist_marked.selected.fg=#d3c6aa
+msglist_pill.reverse=true
+
+# Parts list
+part_*.fg=#d3c6aa
+part_mimetype.fg=#7a8478
+part_*.selected.fg=#d3c6aa
+part_*.selected.bg=#374145
+part_filename.selected.bold=true
+
+# Selector and completion
+selector_focused.bg=#374145
+selector_focused.fg=#d3c6aa
+selector_chooser.bg=#374145
+selector_chooser.fg=#d3c6aa
+selector_chooser.bold=true
+
+completion_default.selected.bg=#374145
+completion_default.selected.fg=#d3c6aa
+completion_description.fg=#859289
+completion_description.dim=true
+completion_pill.reverse=true
+
+[viewer]
+*.default=true
+*.normal=true
+url.underline=true
+url.fg=#7fbbb3
+header.bold=true
+header.fg=#7fbbb3
+signature.dim=true
+signature.fg=#7a8478
+
+diff_meta.bold=true
+diff_chunk.dim=true
+diff_add.fg=#a7c080
+diff_del.fg=#e67e80
+
+quote_1.fg=#7fbbb3
+quote_2.fg=#a7c080
+quote_3.fg=#dbbc7f
+quote_4.fg=#e69875
+quote_x.fg=#859289
+quote_*.dim=true
+quote_1.dim=false
+quote_2.dim=false

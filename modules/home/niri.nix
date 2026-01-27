@@ -6,7 +6,6 @@
     udiskie
     xwayland-satellite
     swww
-    # xdg-desktop-portal packages moved to system-level (modules/core/flatpak.nix)
   ];
 
   # Note: Niri config is managed at ~/.config/niri/config.kdl
