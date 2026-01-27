@@ -76,8 +76,8 @@ return {
 			map("n", "K", vim.lsp.buf.hover, { desc = "Show hover info" })
 			map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Show code actions" })
 			map("n", "gl", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
-			-- map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
-			-- map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+			map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+			map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 		end,
 	},
 }
