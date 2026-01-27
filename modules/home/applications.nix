@@ -73,6 +73,7 @@
       nvitop # monitors tool for nvidia
       tldr # summarize man pages
       htop # monitors tool
+      btop # robust monitors
       curl # download tool
       wget # download tool
       lazydocker # docker tui
