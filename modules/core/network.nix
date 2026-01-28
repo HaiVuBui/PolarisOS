@@ -12,9 +12,6 @@ in lib.mkMerge [
   (lib.mkIf isNm {
     networking.networkmanager.enable = true;
     environment.systemPackages = [ pkgs.networkmanagerapplet ];
-
-    # Stop NM from rewriting resolv.conf (so Unbound stays in charge) :contentReference[oaicite:4]{index=4}
-    networking.networkmanager.dns = "none";
   })
 
   (lib.mkIf isIwd {
