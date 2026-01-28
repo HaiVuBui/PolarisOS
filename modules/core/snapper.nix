@@ -36,8 +36,8 @@
       TIMELINE_CLEANUP = false;
     };
 
-    "backup" = {
-      SUBVOLUME = "/home/${username}/Backup";
+    "archive" = {
+      SUBVOLUME = "/home/${username}/Archive";
       ALLOW_USERS = [ "${username}" ];
       TIMELINE_CREATE = false;
       TIMELINE_CLEANUP = false;

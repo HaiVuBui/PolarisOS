@@ -5,10 +5,10 @@
     options = [ "subvol=storage" "compress=zstd:3" "autodefrag" "noatime"]; 
   };
 
-  fileSystems."/home/hai/Backup" = {
+  fileSystems."/home/hai/Archive" = {
     device = "/dev/disk/by-uuid/e973dce2-7d2e-412f-ba99-722ed58dbd55";
     fsType = "btrfs";
-    options = [ "subvol=backup" "compress=zstd:3" "autodefrag" "noatime"]; 
+    options = [ "subvol=archive" "compress=zstd:3" "autodefrag" "noatime"]; 
   };
 
   fileSystems."/home/hai/Win" = {
