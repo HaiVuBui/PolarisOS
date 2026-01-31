@@ -63,6 +63,9 @@
       nix-output-monitor
       nvd
       imagemagick
+      w3m
+      pandoc
+      markdown-oxide
 
       # cli/tui tools
       comma

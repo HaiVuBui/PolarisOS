@@ -35,15 +35,21 @@ api.nvim_create_autocmd("ColorScheme", {
 vim.o.autoread = true
 
 -- 2. Create an autocommand to trigger the reload immediately
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
   pattern = "*",
-  command = "if mode() != 'c' | checktime | endif",
+  callback = function()
+    if vim.fn.mode() ~= "c" then
+      vim.cmd("checktime")
+    end
+  end,
 })
 
 -- 3. Notification (Optional: lets you know it happened)
-vim.api.nvim_create_autocmd("FileChangedShellPost", {
+api.nvim_create_autocmd("FileChangedShellPost", {
   pattern = "*",
-  command = "echomsg 'File changed on disk. Buffer reloaded.'",
+  callback = function()
+    api.nvim_echo({ { "File changed on disk. Buffer reloaded.", "WarningMsg" } }, false, {})
+  end,
 })
 
 require("config.lazy")
