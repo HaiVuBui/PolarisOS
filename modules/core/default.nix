@@ -25,7 +25,7 @@ in
     ./system.nix
     # ./thunar.nix
     ./user.nix
-    # ./nopass.nix
+    ./nopass.nix
     ./kmscon.nix
     ./syncthing.nix
     ./snapper.nix
