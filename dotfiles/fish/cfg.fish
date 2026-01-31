@@ -10,6 +10,7 @@ if status is-interactive
     abbr --add clean 'bash ~/.config/scripts/clean.sh'
     abbr --add rust 'cargo run --release'
     abbr --add server 'ssh hai@MinasTirith'
+    abbr --add rs rsync
     
     # Eza (List)
     abbr --add l 'eza -lh --icons=always'

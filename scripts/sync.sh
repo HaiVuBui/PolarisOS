@@ -46,7 +46,7 @@ done
 echo ">>> Syncing Individual Dotfiles..."
 rsync -aq "$DOTFILES_DIR/.vimrc" "$HOME/.vimrc"
 # rsync -aq "$DOTFILES_DIR/.p10k.zsh" "$HOME/.p10k.zsh"
-rsync -aq "$DOTFILES_DIR/fish/cfg.fish" "$DOTFILES_DIR/fish/cfg.fish"
+rsync -aq "$DOTFILES_DIR/fish/cfg.fish" "$CONFIG_DIR/fish/cfg.fish"
 rsync -aq "$DOTFILES_DIR/my-app.desktop" "$HOME/.local/share/applications/my-app.desktop" 
 rsync -aq "$DOTFILES_DIR/.cache/quickshell/theme_mode" "$HOME/.cache/quickshell/theme_mode" 
 
