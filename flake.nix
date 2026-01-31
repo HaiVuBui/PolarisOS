@@ -31,7 +31,7 @@
       lib = nixpkgs.lib;
 
       mkNixosConfig = { host }:
-        nixpkgs.lib.nixosSystem {
+        lib.nixosSystem {
           inherit system;
           specialArgs = {
             inherit inputs username host;
@@ -40,9 +40,9 @@
               config.allowUnfree = true;
             };
           };
-          modules = [
-            ./hosts/${host}
-            nix-flatpak.nixosModules.nix-flatpak
+          modules = [ 
+            ./hosts/${host} 
+            nix-flatpak.nixosModules.nix-flatpak 
           ];
         };
 
