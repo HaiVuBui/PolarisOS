@@ -3,7 +3,6 @@
     [
       # apps
       obsidian
-      bleachbit
       firefox
 
       # system

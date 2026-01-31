@@ -49,6 +49,8 @@
     wget # download tool
     tmux
 
+    bleachbit
+
     #jailbreak
     libimobiledevice
     libusbmuxd
