@@ -28,7 +28,7 @@ in
     ./nopass.nix
     ./kmscon.nix
     ./syncthing.nix
-    ./snapper.nix
+    # ./snapper.nix
     ./virtualization.nix
     # ./tmux.nix
     ./nix.nix
