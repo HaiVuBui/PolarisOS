@@ -79,6 +79,8 @@
       curl # download tool
       wget # download tool
       lazydocker # docker tui
+      zk
+      rclone
       rmpc
       khal 
       aerc
