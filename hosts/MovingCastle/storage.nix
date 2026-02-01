@@ -2,13 +2,19 @@
   fileSystems."/home/hai/Storage" = {
     device = "/dev/disk/by-uuid/f7ed8d00-bcb0-44bc-ab00-2fc383b45926";
     fsType = "btrfs";
-    options = [ "subvol=storage" "compress=zstd:3" "autodefrag" "noatime"]; 
+    options = [ "subvol=STORAGE" "compress=zstd:3" "noatime"]; 
   };
 
-  fileSystems."/home/hai/Archive" = {
+  fileSystems."/Backup" = {
     device = "/dev/disk/by-uuid/f7ed8d00-bcb0-44bc-ab00-2fc383b45926";
     fsType = "btrfs";
-    options = [ "subvol=archive" "compress=zstd:3" "autodefrag" "noatime"]; 
+    options = [ "subvol=BACKUP" "compress=zstd:3" "noatime"]; 
+  };
+
+  fileSystems."/snapshots" = {
+    device = "/dev/disk/by-uuid/f7ed8d00-bcb0-44bc-ab00-2fc383b45926";
+    fsType = "btrfs";
+    options = [ "subvol=SNAPSHOTS" "compress=zstd:3" "noatime"]; 
   };
 
   # fileSystems."/home/hai/Win" = {

@@ -5,7 +5,7 @@
     options = [ "subvol=STORAGE" "compress=zstd:3" "noatime"]; 
   };
 
-  fileSystems."/home/hai/Archive" = {
+  fileSystems."/Archive" = {
     device = "/dev/disk/by-uuid/e973dce2-7d2e-412f-ba99-722ed58dbd55";
     fsType = "btrfs";
     options = [ "subvol=ARCHIVE" "compress=zstd:3" "noatime"]; 
