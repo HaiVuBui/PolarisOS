@@ -16,14 +16,10 @@
       tuigreet # greeter
       bluetui # bluetooth tui
       ncdu # disk usage tool
+      smartmontools # smartctl (disk health)
       wiremix # audio mixer
       xwayland-satellite
       udiskie
-
-      # AI shits
-      gemini-cli
-      opencode
-      codeium
 
       # GUI tools
       waybar
@@ -82,8 +78,13 @@
       zk
       rclone
       rmpc
-      khal 
+      khal
       aerc
-    ] ++ (with pkgs-unstable; [ codex ]);
+    ] ++ (with pkgs-unstable; [ 
+      codex 
+      gemini-cli 
+      opencode 
+      codeium 
+    ]);
 }
 

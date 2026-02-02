@@ -7,5 +7,6 @@
   stylixImage = ../../wallpapers/Selected/angel-warior.jpg;
   nopasswdSudo = true;
   network = "iwd";
-  cores=4;
+  cores = 4;
+  cudaEnable = false;
 }

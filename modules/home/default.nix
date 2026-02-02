@@ -12,10 +12,10 @@
     ./stylix.nix
     ./qt.nix
     ./gtk.nix
+    ./env.nix
     ./brave.nix
     # ./zen.nix
     ./symlinks.nix
-    ./home-vars.nix
     ./direnv.nix
     # ./yazi.nix
     ./vdirsyncer.nix

@@ -48,7 +48,6 @@
     curl # download tool
     wget # download tool
     tmux
-
     bleachbit
 
     #jailbreak

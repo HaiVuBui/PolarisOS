@@ -1,12 +1,6 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   # Install Niri and related Wayland utilities
-  home.packages = with pkgs; [
-    niri
-    waybar
-    udiskie
-    xwayland-satellite
-    swww
-  ];
+  home.packages = with pkgs; [ niri waybar udiskie xwayland-satellite swww ];
 
   # Note: Niri config is managed at ~/.config/niri/config.kdl
   # Remove the xdg.configFile line to allow manual configuration
@@ -25,6 +19,11 @@
       StandardOutput = "journal";
       Restart = "on-failure";
     };
+  };
+  home.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = "1";
+    NIXOS_OZONE_WL = "1";
+    OZONE_PLATFORM = "wayland";
   };
 }
 

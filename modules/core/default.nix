@@ -33,8 +33,8 @@ in
     # ./tmux.nix
     ./nix.nix
     ./nix-ld.nix
-    ./pixi.nix
     ./zram.nix
     ./xdg.nix
+    ./systemEnv.nix
   ];
 }

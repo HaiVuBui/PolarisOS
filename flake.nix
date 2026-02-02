@@ -29,25 +29,34 @@
       system = "x86_64-linux";
       username = "hai";
       lib = nixpkgs.lib;
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
 
       mkNixosConfig = { host }:
         lib.nixosSystem {
           inherit system;
-          specialArgs = {
-            inherit inputs username host;
-            pkgs-unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          };
-          modules = [ 
-            ./hosts/${host} 
-            nix-flatpak.nixosModules.nix-flatpak 
-          ];
+          specialArgs = { inherit inputs username host pkgs-unstable; };
+          modules = [ ./hosts/${host} nix-flatpak.nixosModules.nix-flatpak ];
         };
 
       hosts = [ "MovingCastle" "MinasTirith" ];
 
-      nixosConfigurations = lib.genAttrs hosts (host: mkNixosConfig { inherit host; });
-    in { inherit nixosConfigurations; };
+      nixosConfigurations =
+        lib.genAttrs hosts (host: mkNixosConfig { inherit host; });
+    in {
+      inherit nixosConfigurations;
+
+      devShells.${system}.gpu = pkgs.mkShell {
+        packages = with pkgs; [ cudatoolkit ];
+        shellHook = ''
+          export LD_LIBRARY_PATH="${pkgs.cudatoolkit}/lib:/run/opengl-driver/lib:$LD_LIBRARY_PATH"
+        '';
+      };
+    };
 }

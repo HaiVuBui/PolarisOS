@@ -7,4 +7,5 @@
   nopasswdSudo = true;
   network = "nm";
   cores = 6;
+  cudaEnable = true;
 }
