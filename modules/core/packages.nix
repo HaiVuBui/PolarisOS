@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, username, ... }: {
+{ pkgs, username, ... }: {
   programs = {
     neovim = {
       enable = true;
@@ -17,10 +17,8 @@
     };
     dconf.enable = true;
     seahorse.enable = true;
-    # fuse.userAllowOther = true;
+    fuse.userAllowOther = true;
     mtr.enable = true;
-    adb.enable = true;
-    # hyprlock.enable = true;
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
@@ -54,5 +52,6 @@
     libimobiledevice
     libusbmuxd
     usbmuxd
+    android-tools
   ]);
 }

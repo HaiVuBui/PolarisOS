@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs;
     [
       # apps
@@ -44,6 +44,12 @@
       tty-clock
       (pkgs.callPackage ./packages/momoisay.nix { inherit pkgs; })
 
+      #AI shits
+      codex
+      gemini-cli
+      opencode
+      codeium
+
       #dependencies
       ffmpeg
       yt-dlp
@@ -75,16 +81,14 @@
       curl # download tool
       wget # download tool
       lazydocker # docker tui
+      systemctl-tui
+      lazyjournal
       zk
       rclone
       rmpc
       khal
       aerc
-    ] ++ (with pkgs-unstable; [ 
-      codex 
-      gemini-cli 
-      opencode 
-      codeium 
-    ]);
+    ];
+    # ++ (with pkgs-unstable; [ ]);
 }
 

@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, inputs, username, host, ... }:
+{ pkgs, inputs, username, host, ... }:
 let inherit (import ../../hosts/${host}/variables.nix) gitUsername;
 in {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
@@ -6,7 +6,7 @@ in {
     useUserPackages = true;
     useGlobalPkgs = false;
     backupFileExtension = "backup";
-    extraSpecialArgs = { inherit inputs username host pkgs-unstable; };
+    extraSpecialArgs = { inherit inputs username host; };
     users.${username} = {
       imports = [
         ./../home/default.nix
@@ -36,6 +36,7 @@ in {
     ];
     shell = pkgs.fish;
     ignoreShellProgramCheck = true;
+    linger = true;
   };
   nix.settings.allowed-users = [ "${username}" ];
 }

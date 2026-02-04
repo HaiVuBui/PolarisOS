@@ -3,10 +3,10 @@
 {
   boot = {
     kernelPackages = pkgs.linuxPackages;
-    
+
     loader.systemd-boot = {
       enable = true;
-      editor = true; 
+      editor = true;
     };
 
     # plymouth.enable = true;
