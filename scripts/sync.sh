@@ -31,6 +31,7 @@ APPS=(
     "lazydocker"
     "khal"
     "btop"
+    "yazi"
 )
 
 echo ">>> Syncing Config Apps..."

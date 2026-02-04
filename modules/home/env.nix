@@ -6,7 +6,7 @@ let
   basePackages = with pkgs; [
     # nix lsp
     nixd
-    nixfmt-classic
+    nixfmt
 
     # lua
     stylua
