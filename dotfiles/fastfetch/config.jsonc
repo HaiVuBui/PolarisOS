@@ -90,8 +90,7 @@
         },
         {
             "type": "disk",
-            "key": "  󰋊 Disk (/)",
-            "folders": "/",
+            "key": "  󰋊 Disks",
             "keyColor": "magenta"
         },
         {

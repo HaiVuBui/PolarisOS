@@ -1,16 +1,25 @@
 set -g fish_greeting 
+
+# NPM/Node.js global bins (prefer configured prefix; add only if existing)
+if not set -q NPM_CONFIG_PREFIX
+    set -gx NPM_CONFIG_PREFIX "$HOME/.npm-global"
+end
+fish_add_path --path --move "$NPM_CONFIG_PREFIX/bin"
+fish_add_path --path --move "$HOME/.local/share/npm/bin"
+fish_add_path --path --move "$HOME/.npm/bin"
+
+# Per-user Node.js toolchain bins
+fish_add_path "$HOME/.local/bin"
+
 if status is-interactive
     # --- ALIASES (Converted to Abbreviations) ---
     
     # General
     abbr --add .. 'cd ..'
     abbr --add mkdir 'mkdir -p'
-    abbr --add csync 'bash ~/PolarisOs/scripts/sync.sh'
+    abbr --add csync 'cd ~/PolarisOS && bash ~/PolarisOS/scripts/sync.sh'
     abbr --add _ sudo
     abbr --add clean 'bash ~/.config/scripts/clean.sh'
-    abbr --add rust 'cargo run --release'
-    abbr --add server 'ssh hai@MinasTirith'
-    abbr --add rs rsync
     
     # Eza (List)
     abbr --add l 'eza -lh --icons=always'
@@ -26,7 +35,9 @@ if status is-interactive
     abbr --add lzd lazydocker
     abbr --add chat codex
     abbr --add n nvim
+    abbr --add rs rsync
     abbr --add c clear
+    abbr --add st systemctl-tui
     
     # Git
     abbr --add ga 'git add'
@@ -39,6 +50,7 @@ if status is-interactive
     abbr --add os 'cd ~/PolarisOS'
     abbr --add ws 'cd ~/Workspace'
     abbr --add np 'nix profile'
+    abbr --add npa 'nix profile add nixpkgs#'
     abbr --add tm tmux
     abbr --add ta 'tmux a'
 
