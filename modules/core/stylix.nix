@@ -12,7 +12,7 @@ in {
       console.enable = false;
     };
 
-    base16Scheme = ../../themes/everforest-light-soft.yaml;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-latte.yaml";
 
     polarity = "light";
     opacity.terminal = 1.0;

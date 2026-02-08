@@ -15,8 +15,8 @@ let
     tree-sitter
 
     # Java/JS
-    nodejs
-    yarn
+    # nodejs
+    # yarn
 
     # Python
     basedpyright
@@ -36,6 +36,7 @@ let
     gofumpt
 
     # rust
+    clippy
     rustfmt
     rust-analyzer
 

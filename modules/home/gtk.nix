@@ -3,6 +3,10 @@
 {
   gtk = {
     # enable = true;
+    # theme = {
+    #   name = "Everforest-Light";
+    #   package = pkgs.everforest-gtk-theme;
+    # };
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
