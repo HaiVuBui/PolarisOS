@@ -18,6 +18,7 @@ return {
       "markdown",
       "markdown_inline",
       "latex",
+      "rust"
     },
     highlight = { enable = true },
     indent = { enable = true },

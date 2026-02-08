@@ -36,23 +36,6 @@ return {
 
 				-- go
 				gopls = {},
-
-				-- rust
-				rust_analyzer = {
-					-- settings = {
-					-- 	["rust-analyzer"] = {
-					-- 		cargo = {
-					-- 			allFeatures = true,
-					-- 		},
-					-- 		procMacro = {
-					-- 			enable = true,
-					-- 		},
-					-- 	},
-					-- },
-				},
-
-				-- zk (markdown notes)
-				-- zk = {},
 			}
 
 			local function lsp_keymaps(bufnr)
@@ -91,7 +74,8 @@ return {
 
 			for server, opts in pairs(servers) do
 				local server_opts = vim.deepcopy(opts)
-				server_opts.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server_opts.capabilities or {})
+				server_opts.capabilities =
+					vim.tbl_deep_extend("force", {}, capabilities, server_opts.capabilities or {})
 				server_opts.on_attach = make_on_attach(server_opts.on_attach)
 				vim.lsp.config(server, server_opts)
 			end
