@@ -10,9 +10,6 @@ return {
             check = {
               command = 'clippy',
             },
-            checkOnSave = {
-              command = 'clippy',
-            },
           },
         },
       },
