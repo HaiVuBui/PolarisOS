@@ -15,8 +15,8 @@ let
     tree-sitter
 
     # Java/JS
-    # nodejs
-    # yarn
+    nodejs
+    yarn
 
     # Python
     basedpyright
