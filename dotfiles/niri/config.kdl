@@ -210,7 +210,8 @@ layout {
         // off
 
         width 2
-        active-color "#a6e3a1"
+        // active-color "#a6e3a1"
+        active-color "#86BE93"
         inactive-color "#daf2ee"
 
         // Color of the border around windows that request your attention.
@@ -348,8 +349,8 @@ window-rule {
 window-rule {
     match app-id="^kitty$"   
     opacity 0.95
-    geometry-corner-radius 15
-    clip-to-geometry true
+    // geometry-corner-radius 15
+    // clip-to-geometry true
 }
 
 window-rule {
@@ -414,11 +415,11 @@ window-rule {
     open-floating true
 }
 
-window-rule {
-  border {
-    off
-  }
-}
+// window-rule {
+//   border {
+//     off
+//   }
+// }
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
