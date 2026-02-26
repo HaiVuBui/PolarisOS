@@ -86,7 +86,7 @@
       zk
       rclone
       rmpc
-      khal
+      # khal
       aerc
     ];
     # ++ (with pkgs-unstable; [ ]);
