@@ -34,6 +34,7 @@ in {
       ".DS_Store" # Optional: macos junk
       ".pixi"
       "__pycache__"
+      "typings"
     ];
   };
 }

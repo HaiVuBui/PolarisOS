@@ -19,6 +19,7 @@ let
     yarn
 
     # Python
+    python3
     basedpyright
     black
     (pkgs.buildFHSEnv {
@@ -43,6 +44,9 @@ let
     # latex
     texlab
     texliveFull
+
+    #marp
+    marp-cli
   ];
 
 in {

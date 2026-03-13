@@ -13,6 +13,7 @@
       libnotify # For Notifications
       mako # notifications daemon
       playerctl # media controller
+      pamixer
       tuigreet # greeter
       bluetui # bluetooth tui
       ncdu # disk usage tool
@@ -86,7 +87,7 @@
       zk
       rclone
       rmpc
-      # khal
+      khal
       aerc
     ];
     # ++ (with pkgs-unstable; [ ]);

@@ -22,7 +22,38 @@ return {
     vim.keymap.set("n", "<leader>zn", "<Cmd>ZkNew<CR>", { desc = "Zk new note" })
     vim.keymap.set("n", "<leader>zi", "<Cmd>ZkInsertLink<CR>", { desc = "Zk insert link" })
     vim.keymap.set("n", "<leader>zf", "<Cmd>ZkNotes<CR>", { desc = "Zk find notes" })
+    vim.keymap.set("n", "<leader>zg", function()
+      local query = vim.fn.input("Search: ")
+      if query == nil or query == "" then
+        return
+      end
+
+      require("zk.commands").get("ZkNotes")({
+        sort = { "modified" },
+        match = { query },
+      })
+    end, { desc = "Zk match search" })
     vim.keymap.set("n", "<leader>zt", "<Cmd>ZkTags<CR>", { desc = "Zk tags" })
+    vim.keymap.set("n", "<leader>zT", function()
+      local input = vim.fn.input("Tags search: ")
+      if input == nil or input == "" then
+        return
+      end
+
+      local tags = {}
+      for tag in input:gmatch("%S+") do
+        table.insert(tags, tag)
+      end
+
+      if #tags == 0 then
+        return
+      end
+
+      require("zk.commands").get("ZkNotes")({
+        sort = { "modified" },
+        tags = tags,
+      })
+    end, { desc = "Zk multi-tag search" })
     vim.keymap.set("n", "<leader>zo", function()
       zk.new({
         insertLinkAtLocation = cursor_location(),
