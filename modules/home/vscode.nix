@@ -1,6 +1,5 @@
-{ pkgs, ... }: {
-  nixpkgs.config.allowUnfree = true;
-
+{ pkgs, ... }:
+{
   programs.vscode = {
     enable = true;
     profiles = {

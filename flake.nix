@@ -24,7 +24,8 @@
     # };
   };
 
-  outputs = { nixpkgs,  nix-flatpak, ... }@inputs:
+  outputs =
+    { nixpkgs, nix-flatpak, ... }@inputs:
     let
       system = "x86_64-linux";
       username = "hai";
@@ -38,18 +39,26 @@
       #   config.allowUnfree = true;
       # };
 
-      mkNixosConfig = { host }:
+      mkNixosConfig =
+        { host }:
         lib.nixosSystem {
           inherit system;
+          inherit pkgs;
           specialArgs = { inherit inputs username host; };
-          modules = [ ./hosts/${host} nix-flatpak.nixosModules.nix-flatpak ];
+          modules = [
+            ./hosts/${host}
+            nix-flatpak.nixosModules.nix-flatpak
+          ];
         };
 
-      hosts = [ "MovingCastle" "MinasTirith" ];
+      hosts = [
+        "MovingCastle"
+        "MinasTirith"
+      ];
 
-      nixosConfigurations =
-        lib.genAttrs hosts (host: mkNixosConfig { inherit host; });
-    in {
+      nixosConfigurations = lib.genAttrs hosts (host: mkNixosConfig { inherit host; });
+    in
+    {
       inherit nixosConfigurations;
 
       devShells.${system}.gpu = pkgs.mkShell {

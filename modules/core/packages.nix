@@ -1,4 +1,5 @@
-{ pkgs, username, ... }: {
+{ pkgs, username, ... }:
+{
   programs = {
     neovim = {
       enable = true;
@@ -31,27 +32,28 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
+  environment.systemPackages = (
+    with pkgs;
+    [
+      # essentials
+      brightnessctl # light controller
+      vim # editor
+      tuigreet # greeter
+      zip
+      unzip
+      fish
+      git # distributed version control system
+      htop # monitors tool
+      curl # download tool
+      wget # download tool
+      tmux
+      bleachbit
 
-  environment.systemPackages = (with pkgs; [
-    # essentials
-    brightnessctl # light controller
-    vim # editor
-    tuigreet # greeter
-    zip
-    unzip
-    fish
-    git # distributed version control system
-    htop # monitors tool
-    curl # download tool
-    wget # download tool
-    tmux
-    bleachbit
-
-    #jailbreak
-    libimobiledevice
-    libusbmuxd
-    usbmuxd
-    android-tools
-  ]);
+      #jailbreak
+      libimobiledevice
+      libusbmuxd
+      usbmuxd
+      android-tools
+    ]
+  );
 }
