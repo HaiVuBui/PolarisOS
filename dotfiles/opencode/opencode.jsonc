@@ -42,6 +42,12 @@
       "template": "Run a project-level review (not diff-only).\n\nUser input:\n{{args}}\n\nInstructions:\n- Default scope to the entire repository if no scope is provided.\n- If the user provides a path/component, focus there and note boundaries.\n- Evaluate architecture, correctness hotspots, security posture, performance risks, maintainability, dependency hygiene, and test strategy.\n- If repo/scope context is missing, ask exactly one targeted question.\n- Keep findings evidence-based and mark uncertain points as 'needs verification'."
     }
   },
+  "watcher": {
+    "ignore": [
+      ".env",
+      ".env.*"
+    ]
+  },
   "mcp": {
     // "filesystem": {
     //   "type": "local",

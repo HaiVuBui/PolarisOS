@@ -6,7 +6,7 @@
     ./vscode.nix
     ./git.nix
     # ./pixi.nix
-    ./gaming.nix
+    # ./gaming.nix
     ./applications.nix
     ./mpd.nix
     ./stylix.nix

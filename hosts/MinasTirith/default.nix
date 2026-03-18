@@ -4,6 +4,6 @@
     ./hardware.nix
     ./storage.nix
     ../../modules/core/default.nix
-    ../../modules/core/gaming.nix
+    # ../../modules/core/gaming.nix
   ];
 }

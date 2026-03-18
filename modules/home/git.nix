@@ -35,6 +35,7 @@ in {
       ".pixi"
       "__pycache__"
       "typings"
+      ".env"
     ];
   };
 }

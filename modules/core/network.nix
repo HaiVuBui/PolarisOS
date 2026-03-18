@@ -1,9 +1,15 @@
-{ host, lib, pkgs, ... }:
+{
+  host,
+  lib,
+  pkgs,
+  ...
+}:
 let
   vars = import ../../hosts/${host}/variables.nix;
   isNm = vars.network == "nm";
   isIwd = vars.network == "iwd";
-in lib.mkMerge [
+in
+lib.mkMerge [
   {
     networking.hostName = host;
 
