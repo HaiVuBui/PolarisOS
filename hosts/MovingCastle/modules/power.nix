@@ -1,83 +1,53 @@
-# {pkgs, userConfig,...}:
-# {
-#   services.power-profiles-daemon.enable = true;
-# }
-
-{pkgs, ... }:
+{ pkgs, ... }:
 {
-  # Enable TLP
   services.tlp = {
     enable = true;
     settings = {
-      # CPU settings: Maximize performance
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "performance"; # Optional, for systems with battery
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
       CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "performance";
-      CPU_HWP_ON_AC = "performance"; # Force Intel HWP to performance
-      CPU_HWP_ON_BAT = "performance";
-      CPU_HWP_DYN_BOOST_ON_AC = 1; # Allow dynamic boost
-      CPU_HWP_DYN_BOOST_ON_BAT = 1;
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
       CPU_MIN_PERF_ON_AC = 0;
       CPU_MAX_PERF_ON_AC = 100;
       CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 100;
-      CPU_BOOST_ON_AC = 1; # Enable CPU boost
-      CPU_BOOST_ON_BAT = 1;
-      SCHED_POWERSAVE_ON_AC = 0; # Disable scheduler power saving
-      SCHED_POWERSAVE_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 60;
+      CPU_BOOST_ON_AC = 1;
+      CPU_BOOST_ON_BAT = 0;
+      SCHED_POWERSAVE_ON_AC = 0;
+      SCHED_POWERSAVE_ON_BAT = 1;
 
-      # Disk settings: Disable power-saving features
-      DISK_IDLE_SECS_ON_AC = 0; # Disable disk spin-down
-      DISK_IDLE_SECS_ON_BAT = 0;
-      DISK_APM_LEVEL_ON_AC = "255"; # Maximum performance (disable APM)
-      DISK_APM_LEVEL_ON_BAT = "255";
-      SATA_LINKPWR_ON_AC = "max_performance"; # Maximize SATA link performance
-      SATA_LINKPWR_ON_BAT = "max_performance";
-      AHCI_RUNTIME_PM_ON_AC = "off"; # Disable runtime power management
-      AHCI_RUNTIME_PM_ON_BAT = "off";
-
-      # Runtime power management for devices
-      RUNTIME_PM_ON_AC = "off"; # Disable runtime PM for devices
-      RUNTIME_PM_ON_BAT = "off";
-
-      # PCIe Active State Power Management
-      PCIE_ASPM_ON_AC = "performance"; # Disable PCIe power saving
-      PCIE_ASPM_ON_BAT = "performance";
-
-      # USB settings
-      USB_AUTOSUSPEND = 0; # Disable USB autosuspend
-      USB_BLACKLIST_WWAN = 1; # Blacklist WWAN devices from autosuspend
-
-      # Network settings
-      WIFI_PWR_ON_AC = 0; # Disable WiFi power saving
-      WIFI_PWR_ON_BAT = 0;
-
-      # Sound power saving
-      SOUND_POWER_SAVE_ON_AC = 0; # Disable sound power saving
-      SOUND_POWER_SAVE_ON_BAT = 0;
-      SOUND_POWER_SAVE_CONTROLLER = "N";
-
-      # Platform profile: stay in performance mode everywhere
       PLATFORM_PROFILE_ON_AC = "performance";
-      PLATFORM_PROFILE_ON_BAT = "performance";
+      PLATFORM_PROFILE_ON_BAT = "balanced";
 
-      # Other performance settings
-      NMI_WATCHDOG = 0; # Disable NMI watchdog for lower latency
-      TLP_DEFAULT_MODE = "AC"; # Always use AC mode (performance)
-      TLP_PERSISTENT_DEFAULT = 1; # Ensure settings persist
+      DISK_IDLE_SECS_ON_AC = 0;
+      DISK_IDLE_SECS_ON_BAT = 2;
+      DISK_APM_LEVEL_ON_AC = "254 254";
+      DISK_APM_LEVEL_ON_BAT = "128 128";
+      SATA_LINKPWR_ON_AC = "med_power_with_dipm";
+      SATA_LINKPWR_ON_BAT = "med_power_with_dipm";
+      AHCI_RUNTIME_PM_ON_AC = "on";
+      AHCI_RUNTIME_PM_ON_BAT = "auto";
+
+      PCIE_ASPM_ON_AC = "default";
+      PCIE_ASPM_ON_BAT = "powersupersave";
+      RUNTIME_PM_ON_AC = "on";
+      RUNTIME_PM_ON_BAT = "auto";
+
+      USB_AUTOSUSPEND = 1;
+      USB_BLACKLIST_WWAN = 1;
+
+      WIFI_PWR_ON_AC = 0;
+      WIFI_PWR_ON_BAT = 1;
+
+      SOUND_POWER_SAVE_ON_AC = 0;
+      SOUND_POWER_SAVE_ON_BAT = 1;
+      SOUND_POWER_SAVE_CONTROLLER = "Y";
+
+      STOP_CHARGE_THRESH_BAT0 = 1;
     };
   };
 
-  # Optional: Enable power-profiles-daemon to avoid conflicts
   services.power-profiles-daemon.enable = false;
 
-  # Optional: Ensure performance governor is set system-wide
-  powerManagement.cpuFreqGovernor = "performance";
-
-  # Enable necessary kernel modules for performance
-  boot.kernelModules = [ "cpufreq_performance" ];
-
-  # Ensure TLP package is installed
   environment.systemPackages = with pkgs; [ tlp ];
 }
