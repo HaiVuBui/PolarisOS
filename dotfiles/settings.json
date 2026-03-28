@@ -10,18 +10,12 @@
   "workbench.colorTheme": "Gruvbox Material Dark",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.sideBar.location": "right",
-  "vim.vimrc.enable": true,
-  "vim.vimrc.path": "~/.vimrc",
-  "vim.useSystemClipboard": true,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
   "window.menuBarVisibility": "toggle",
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
-  "chat.commandCenter.enabled": false,
   "github.copilot.nextEditSuggestions.enabled": true,
-  "geminicodeassist.project": "alien-winter-qbjf5",
+  "remote.SSH.useLocalServer": false
 }
-
-
