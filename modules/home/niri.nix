@@ -6,7 +6,7 @@
     waybar
     udiskie
     xwayland-satellite
-    swww
+    awww
   ];
 
   # Note: Niri config is managed at ~/.config/niri/config.kdl

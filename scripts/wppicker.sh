@@ -18,7 +18,7 @@ usage() {
 Usage: ${0##*/} [DIRECTORY]
 
 Pick a wallpaper from DIRECTORY (default: $DEFAULT_DIR)
-using rofi and set it via swww.
+using rofi and set it via awww or swww.
 EOF
   exit 1
 }
@@ -27,13 +27,29 @@ if [[ "${1-}" == "-h" || "${1-}" == "--help" ]]; then
   usage
 fi
 
-# --- required commands (except fd/find, handled separately) ---
-for cmd in rofi swww sort; do
+# --- required base commands (except fd/find, handled separately) ---
+for cmd in rofi sort; do
   if ! command -v "$cmd" >/dev/null 2>&1; then
     echo "Error: required command not found in PATH: $cmd" >&2
     exit 1
   fi
 done
+
+# --- choose wallpaper backend ---
+WALL_BACKEND=""
+if command -v awww >/dev/null 2>&1; then
+  WALL_BACKEND="awww"
+elif command -v swww >/dev/null 2>&1; then
+  WALL_BACKEND="swww"
+else
+  echo "Error: neither awww nor swww is available in PATH." >&2
+  exit 1
+fi
+
+if [[ "$WALL_BACKEND" == "awww" ]] && ! command -v awww-daemon >/dev/null 2>&1; then
+  echo "Error: awww is installed but awww-daemon is missing from PATH." >&2
+  exit 1
+fi
 
 if [[ ! -d "$DIR" ]]; then
   echo "Error: directory not found: $DIR" >&2
@@ -61,7 +77,7 @@ mapfile -d '' -t files < <(
       -e jpg  -e jpeg -e png  -e webp \
       -e bmp  -e svg  -e avif \
       -e gif  -e tiff -e tif \
-      . "$DIR" 2>/dev/null | sort -z
+      . "$DIR" 2>/dev/null | LC_ALL=C sort -z
   else
     # fallback: find
     if ! command -v find >/dev/null 2>&1; then
@@ -73,7 +89,7 @@ mapfile -d '' -t files < <(
         -iname '*.webp' -o -iname '*.bmp'  -o -iname '*.svg'  -o \
         -iname '*.avif' -o -iname '*.gif'  -o \
         -iname '*.tiff' -o -iname '*.tif' \
-      \) -print0 2>/dev/null | sort -z
+      \) -print0 2>/dev/null | LC_ALL=C sort -z
   fi
 )
 
@@ -88,11 +104,15 @@ if (( rows > MAX_ROWS )); then
   rows=$MAX_ROWS
 fi
 
-# --- show only basenames in rofi, get INDEX back ---
+# --- show relative paths in rofi, get INDEX back ---
+display=()
+for f in "${files[@]}"; do
+  display+=("${f#"$DIR"/}")
+done
+
 index="$(
-  printf '%s\0' "${files[@]##*/}" |
+  printf '%s\n' "${display[@]}" |
 rofi -dmenu \
-  -sep '\0' \
   -i \
   -no-custom \
   -format 'i' \
@@ -125,18 +145,41 @@ if [[ ! -f "$selection" ]]; then
   exit 1
 fi
 
-# --- ensure swww is running ---
-if ! swww query >/dev/null 2>&1; then
-  if ! swww init >/dev/null 2>&1; then
-    echo "Error: failed to initialize swww." >&2
-    exit 1
+# --- ensure backend daemon is running ---
+if [[ "$WALL_BACKEND" == "awww" ]]; then
+  if ! awww query >/dev/null 2>&1; then
+    awww-daemon --quiet >/dev/null 2>&1 &
+    ready=0
+    for _ in {1..30}; do
+      if awww query >/dev/null 2>&1; then
+        ready=1
+        break
+      fi
+      sleep 0.1
+    done
+    if (( ready == 0 )); then
+      echo "Error: failed to start awww-daemon." >&2
+      exit 1
+    fi
   fi
-  sleep 0.1
+
+  # --- set wallpaper via awww ---
+  awww img "$selection" \
+    --transition-fps "$TRANSITION_FPS" \
+    --transition-type "$TRANSITION_TYPE" \
+    --transition-duration "$TRANSITION_DURATION"
+else
+  if ! swww query >/dev/null 2>&1; then
+    if ! swww init >/dev/null 2>&1; then
+      echo "Error: failed to initialize swww." >&2
+      exit 1
+    fi
+    sleep 0.1
+  fi
+
+  # --- set wallpaper via swww ---
+  swww img "$selection" \
+    --transition-fps "$TRANSITION_FPS" \
+    --transition-type "$TRANSITION_TYPE" \
+    --transition-duration "$TRANSITION_DURATION"
 fi
-
-# --- set wallpaper ---
-swww img "$selection" \
-  --transition-fps "$TRANSITION_FPS" \
-  --transition-type "$TRANSITION_TYPE" \
-  --transition-duration "$TRANSITION_DURATION"
-
