@@ -27,6 +27,7 @@ let
       runScript = "pixi";
       targetPkgs = pkgs: with pkgs; [ pixi ];
     })
+    uv
 
     # Haskell
     ormolu

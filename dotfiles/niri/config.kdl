@@ -107,7 +107,8 @@ input {
 }
 
 output "HDMI-A-1" {
-    mode "1920x1080@100"
+    mode "2560x1440@59.951"
+    scale 1.25
 }
 
 debug {
@@ -342,13 +343,13 @@ animations {
 //vscode transparency
 window-rule {
     match app-id="^code$"   
-    opacity 0.98
+    opacity 0.9
 }
 
 // kitty
 window-rule {
     match app-id="^kitty$"   
-    opacity 0.95
+    opacity 0.8
     // geometry-corner-radius 15
     // clip-to-geometry true
 }
