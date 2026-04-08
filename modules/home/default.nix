@@ -19,5 +19,6 @@
     ./direnv.nix
     # ./yazi.nix
     ./vdirsyncer.nix
+    ./niri.nix
   ];
 }

@@ -416,11 +416,11 @@ window-rule {
     open-floating true
 }
 
-// window-rule {
-//   border {
-//     off
-//   }
-// }
+window-rule {
+  border {
+    off
+  }
+}
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)

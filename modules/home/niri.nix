@@ -1,6 +1,13 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # Install Niri and related Wayland utilities
-  home.packages = with pkgs; [ niri waybar udiskie xwayland-satellite swww ];
+  home.packages = with pkgs; [
+    niri
+    waybar
+    udiskie
+    xwayland-satellite
+    swww
+  ];
 
   # Note: Niri config is managed at ~/.config/niri/config.kdl
   # Remove the xdg.configFile line to allow manual configuration
@@ -26,4 +33,3 @@
     OZONE_PLATFORM = "wayland";
   };
 }
-

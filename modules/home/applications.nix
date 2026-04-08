@@ -27,7 +27,6 @@
       tofi
       rofi
       hyprlock
-      swww
       # wlogout
       kdePackages.dolphin
       (pkgs.callPackage ./packages/evercal.nix { inherit pkgs; }) # calendar
