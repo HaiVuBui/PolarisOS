@@ -1,15 +1,19 @@
 // Place your key bindings in this file to override the defaults
 [
     {
-        "key": "ctrl+shift+f",
-        "command": "workbench.action.quickOpen"
-    },
-    {
-        "key": "ctrl+e",
-        "command": "-workbench.action.quickOpen"
-    },
-    {
         "key": "ctrl+shift+/",
         "command": "workbench.action.quickTextSearch"
-    }
+    },
+    // {
+    //     "key": "space r",
+    //     "command": "editor.action.rename",
+    //     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    // },
+    {
+        "key": "g d",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
 ]
+
+
