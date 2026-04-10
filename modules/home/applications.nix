@@ -4,6 +4,8 @@
       # apps
       obsidian
       firefox
+      vesktop
+      teams-for-linux
 
       # system
       cliphist # clipboard history
