@@ -1,7 +1,7 @@
 # This is the configuration file for kitty terminal
 # For more information, see https://sw.kovidgoyal.net/kitty/conf.html
 # For your custom configurations, put it in ./kitty.conf
-font_family JetBrainsMono Nerd Font
+font_family JetBrainsMono Nerd Font Mono
 # font_family firacode Nerd Font
 bold_font auto
 italic_font auto
@@ -34,6 +34,6 @@ wayland_enable_ime no
 
 
 # BEGIN_KITTY_THEME
-# Rosé Pine Dawn
+# Everforest Dark Hard
 include current-theme.conf
 # END_KITTY_THEME
