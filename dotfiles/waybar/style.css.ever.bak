@@ -1,17 +1,3 @@
-@define-color base #faf4ed;
-@define-color surface #fffaf3;
-@define-color overlay #f2e9e1;
-@define-color muted #9893a5;
-@define-color subtle #797593;
-@define-color text #464261;
-@define-color love #b4637a;
-@define-color gold #ea9d34;
-@define-color rose #d7827e;
-@define-color pine #286983;
-@define-color foam #56949f;
-@define-color iris #907aa9;
-@define-color highlight-low #f4ede8;
-
 * {
     border: none;
     border-radius: 0;
@@ -23,34 +9,34 @@
 
 window#waybar {
     background: transparent;
-    color: @text;
+    color: #d3c6aa;
 }
 
 #workspaces button {
     padding: 5px;
-    color: @muted;
+    color: #859289;
     margin-right: 5px;
 }
 
 #workspaces button.active {
-    color: @pine;
+    color: #a7c080;
 }
 
 #workspaces button.focused {
-    color: @base;
-    background: @pine;
+    color: #2b3339;
+    background: #a7c080;
     border-radius: 10px;
 }
 
 #workspaces button.urgent {
-    color: @base;
-    background: @love;
+    color: #2b3339;
+    background: #e67e80;
     border-radius: 10px;
 }
 
 #workspaces button:hover {
-    background: @foam;
-    color: @base;
+    background: #83c092;
+    color: #2b3339;
     border-radius: 10px;
 }
 
@@ -66,7 +52,7 @@ window#waybar {
 #workspaces,
 #tray,
 #backlight {
-    background: @overlay;
+    background: #323c41;
     padding: 0px 10px;
     margin: 3px 0px;
     margin-top: 5px;
@@ -80,7 +66,7 @@ window#waybar {
 }
 
 #workspaces {
-    background: @overlay;
+    background: #323c41;
     border-radius: 10px;
     margin-left: 10px;
     padding-right: 0px;
@@ -104,39 +90,39 @@ window#waybar {
 }
 
 #clock {
-    color: @text;
+    color: #d3c6aa;
     border-radius: 10px 10px 10px 10px;
     margin-left: 5px;
     border-right: 0px;
 }
 
 #custom-nixos {
-    color: @base;
-    background: @pine;
+    color: #2b3339;
+    background: #a7c080;
     padding: 0px 8px;
     margin: 5px 6px 3px 10px;
     border-radius: 10px;
 }
 
 #custom-nvidia {
-    color: @pine;
+    color: #a7c080;
     border-radius: 0px;
 }
 
 #network {
-    color: @text;
+    color:  #d3c6aa;
     border-radius: 10px 0px 0px 10px;
 
 }
 
 #pulseaudio {
-    color: @text;
+    color: #d3c6aa;
     border-left: 0px;
     border-right: 0px;
 }
 
 #pulseaudio.microphone {
-    color: @text;
+    color: #d3c6aa;
     border-radius: 0px 10px 10px 0px;
     border-left: 0px;
     border-right: 0px;
@@ -144,7 +130,7 @@ window#waybar {
 }
 
 #battery {
-    color: @text;
+    color:#d3c6aa;
     border-radius: 0px 10px 10px 0px;
     margin-right: 10px;
 }
