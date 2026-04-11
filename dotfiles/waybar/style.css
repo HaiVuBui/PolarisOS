@@ -131,8 +131,12 @@ window#waybar {
 
 #pulseaudio {
     color: @text;
-    border-left: 0px;
-    border-right: 0px;
+    border-radius: 10px 0px 0px 10px;
+    margin-right: 0px;
+}
+
+#backlight {
+    border-radius: 0px;
 }
 
 #pulseaudio.microphone {

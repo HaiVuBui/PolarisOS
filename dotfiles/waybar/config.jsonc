@@ -19,8 +19,8 @@
         "memory",
         "network",
         "battery",
-        "backlight",
         "pulseaudio",
+        "backlight",
         "pulseaudio#microphone"
     ],
 
