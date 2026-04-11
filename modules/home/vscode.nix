@@ -6,11 +6,9 @@
       default = {
         extensions = with pkgs.vscode-extensions; [
           # python
-          ms-python.python
-          ms-toolsai.jupyter
+          # ms-python.python
 
           # themes
-          catppuccin.catppuccin-vsc
           sainnhe.gruvbox-material
 
           # vscodevim.vim

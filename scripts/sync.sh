@@ -57,8 +57,8 @@ rsync -aq "$DOTFILES_DIR/.cache/quickshell/theme_mode" "$HOME/.cache/quickshell/
 # ---------------------------------------------------------
 echo ">>> Syncing VS Code..."
 mkdir -p "$CODE_DIR"
-rsync -aq "$DOTFILES_DIR/settings.json" "$CODE_DIR/"
-rsync -aq "$DOTFILES_DIR/keybindings.json" "$CODE_DIR/"
+# rsync -aq "$DOTFILES_DIR/vscode/settings.json" "$CODE_DIR/"
+# rsync -aq "$DOTFILES_DIR/vscode/keybindings.json" "$CODE_DIR/"
 
 # ---------------------------------------------------------
 # 4. Scripts
