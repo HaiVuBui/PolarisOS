@@ -6,7 +6,7 @@ Flake-based NixOS configuration for hai's machines, with per-host settings, GPU-
 - `flake.nix` – defines inputs (home-manager, Stylix, nix-flatpak, zen-browser, nix-index-database) and exports NixOS configurations for `MovingCastle` and `MinasTirith`.
 - `profiles/` – GPU profiles (`intel`, `nvidia`) that compose host configs with shared core modules.
 - `hosts/` – hardware configs, host-specific modules, and package lists.
-- `modules/core/` – common NixOS modules (network, security, stylix, flatpak, docker, gaming, etc.).
+- `modules/system/` – common NixOS modules (network, security, stylix, flatpak, docker, gaming, etc.).
 - `modules/home/` – home-manager modules for apps and theming.
 - `dotfiles/` – editor/terminal/WM settings; `scripts/` – helper scripts; `wallpapers/` – curated wallpaper sets.
 

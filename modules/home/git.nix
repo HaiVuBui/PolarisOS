@@ -36,6 +36,7 @@ in {
       "__pycache__"
       "typings"
       ".env"
+      ".vscode"
     ];
   };
 }
