@@ -34,6 +34,6 @@ wayland_enable_ime no
 
 
 # BEGIN_KITTY_THEME
-# Everforest Dark Hard
+# Everforest Light Soft
 include current-theme.conf
 # END_KITTY_THEME
