@@ -70,7 +70,7 @@
       w3m
       pandoc
       markdown-oxide
-      xclip
+      wl-clipboard-x11
 
       # cli/tui tools
       comma
