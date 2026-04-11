@@ -125,7 +125,8 @@ window#waybar {
 
 #network {
     color: @text;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px;
+    margin-right: 5px;
 
 }
 
