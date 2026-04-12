@@ -349,7 +349,10 @@ window-rule {
 // kitty
 window-rule {
     match app-id="^kitty$"   
-    opacity 0.8
+    open-floating true
+    default-column-width { proportion 0.5; }
+    default-window-height { proportion 0.6; }
+    opacity 0.9
     // geometry-corner-radius 15
     // clip-to-geometry true
 }
