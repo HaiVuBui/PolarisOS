@@ -1,4 +1,4 @@
-{ pkgs, ... }: # Ensure this line has 'pkgs' inside the { }
+{ pkgs, ... }:
 
 {
   i18n.inputMethod = {
@@ -10,8 +10,6 @@
     ];
   };
 
-  # We use 'environment.variables' directly to match the system module exactly.
-  # We use 'pkgs.lib.mkForce' to guarantee this overrides the default "fcitx".
   environment.variables = {
     GTK_IM_MODULE = pkgs.lib.mkForce "";
   };
@@ -21,4 +19,5 @@
     QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
   };
+
 }
