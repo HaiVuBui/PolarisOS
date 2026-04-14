@@ -6,6 +6,7 @@
       firefox
       vesktop
       teams-for-linux
+      zed-editor
 
       # system
       cliphist # clipboard history

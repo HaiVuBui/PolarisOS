@@ -39,6 +39,7 @@ if status is-interactive
     abbr --add rs rsync
     abbr --add c clear
     abbr --add st systemctl-tui
+    abbr --add zed zeditor
     
     # Git
     abbr --add ga 'git add'
