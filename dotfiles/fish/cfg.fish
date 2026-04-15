@@ -29,7 +29,7 @@ if status is-interactive
     abbr --add lt 'eza --icons=always --tree'
     
     # Tools
-    abbr --add ns "code ~/GrandArchive/"
+    abbr --add nz "zeditor ~/GrandArchive/"
     abbr --add y yazi
     abbr --add m rmpc
     abbr --add lzg lazygit
