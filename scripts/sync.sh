@@ -4,6 +4,7 @@
 DOTFILES_DIR="dotfiles"
 CONFIG_DIR="$HOME/.config"
 CODE_DIR="$CONFIG_DIR/Code/User"
+ZED_DIR="$CONFIG_DIR/zed"
 SCRIPTS_DIR="$CONFIG_DIR/scripts"
 
 # ---------------------------------------------------------
@@ -59,6 +60,11 @@ echo ">>> Syncing VS Code..."
 mkdir -p "$CODE_DIR"
 # rsync -aq "$DOTFILES_DIR/vscode/settings.json" "$CODE_DIR/"
 # rsync -aq "$DOTFILES_DIR/vscode/keybindings.json" "$CODE_DIR/"
+
+echo ">>> Syncing zed..."
+mkdir -p "$ZED_DIR"
+rsync -aq "$DOTFILES_DIR/zed/settings.json" "$ZED_DIR/"
+rsync -aq "$DOTFILES_DIR/zed/keymap.json" "$ZED_DIR/"
 
 # ---------------------------------------------------------
 # 4. Scripts
