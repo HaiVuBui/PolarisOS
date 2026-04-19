@@ -1,4 +1,12 @@
-{ pkgs, username, ... }:
+{
+  pkgs,
+  username,
+  inputs,
+  ...
+}:
+let
+  niriBlurPackage = inputs.niri-flake-wip.packages.${pkgs.system}.niri-unstable;
+in
 {
   programs = {
     neovim = {
@@ -12,6 +20,7 @@
     firefox.enable = false; # Firefox is not installed by default
     niri = {
       enable = true; # set this so desktop file is created
+      package = niriBlurPackage;
     };
     hyprland = {
       enable = true; # set this so desktop file is created
