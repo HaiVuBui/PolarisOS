@@ -35,6 +35,6 @@ in
     ./nix-ld.nix
     ./zram.nix
     ./xdg.nix
-    # ./systemEnv.nix
+    ./systemEnv.nix
   ];
 }
