@@ -34,6 +34,6 @@ wayland_enable_ime no
 
 
 # BEGIN_KITTY_THEME
-# Everforest Light Soft
+# Flexoki (Light)
 include current-theme.conf
 # END_KITTY_THEME
