@@ -1,0 +1,3 @@
+[submodule "dotfiles/NvimConfig"]
+	path = dotfiles/NvimConfig
+	url = git@github.com:HaiVuBui/NvimConfig.git
