@@ -5,7 +5,7 @@
   ...
 }:
 let
-  niriBlurPackage = inputs.niri-flake-wip.packages.${pkgs.system}.niri-unstable;
+  niriBlurPackage = inputs.niri-flake-wip.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable;
 in
 {
   programs = {

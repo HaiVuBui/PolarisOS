@@ -1,6 +1,6 @@
 { pkgs, inputs, ... }:
 let
-  niriBlurPackage = inputs.niri-flake-wip.packages.${pkgs.system}.niri-unstable;
+  niriBlurPackage = inputs.niri-flake-wip.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable;
 in
 {
   # Install Niri and related Wayland utilities
