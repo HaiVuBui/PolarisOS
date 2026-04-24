@@ -75,16 +75,13 @@ if status is-interactive
 
         if tmux has-session -t "$session" 2>/dev/null
             if set -q TMUX
-                # Already inside tmux
                 tmux switch-client -t "$session"
             else
-                # Outside tmux
                 tmux attach-session -t "$session" -c "$dir"
             end
             return
         end
 
-        # Session does not exist
         if set -q TMUX
             tmux new-session -d -s "$session" -c "$dir" "nvim Polaris.md"
             tmux switch-client -t "$session"

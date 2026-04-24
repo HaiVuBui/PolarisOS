@@ -493,6 +493,7 @@ binds {
 
     // wallpaper picker
     Mod+Shift+w hotkey-overlay-title="change wallpaper" {spawn-sh "bash /home/hai/.config/scripts/wppicker.sh";}
+    Mod+Shift+N hotkey-overlay-title="Open notes" { spawn "kitty" "-e" "fish" "-ic" "note"; }
 
     // Scratchpad helpers.
     Mod+Grave hotkey-overlay-title="Toggle kitty scratchpad" { spawn-sh "$HOME/PolarisOS/scripts/niri-scratchpad.sh toggle kitty kitty"; }
