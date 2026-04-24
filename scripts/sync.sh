@@ -49,7 +49,10 @@ rsync -aq "$DOTFILES_DIR/.vimrc" "$HOME/.vimrc"
 # rsync -aq "$DOTFILES_DIR/.p10k.zsh" "$HOME/.p10k.zsh"
 rsync -aq "$DOTFILES_DIR/fish/cfg.fish" "$CONFIG_DIR/fish/cfg.fish"
 rsync -aq "$DOTFILES_DIR/my-app.desktop" "$HOME/.local/share/applications/my-app.desktop"
+mkdir -p "$CONFIG_DIR/opencode"
 rsync -aq "$DOTFILES_DIR/opencode/opencode.jsonc" "$CONFIG_DIR/opencode/opencode.jsonc"
+mkdir -p "$CONFIG_DIR/opencode/skills"
+rsync -aq --delete "$DOTFILES_DIR/opencode/skills/" "$CONFIG_DIR/opencode/skills/"
 rsync -aq "$DOTFILES_DIR/.cache/quickshell/theme_mode" "$HOME/.cache/quickshell/theme_mode"
 
 # ---------------------------------------------------------
