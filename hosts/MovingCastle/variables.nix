@@ -9,4 +9,5 @@
   network = "nm";
   cores = 4;
   cudaEnable = false;
+  jellyfinEnable = false;
 }

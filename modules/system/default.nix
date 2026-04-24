@@ -15,6 +15,7 @@ in
     ./hardware.nix
     ./network.nix
     ./keyboard.nix
+    ./jellyfin.nix
     ./packages.nix
     ./tuigreet.nix
     ./security.nix
