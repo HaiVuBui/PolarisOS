@@ -119,6 +119,9 @@ debug {
     wait-for-frame-completion-before-queueing
 }
 
+// Scratchpad workspace is created lazily by the helper script the first time
+// you hide a window, so it stays out of the normal workspace list until needed.
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
@@ -490,6 +493,11 @@ binds {
 
     // wallpaper picker
     Mod+Shift+w hotkey-overlay-title="change wallpaper" {spawn-sh "bash /home/hai/.config/scripts/wppicker.sh";}
+
+    // Scratchpad helpers.
+    Mod+Grave hotkey-overlay-title="Toggle kitty scratchpad" { spawn-sh "$HOME/PolarisOS/scripts/niri-scratchpad.sh toggle kitty kitty"; }
+    Mod+Ctrl+Grave hotkey-overlay-title="Show last hidden window" { spawn-sh "$HOME/PolarisOS/scripts/niri-scratchpad.sh show-last"; }
+    Mod+Shift+Grave hotkey-overlay-title="Hide focused window" { spawn-sh "$HOME/PolarisOS/scripts/niri-scratchpad.sh hide-focused"; }
 
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
