@@ -1,10 +1,14 @@
-{ ... }: {
+{ ... }:
+{
   # Services to start
   services = {
     libinput.enable = true; # Input Handling
     fstrim.enable = true; # SSD Optimizer
     gvfs.enable = true; # For Mounting USB & More
-    openssh.enable = true; # Enable SSH
+    openssh = {
+      enable = true; # Enable SSH
+      openFirewall = false;
+    };
     blueman.enable = false; # Bluetooth Support
     tumbler.enable = true; # Image/video preview
     gnome.gnome-keyring.enable = true;
@@ -20,7 +24,7 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-      wireplumber.enable = true;  # Enable WirePlumber session manager
+      wireplumber.enable = true; # Enable WirePlumber session manager
     };
   };
 }

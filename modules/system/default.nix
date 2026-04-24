@@ -12,6 +12,7 @@ in
   imports = [
     ./brave.nix
     ./boot.nix
+    ./firewall.nix
     ./flatpak.nix
     ./fonts.nix
     ./hardware.nix
