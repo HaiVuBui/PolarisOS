@@ -355,7 +355,7 @@ window-rule {
     open-floating true
     default-column-width { proportion 0.5; }
     default-window-height { proportion 0.6; }
-    opacity 0.75
+    opacity 0.85
     // geometry-corner-radius 15
     // clip-to-geometry true
     background-effect {
@@ -403,6 +403,9 @@ window-rule {
 
 window-rule {
     match app-id="brave-browser"  
+    default-column-width { proportion 0.66667; }
+    open-maximized-to-edges false
+    open-fullscreen false
     opacity 0.99
     border {
         off
