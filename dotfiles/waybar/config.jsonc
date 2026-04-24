@@ -27,12 +27,11 @@
     "niri/window": {
         "format": "<span font_desc='Symbols Nerd Font 12'></span>  {}"
     },
-    
+
     "niri/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate"
-        //"format": "{icon}",
     },
 
     "tray": {
@@ -180,6 +179,5 @@
         "tooltip-format-disconnected": "Disconnected",
         "format-alt": "<span foreground='#99ffdd'><span font_desc='Symbols Nerd Font 12'></span> {bandwidthDownBytes}</span> <span foreground='#ffcc66'><span font_desc='Symbols Nerd Font 12'></span> {bandwidthUpBytes}</span>",
         "interval": 2
-        // "on-click": "rofi-network-manager"
     }
 }

@@ -70,8 +70,6 @@ window#waybar {
     padding: 0px 10px;
     margin: 2px 0px;
     margin-top: 4px;
-    /* border: 1px solid #181825; */
-    /* border-radius: 10px 0px 0px 10px; */
 }
 
 #tray {
@@ -105,7 +103,7 @@ window#waybar {
 
 #clock {
     color: @text;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
     margin-left: 5px;
     border-right: 0px;
 }
@@ -127,7 +125,6 @@ window#waybar {
     color: @text;
     border-radius: 10px;
     margin-right: 5px;
-
 }
 
 #pulseaudio {
