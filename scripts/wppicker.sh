@@ -5,7 +5,12 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # --- config ---
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_WALLPAPERS="$(cd -- "$SCRIPT_DIR/.." && pwd)/wallpapers"
 DEFAULT_DIR="${HOME}/Wallpapers"
+if [[ ! -d "$DEFAULT_DIR" && -d "$REPO_WALLPAPERS" ]]; then
+  DEFAULT_DIR="$REPO_WALLPAPERS"
+fi
 DIR="${1:-$DEFAULT_DIR}"
 
 TRANSITION_FPS=120

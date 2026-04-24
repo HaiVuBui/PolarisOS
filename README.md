@@ -8,7 +8,7 @@ Flake-based NixOS configuration for hai's machines, with per-host settings, GPU-
 - `hosts/` – hardware configs, host-specific modules, and package lists.
 - `modules/system/` – common NixOS modules (network, security, stylix, flatpak, docker, gaming, etc.).
 - `modules/home/` – home-manager modules for apps and theming.
-- `dotfiles/` – editor/terminal/WM settings; `scripts/` – helper scripts; `wallpapers/` – curated wallpaper sets.
+- `dotfiles/` – editor/terminal/WM settings; `scripts/` – helper scripts; `wallpapers/` – curated wallpapers, symlinked to `~/Wallpapers`.
 
 ## Prerequisites
 - Nix with `flakes` and `nix-command` enabled.
@@ -30,7 +30,7 @@ Flake-based NixOS configuration for hai's machines, with per-host settings, GPU-
   ```
 
 ## Dotfiles & Extras
-- Sync dotfiles, VS Code settings, scripts, and wallpapers into `$HOME`:
+- Sync dotfiles, VS Code settings, scripts, and link `~/Wallpapers` to the repo wallpaper directory:
   ```bash
   ./scripts/sync.sh
   ```
