@@ -1,10 +1,6 @@
 ---
 name: karpathy
 description: Apply cautious, minimal, goal-driven coding behavior to reduce common LLM implementation mistakes.
-compatibility: opencode
-metadata:
-  audience: general
-  source: CLAUDE.md
 ---
 
 # Karpathy Skill
