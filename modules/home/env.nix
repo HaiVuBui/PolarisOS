@@ -1,4 +1,9 @@
-{ pkgs, lib ? pkgs.lib, host, ... }:
+{
+  pkgs,
+  lib ? pkgs.lib,
+  host,
+  ...
+}:
 
 let
   inherit (import ../../hosts/${host}/variables.nix) cudaEnable;
@@ -50,9 +55,11 @@ let
     marp-cli
   ];
 
-in {
-  home.packages = basePackages
-    ++ (lib.optionals cudaEnable (with pkgs; [ cudatoolkit ]));
+in
+{
+  home.packages = basePackages ++ (lib.optionals cudaEnable (with pkgs; [ cudatoolkit ]));
 
-  home.sessionVariables = { FLAKE = "${host}"; };
+  home.sessionVariables = {
+    FLAKE = "${host}";
+  };
 }

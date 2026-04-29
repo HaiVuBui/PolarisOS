@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.ccache.enable = true;
   environment.systemPackages = with pkgs; [
     # --core--
@@ -25,4 +26,3 @@
     man-pages-posix
   ];
 }
-
