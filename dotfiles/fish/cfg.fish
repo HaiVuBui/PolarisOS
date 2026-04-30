@@ -20,6 +20,7 @@ if status is-interactive
     abbr --add csync 'cd ~/PolarisOS && bash ~/PolarisOS/scripts/sync.sh'
     abbr --add _ sudo
     abbr --add clean 'bash ~/.config/scripts/clean.sh'
+    abbr --add ytm 'bash ~/.config/scripts/yt-music.sh'
     
     # Eza (List)
     abbr --add l 'eza -lh --icons=always'
