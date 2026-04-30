@@ -1,0 +1,108 @@
+# vim: ft=dosini
+#
+# aerc rosepine-dawn styleset
+#
+
+*.default=true
+*.normal=true
+
+# Base
+*.fg=#575279
+*.bg=#faf4ed
+
+# Titles and borders
+border.fg=#cecacd
+border.bold=false
+
+# Header/title bars
+header.fg=#286983
+header.bold=true
+
+title.bg=#f2e9e1
+title.fg=#575279
+title.bold=true
+
+# Tabs
+tab.selected.bg=#dfdad9
+tab.selected.fg=#575279
+tab.selected.bold=true
+
+# Status line
+statusline_default.bg=#f2e9e1
+statusline_default.fg=#575279
+statusline_error.fg=#b4637a
+statusline_warning.fg=#ea9d34
+statusline_success.fg=#56949f
+
+# Alerts
+*error.bold=true
+*error.fg=#b4637a
+*warning.fg=#ea9d34
+*success.fg=#56949f
+
+# Selection
+*.selected.bg=#dfdad9
+*.selected.fg=#575279
+
+# Directory list
+dirlist*.selected.bg=#dfdad9
+dirlist*.selected.fg=#575279
+dirlist_unread.fg=#286983
+dirlist_recent.fg=#d7827e
+
+# Message list
+msglist_unread.fg=#286983
+msglist_unread.bold=true
+msglist_deleted.fg=#9893a5
+msglist_result.bg=#f2e9e1
+msglist_flagged.fg=#d7827e
+msglist_flagged.bold=true
+msglist_marked.bg=#dfdad9
+msglist_marked.fg=#575279
+msglist_marked.selected.bg=#cecacd
+msglist_marked.selected.fg=#575279
+msglist_pill.reverse=true
+
+# Parts list
+part_*.fg=#575279
+part_mimetype.fg=#797593
+part_*.selected.fg=#575279
+part_*.selected.bg=#dfdad9
+part_filename.selected.bold=true
+
+# Selector and completion
+selector_focused.bg=#dfdad9
+selector_focused.fg=#575279
+selector_chooser.bg=#dfdad9
+selector_chooser.fg=#575279
+selector_chooser.bold=true
+
+completion_default.selected.bg=#dfdad9
+completion_default.selected.fg=#575279
+completion_description.fg=#9893a5
+completion_description.dim=true
+completion_pill.reverse=true
+
+[viewer]
+*.default=true
+*.normal=true
+url.underline=true
+url.fg=#286983
+header.bold=true
+header.fg=#286983
+signature.dim=true
+signature.fg=#797593
+
+diff_meta.bold=true
+diff_chunk.dim=true
+diff_add.fg=#56949f
+diff_del.fg=#b4637a
+
+quote_1.fg=#286983
+quote_2.fg=#56949f
+quote_3.fg=#ea9d34
+quote_4.fg=#907aa9
+quote_x.fg=#9893a5
+quote_*.dim=true
+quote_1.dim=false
+quote_2.dim=false
