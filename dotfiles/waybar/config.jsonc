@@ -152,6 +152,7 @@
             "m": 30 // medium
         },
         "interval": 10,
+        "unit": "GB",
         "format": "<span font_desc='Symbols Nerd Font 12'>󰾆</span> {used}GB",
         "format-m": "<span font_desc='Symbols Nerd Font 12'>󰾅</span> {used}GB",
         "format-h": "<span font_desc='Symbols Nerd Font 12'>󰓅</span> {used}GB",
