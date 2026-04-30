@@ -1,6 +1,7 @@
 {
   inputs,
   host,
+  lib,
   ...
 }:
 let
@@ -37,5 +38,8 @@ in
     ./zram.nix
     ./xdg.nix
     ./systemEnv.nix
+  ]
+  ++ lib.optionals (vars.gamingEnable or false) [
+    ./gaming.nix
   ];
 }

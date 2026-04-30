@@ -1,4 +1,7 @@
-{ host, ... }:
+{ host, lib, ... }:
+let
+  vars = import ../../hosts/${host}/variables.nix;
+in
 {
   imports = [
     # ./zsh.nix
@@ -6,7 +9,6 @@
     ./vscode.nix
     ./git.nix
     # ./pixi.nix
-    # ./gaming.nix
     ./applications.nix
     ./mpd.nix
     ./stylix.nix
@@ -20,5 +22,8 @@
     # ./yazi.nix
     ./vdirsyncer.nix
     ./niri.nix
+  ]
+  ++ lib.optionals (vars.gamingEnable or false) [
+    ./gaming.nix
   ];
 }
