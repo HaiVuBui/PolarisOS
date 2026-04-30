@@ -2,12 +2,13 @@
 
 let
   src = pkgs.fetchFromGitHub {
-    owner = "snes19xx";
+    owner = "HaiVuBui";
     repo = "EverCal";
-    rev = "faecbf5";
-    sha256 = "sha256-gXbv6Vq954TBKAnzygzfNBfuFuRqWdX/jDa+PJOjG1s";
+    rev = "e97c903";
+    sha256 = "sha256-J/VaBZGWa5aLg1ObFtgLJNVk1wiAgJ0Mj1JMgL+n4Is";
   };
-in pkgs.flutter.buildFlutterApplication rec {
+in
+pkgs.flutter.buildFlutterApplication rec {
   pname = "evercal";
   version = "1.0.0";
 
