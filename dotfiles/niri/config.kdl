@@ -327,7 +327,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    slowdown 1.25
+    slowdown 1
 
     // Smooth preset (examples — leave commented if unsupported by your Niri version)
     // The keys below are available in newer Niri releases. If your version supports
