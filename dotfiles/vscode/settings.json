@@ -20,6 +20,12 @@
         "**/.direnv": true
     },
     "extensions.ignoreRecommendations": true, // no extension recommendation
+    "telemetry.telemetryLevel": "off", // disable telemetry
+    "update.mode": "none", // disable editor update checks
+    "update.showReleaseNotes": false, // no release notes popups
+    "extensions.autoCheckUpdates": false, // disable extension update checks
+    "extensions.autoUpdate": false, // disable extension auto-updates
+    "workbench.enableExperiments": false, // disable experiments
     "vscode-neovim.neovimClean": true, // stop nvim verbose
     "diffEditor.hideUnchangedRegions.enabled": true,
     "editor.minimap.enabled": false, // hide minimap in scroll bar
