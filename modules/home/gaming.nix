@@ -3,23 +3,22 @@
   # User-level gaming tooling and defaults.
   # - Lutris for non-Steam titles
   # - Wine (staging, 32/64-bit), Winetricks
-  # - Proton management helpers
+  # - Proton/Wine launch helpers
   # - MangoHud config
 
   home.packages = with pkgs; [
     lutris
     wineWow64Packages.staging
     winetricks
-    protontricks
     protonup-qt
+    umu-launcher
     mangohud
+    cabextract
     yad
     zenity
   ];
 
-  # Make it easy for Steam to discover custom Proton builds (via ProtonUp-Qt).
   home.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "${config.home.homeDirectory}/.local/share/Steam/compatibilitytools.d";
     # Help Lutris web features if Python/requests has trouble finding certs
     SSL_CERT_FILE = "/etc/ssl/certs/ca-bundle.crt";
     SSL_CERT_DIR = "/etc/ssl/certs";
