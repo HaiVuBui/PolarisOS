@@ -34,6 +34,7 @@
     # wlogout
     kdePackages.dolphin
     (pkgs.callPackage ./packages/evercal.nix { inherit pkgs; }) # calendar
+    nautilus
 
     # terminal ricing
     kitty
@@ -94,6 +95,7 @@
     khal
     aerc
     magic-wormhole
+    gh
   ];
   # ++ (with pkgs-unstable; [ ]);
 }
