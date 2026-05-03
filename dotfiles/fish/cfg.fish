@@ -1,4 +1,4 @@
-set -g fish_greeting 
+set -g fish_greeting
 
 # NPM/Node.js global bins (prefer configured prefix; add only if existing)
 if not set -q NPM_CONFIG_PREFIX
@@ -13,7 +13,7 @@ fish_add_path "$HOME/.local/bin"
 
 if status is-interactive
     # --- ALIASES (Converted to Abbreviations) ---
-    
+
     # General
     abbr --add .. 'cd ..'
     abbr --add mkdir 'mkdir -p'
@@ -21,14 +21,14 @@ if status is-interactive
     abbr --add _ sudo
     abbr --add clean 'bash ~/.config/scripts/clean.sh'
     abbr --add ytm 'bash ~/.config/scripts/yt-music.sh'
-    
+
     # Eza (List)
     abbr --add l 'eza -lh --icons=always'
     abbr --add ls 'eza -1 --icons=always'
     abbr --add ll 'eza -lha --icons=always --sort=name --group-directories-first'
     abbr --add ld 'eza -lhD --icons=always'
     abbr --add lt 'eza --icons=always --tree'
-    
+
     # Tools
     abbr --add nz "zeditor ~/GrandArchive/"
     abbr --add y yazi
@@ -39,16 +39,16 @@ if status is-interactive
     abbr --add n nvim
     abbr --add rs rsync
     abbr --add c clear
-    abbr --add st systemctl-tui
+    abbr --add stl systemctl-tui
     abbr --add zed zeditor
-    
+
     # Git
     abbr --add ga 'git add'
     abbr --add gc 'git commit'
     abbr --add gs 'git status -s'
     abbr --add gl 'git log'
     abbr --add gp 'git push'
-    
+
     # Navigation & Nix
     abbr --add os 'cd ~/PolarisOS'
     abbr --add ws 'cd ~/Workspace'
@@ -59,7 +59,7 @@ if status is-interactive
 
     # --- COMPLEX ALIASES ---
     # In Fish, "&&" becomes "; and", "$()" becomes "()"
-    
+
     function notesync
         cd ~/GrandArchive
         and git add .
@@ -71,7 +71,7 @@ if status is-interactive
 
     # Note Function
     function note
-        set -l session "Notes"
+        set -l session Notes
         set -l dir "$HOME/GrandArchive"
 
         if tmux has-session -t "$session" 2>/dev/null
@@ -98,9 +98,9 @@ if status is-interactive
         if test -z "$base"
             set base $HOME
         end
-        
+
         set -l pick (fd -t d -H . "$base" | fzf --height=40% --reverse --prompt='cd → ' --preview 'ls -la {} | head -200')
-        
+
         if test -n "$pick"
             cd "$pick"
         end
@@ -114,7 +114,7 @@ if status is-interactive
         end
 
         set -l pick (fd -t f -H . "$base" | fzf --height=40% --reverse --prompt='open → ' --preview 'bat --style=plain --color=always --line-range=:200 {} 2>/dev/null || head -200 {}')
-        
+
         if test -n "$pick"
             # Use standard EDITOR var or default to nvim
             eval $EDITOR $pick 2>/dev/null; or nvim "$pick"
@@ -129,7 +129,7 @@ if status is-interactive
         end
 
         set -l pick (fd -t f -H . "$base" | fzf --height=40% --reverse --prompt='find → ' --preview 'bat --style=plain --color=always --line-range=:200 {} 2>/dev/null || head -200 {}')
-        
+
         if test -n "$pick"
             echo "$pick"
         end
