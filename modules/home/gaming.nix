@@ -1,50 +1,42 @@
 { pkgs, config, ... }:
 {
-  # User-level gaming tooling and defaults.
-  # - Lutris for non-Steam titles
-  # - Wine (staging, 32/64-bit), Winetricks
-  # - Proton/Wine launch helpers
-  # - MangoHud config
-
   home.packages = with pkgs; [
     lutris
-    wineWow64Packages.staging
+    bottles
+    heroic
+    wineWow64Packages.stagingFull
     winetricks
+    protontricks
     protonup-qt
     umu-launcher
     mangohud
-    cabextract
-    yad
-    zenity
+    goverlay
   ];
 
   home.sessionVariables = {
-    # Help Lutris web features if Python/requests has trouble finding certs
-    SSL_CERT_FILE = "/etc/ssl/certs/ca-bundle.crt";
-    SSL_CERT_DIR = "/etc/ssl/certs";
-    # Sensible defaults for Wine/DXVK
     WINEDEBUG = "-all";
+    WINEESYNC = "1";
+    WINEFSYNC = "1";
     DXVK_LOG_LEVEL = "none";
+    MESA_SHADER_CACHE_MAX_SIZE = "12G";
     __GL_SHADER_DISK_CACHE = "1";
+    __GL_SHADER_DISK_CACHE_SIZE = "10737418240";
     __GL_SHADER_DISK_CACHE_PATH = "${config.xdg.cacheHome}/nv-shaders";
   };
 
-  xdg.configFile."MangoHud/MangoHud.conf".text = ''
-    # Basic MangoHud overlay suitable for troubleshooting/perf checks.
-    fps
-    frametime
-    cpu_stats
-    gpu_stats
-    vram
-    ram
-    io_read
-    io_write
-    engine_version
-    gpu_temp
-    cpu_temp
-    time
-    cpu_power
-    gpu_power
-    font_size=18
-  '';
+  programs.mangohud = {
+    enable = true;
+    settings = {
+      fps = true;
+      cpu_stats = true;
+      gpu_stats = true;
+      vram = true;
+      ram = true;
+      frametime = true;
+      frame_timing = true;
+      engine_version = true;
+      fps_limit = "0,60,120,144";
+      toggle_fps_limit = "Shift_R+F1";
+    };
+  };
 }
