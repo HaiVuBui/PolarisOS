@@ -10,6 +10,11 @@
     type = calendar
     readonly = true
 
+  [[local]]
+    path = ~/.calendars/local/
+    type = calendar
+    readonly = false
+
 [locale]
 timeformat = %H:%M
 dateformat = %Y-%m-%d
