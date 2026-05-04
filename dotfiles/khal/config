@@ -1,8 +1,14 @@
 [calendars]
 
-[[private]]
-path = ~/.calendars
-type = calendar
+  [[google]]
+    path = ~/.calendars/google/
+    type = calendar
+    readonly = true
+
+  [[outlook]]
+    path = ~/.calendars/outlook/
+    type = calendar
+    readonly = true
 
 [locale]
 timeformat = %H:%M
@@ -10,6 +16,5 @@ dateformat = %Y-%m-%d
 longdateformat = %Y-%m-%d
 datetimeformat = %Y-%m-%d %H:%M
 longdatetimeformat = %Y-%m-%d %H:%M
-
-[default]
-default_calendar = private
+local_timezone = Asia/Ho_Chi_Minh
+default_timezone = Asia/Ho_Chi_Minh
