@@ -1,11 +1,8 @@
-{ pkgs, inputs, ... }:
-let
-  niriBlurPackage = inputs.niri-flake-wip.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable;
-in
+{ pkgs, ... }:
 {
   # Install Niri and related Wayland utilities
   home.packages = with pkgs; [
-    niriBlurPackage
+    niri
     waybar
     udiskie
     xwayland-satellite
