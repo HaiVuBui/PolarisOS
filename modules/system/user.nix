@@ -34,6 +34,7 @@ in
     extraGroups = [
       "adbusers"
       "docker" # access to docker as non-root
+      "gamemode" # allow GameMode priority optimizations
       "libvirtd" # Virt manager/QEMU access
       "lp"
       "networkmanager"

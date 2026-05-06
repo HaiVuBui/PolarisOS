@@ -20,6 +20,7 @@
       "rd.systemd.show_status=auto"
       "systemd.show_status=false"
       "udev.log_priority=0"
+      "workqueue.power_efficient=0"
     ];
 
     consoleLogLevel = 3;

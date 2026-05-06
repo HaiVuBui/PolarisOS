@@ -20,12 +20,14 @@
     enable = true;
     settings = {
       general = {
+        desiredgov = "performance";
         renice = 10;
         softrealtime = "auto";
       };
-      cpu.desiredgov = "performance";
     };
   };
+
+  services.irqbalance.enable = true;
 
   programs.gamescope = {
     enable = true;
@@ -42,5 +44,6 @@
 
   boot.kernel.sysctl = {
     "vm.max_map_count" = 2147483642;
+    "net.core.default_qdisc" = "fq";
   };
 }
