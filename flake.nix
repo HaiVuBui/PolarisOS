@@ -37,6 +37,14 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [
+          (final: prev:
+            lib.optionalAttrs prev.stdenv.hostPlatform.isi686 {
+              openldap = prev.openldap.overrideAttrs (_: {
+                doCheck = false;
+              });
+            })
+        ];
       };
       # pkgs-unstable = import nixpkgs-unstable {
       #   inherit system;
