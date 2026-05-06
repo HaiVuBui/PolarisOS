@@ -26,4 +26,5 @@
   fileSystems."/".options = lib.mkForce [ "subvol=root" "compress=zstd" ];
   fileSystems."/home".options = lib.mkForce [ "subvol=home" "compress=zstd" ];
   fileSystems."/nix".options = lib.mkForce [ "subvol=nix" "compress=zstd" "noatime" ];
+  fileSystems."/nix".neededForBoot = true;
 }

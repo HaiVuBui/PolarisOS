@@ -3,6 +3,7 @@
 {
   boot = {
     kernelPackages = pkgs.linuxPackages;
+    initrd.systemd.enable = false;
 
     loader.systemd-boot = {
       enable = true;
