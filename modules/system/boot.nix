@@ -1,8 +1,13 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages;
+    kernelPackages = pkgs.linuxPackages_latest;
     initrd.systemd.enable = false;
 
     loader.systemd-boot = {
@@ -27,7 +32,7 @@
   };
 
   # --- THE "BIOS BYPASS" MAGIC ---
-  # This script runs every time you rebuild. 
+  # This script runs every time you rebuild.
   # It forces the EFI Shell binary into your boot partition.
   system.activationScripts.installEfiShell = {
     text = ''
