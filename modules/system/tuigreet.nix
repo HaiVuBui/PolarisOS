@@ -1,17 +1,17 @@
-{ pkgs
-, username
-, ...
-}: {
+{
+  pkgs,
+  username,
+  ...
+}:
+{
   services.greetd = {
     enable = true;
-    settings = {
-      default_session = {
-        user = username;
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session"; # start Hyprland with a TUI login manager
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.niri}/bin/niri-session";
+        user = "hai";
       };
+      default_session = initial_session;
     };
   };
 }
-
-
-
