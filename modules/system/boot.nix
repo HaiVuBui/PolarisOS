@@ -8,12 +8,24 @@
 {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    initrd.systemd.enable = false;
+    initrd = {
+      systemd.enable = true;
+      supportedFilesystems = [ "btrfs" ];
+      systemd.emergencyAccess = true;
+      availableKernelModules = [
+        "nvme"
+        "xhci_pci"
+        "ahci"
+        "usb_storage"
+        "sd_mod"
+        "btrfs"
+      ];
+    };
 
     loader.systemd-boot = {
       enable = true;
-      editor = true;
     };
+    kernelParams = [ "rd.systemd.debug_shell=1" ];
 
   };
 }
