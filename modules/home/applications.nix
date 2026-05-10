@@ -74,6 +74,8 @@
     pandoc
     markdown-oxide
     wl-clipboard-x11
+    wf-recorder
+    slurp
 
     # cli/tui tools
     comma
