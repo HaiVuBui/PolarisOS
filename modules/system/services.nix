@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   # Services to start
   services = {
@@ -14,6 +14,7 @@
     gnome.gnome-keyring.enable = true;
     upower.enable = true; # Power management (required for DMS battery monitoring)
     usbmuxd.enable = true;
+    cloudflare-warp.enable = true;
 
     smartd = {
       enable = true;
@@ -27,4 +28,5 @@
       wireplumber.enable = true; # Enable WirePlumber session manager
     };
   };
+  environment.systemPackages = with pkgs; [ cloudflare-warp ];
 }
