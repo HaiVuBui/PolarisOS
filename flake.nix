@@ -14,14 +14,7 @@
     };
     stylix.url = "github:danth/stylix";
     nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
-    # zen-browser = {
-    #   url = "github:0xc000022070/zen-browser-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs"; # keep in sync
-    # };
-    # firefox-addons = { # Add-on pkgs
-    #   url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    niri-scratchpad.url = "github:argosnothing/niri-scratchpad-rs";
   };
 
   outputs =
@@ -34,18 +27,16 @@
         inherit system;
         config.allowUnfree = true;
         overlays = [
-          (final: prev:
+          (
+            final: prev:
             lib.optionalAttrs prev.stdenv.hostPlatform.isi686 {
               openldap = prev.openldap.overrideAttrs (_: {
                 doCheck = false;
               });
-            })
+            }
+          )
         ];
       };
-      # pkgs-unstable = import nixpkgs-unstable {
-      #   inherit system;
-      #   config.allowUnfree = true;
-      # };
 
       mkNixosConfig =
         { host }:

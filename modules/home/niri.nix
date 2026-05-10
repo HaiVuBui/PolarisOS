@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   # Install Niri and related Wayland utilities
   home.packages = with pkgs; [
@@ -7,6 +7,7 @@
     udiskie
     xwayland-satellite
     awww
+    inputs.niri-scratchpad.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   # Portal config
