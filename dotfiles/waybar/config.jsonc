@@ -28,10 +28,30 @@
         "format": "<span font_desc='Symbols Nerd Font 12'></span>  {}"
     },
 
-    "niri/workspaces": {
+    // "niri/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "on-click": "activate"
+    // },
+
+  "niri/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "on-click": "activate"
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "stash": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "default": ""
+        }
     },
 
     "tray": {
