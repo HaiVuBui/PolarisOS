@@ -8,6 +8,8 @@
     teams-for-linux
     zed-editor
     qbittorrent
+    zathura
+    sioyek
 
     # system
     cliphist # clipboard history
