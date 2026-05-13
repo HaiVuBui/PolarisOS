@@ -37,6 +37,14 @@
 
   };
 
+  # default pdf viewer
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "application/pdf" = [ "sioyek.desktop" ];
+    };
+  };
+
   # Enable XWayland satellite for X11 app support
   systemd.user.services.xwayland-satellite = {
     Unit = {
