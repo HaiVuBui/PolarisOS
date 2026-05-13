@@ -10,6 +10,7 @@
     qbittorrent
     zathura
     sioyek
+    foliate
 
     # system
     cliphist # clipboard history
@@ -100,6 +101,7 @@
     aerc
     magic-wormhole
     gh
+    calibre
   ];
   # ++ (with pkgs-unstable; [ ]);
 }
