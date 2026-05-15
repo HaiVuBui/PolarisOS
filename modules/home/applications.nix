@@ -57,6 +57,7 @@
     gemini-cli
     opencode
     codeium
+    claude-code
 
     #dependencies
     ffmpeg
