@@ -9,7 +9,15 @@
     zed-editor
     qbittorrent
     zathura
-    sioyek
+    (pkgs.symlinkJoin {
+      name = "sioyek";
+      paths = [ pkgs.sioyek ];
+      nativeBuildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/sioyek \
+          --set QT_QPA_PLATFORM xcb
+      '';
+    })
     foliate
 
     # system
