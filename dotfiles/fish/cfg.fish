@@ -121,6 +121,8 @@ if status is-interactive
         end
     end
 
+    abbr --add paper cpaper
+
     # Fuzzy Find (ff)
     function ff
         set -l base $argv[1]
@@ -133,6 +135,17 @@ if status is-interactive
         if test -n "$pick"
             echo "$pick"
         end
+    end
+
+    function cpaper
+        set -l latest (ls -t ~/Documents/Papers/ | head -1)
+        if test -z "$latest"
+            echo "No files found in ~/Documents/Papers/"
+            return 1
+        end
+        set -l full_path "$HOME/Documents/Papers/$latest"
+        echo -n "$full_path" | wl-copy
+        echo "Copied: $full_path"
     end
 
 end
