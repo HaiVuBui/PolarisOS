@@ -1,0 +1,9 @@
+{
+  "model": "opusplan",
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/hai/.claude/statusline-command.sh"
+  },
+  "effortLevel": "high",
+  "theme": "light-ansi"
+}

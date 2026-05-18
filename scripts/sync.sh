@@ -55,6 +55,8 @@ rsync -aq "$DOTFILES_DIR/opencode/opencode.jsonc" "$CONFIG_DIR/opencode/opencode
 mkdir -p "$CONFIG_DIR/opencode/skills"
 rsync -aq --delete "$DOTFILES_DIR/opencode/skills/" "$CONFIG_DIR/opencode/skills/"
 rsync -aq --delete "$DOTFILES_DIR/claude/skills/" "$HOME/.claude/skills/"
+rsync -aq "$DOTFILES_DIR/claude/settings.json" "$HOME/.claude/settings.json"
+rsync -aq "$DOTFILES_DIR/claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
 
 # ---------------------------------------------------------
 # 3. VS Code + Zed Settings
