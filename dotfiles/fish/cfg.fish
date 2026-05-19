@@ -64,7 +64,8 @@ if status is-interactive
         cd ~/GrandArchive
         and git add .
         and git commit -m (date)
-        and git push origin main --force-with-lease
+        and git merge origin/main
+        and git push origin main
     end
 
     # --- FUNCTIONS ---
