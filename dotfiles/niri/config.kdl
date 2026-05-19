@@ -482,7 +482,8 @@ binds {
 
     // Mod+P { spawn-sh "/home/hai/.nix-profile/bin/caelestia shell drawers toggle launcher";}
     Mod+Shift+b { spawn "helium";}
-    Mod+Shift+c { spawn "kitty" "-e" "nvim"; }
+    // Mod+Shift+c { spawn "kitty" "-e" "nvim"; }
+    Mod+Shift+c { spawn "zeditor"; }
 
 
     Mod+Backspace hotkey-overlay-title="Exit menu" { spawn-sh "bash /home/hai/.config/scripts/logout.sh"; }
