@@ -19,15 +19,8 @@
       "host": "air3090",
       "username": "hai",
       "args": [],
-      "projects": [
-        {
-          "paths": ["/home/hai/Workspace"],
-        },
-        {
-          "paths": ["/home/hai/Workspace/HaiSpace/codes/omni_control"],
-        },
-      ],
-    },
+      "projects": []
+    }
   ],
   "icon_theme": {
     "mode": "light",
