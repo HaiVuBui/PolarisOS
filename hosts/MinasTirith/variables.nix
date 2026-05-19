@@ -10,4 +10,5 @@
   cudaEnable = true;
   gamingEnable = true;
   jellyfinEnable = true;
+  vaultwardenEnable = true;
 }
