@@ -11,4 +11,5 @@
   gamingEnable = true;
   jellyfinEnable = true;
   vaultwardenEnable = true;
+  floccusEnable = true;
 }

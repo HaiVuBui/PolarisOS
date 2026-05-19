@@ -11,4 +11,5 @@
   cudaEnable = false;
   gamingEnable = false;
   jellyfinEnable = false;
+  floccusEnable = false;
 }

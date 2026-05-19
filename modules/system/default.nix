@@ -25,6 +25,7 @@ in
     ./services.nix
     ./tailscale.nix
     ./vaultwarden.nix
+    ./floccus.nix
     ./stylix.nix
     inputs.stylix.nixosModules.stylix
     ./system.nix
