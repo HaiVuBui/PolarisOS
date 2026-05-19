@@ -35,7 +35,7 @@ if status is-interactive
     abbr --add m rmpc
     abbr --add lzg lazygit
     abbr --add lzd lazydocker
-    abbr --add chat opencode
+    abbr --add chat claude
     abbr --add n nvim
     abbr --add rs rsync
     abbr --add c clear

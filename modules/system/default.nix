@@ -24,6 +24,7 @@ in
     ./security.nix
     ./services.nix
     ./tailscale.nix
+    ./vaultwarden.nix
     ./stylix.nix
     inputs.stylix.nixosModules.stylix
     ./system.nix
