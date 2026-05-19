@@ -481,7 +481,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Mod+P { spawn-sh "/home/hai/.nix-profile/bin/caelestia shell drawers toggle launcher";}
-    Mod+Shift+b { spawn "brave";}
+    Mod+Shift+b { spawn "helium";}
     Mod+Shift+c { spawn "kitty" "-e" "nvim"; }
 
 
