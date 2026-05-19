@@ -420,6 +420,16 @@ window-rule {
 }
 
 window-rule {
+    match app-id="helium"  
+    opacity 0.99
+    border {
+        off
+    }
+    geometry-corner-radius 5
+    clip-to-geometry true
+}
+
+window-rule {
     draw-border-with-background false
 }
 
