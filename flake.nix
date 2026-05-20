@@ -15,6 +15,10 @@
     stylix.url = "github:danth/stylix";
     nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
     niri-scratchpad.url = "github:argosnothing/niri-scratchpad-rs";
+    fcitx5-lotus = {
+      url = "github:LotusInputMethod/fcitx5-lotus";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -47,6 +51,7 @@
           modules = [
             ./hosts/${host}
             nix-flatpak.nixosModules.nix-flatpak
+            inputs.fcitx5-lotus.nixosModules.fcitx5-lotus
           ];
         };
 
