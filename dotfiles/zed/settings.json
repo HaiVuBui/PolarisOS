@@ -20,6 +20,22 @@
       "username": "hai",
       "args": [],
       "projects": []
+    },
+    {
+      "host": "MinasTirith",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/hai/Workspace/HaiSpace/codes/omni_control"
+          ]
+        },
+        {
+          "paths": [
+            "/home/hai/Workspace/trading/./"
+          ]
+        }
+      ]
     }
   ],
   "icon_theme": {
