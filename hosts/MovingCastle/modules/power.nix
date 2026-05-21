@@ -19,15 +19,6 @@
       PLATFORM_PROFILE_ON_AC = "performance";
       PLATFORM_PROFILE_ON_BAT = "balanced";
 
-      DISK_IDLE_SECS_ON_AC = 0;
-      DISK_IDLE_SECS_ON_BAT = 2;
-      DISK_APM_LEVEL_ON_AC = "255 255";
-      DISK_APM_LEVEL_ON_BAT = "128 128";
-      SATA_LINKPWR_ON_AC = "max_performance";
-      SATA_LINKPWR_ON_BAT = "med_power_with_dipm";
-      AHCI_RUNTIME_PM_ON_AC = "off";
-      AHCI_RUNTIME_PM_ON_BAT = "auto";
-
       PCIE_ASPM_ON_AC = "performance";
       PCIE_ASPM_ON_BAT = "powersupersave";
       RUNTIME_PM_ON_AC = "off";
