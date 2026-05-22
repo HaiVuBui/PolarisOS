@@ -33,6 +33,7 @@ APPS=(
   "btop"
   "yazi"
   "sioyek"
+  "zathura"
 )
 
 echo ">>> Syncing Config Apps..."
