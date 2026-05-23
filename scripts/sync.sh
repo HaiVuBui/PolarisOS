@@ -58,6 +58,8 @@ rsync -aq --delete "$DOTFILES_DIR/opencode/skills/" "$CONFIG_DIR/opencode/skills
 rsync -aq --delete "$DOTFILES_DIR/claude/skills/" "$HOME/.claude/skills/"
 rsync -aq "$DOTFILES_DIR/claude/settings.json" "$HOME/.claude/settings.json"
 rsync -aq "$DOTFILES_DIR/claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
+tmp=$(mktemp)
+jq --slurpfile mcp "$DOTFILES_DIR/claude/mcp-servers.json" '.mcpServers = $mcp[0]' "$HOME/.claude.json" > "$tmp" && mv "$tmp" "$HOME/.claude.json"
 
 # ---------------------------------------------------------
 # 3. VS Code + Zed Settings
