@@ -9,7 +9,6 @@
     # Web GUI will be available at http://127.0.0.1:8384/
     guiAddress = "127.0.0.1:8384";
 
-    # Sync traffic is opened explicitly by the firewall module so the GUI stays local.
     openDefaultPorts = false;
   };
 
