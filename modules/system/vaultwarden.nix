@@ -1,10 +1,13 @@
 {
   host,
   lib,
+  pkgs,
   ...
 }:
 let
   inherit (import ../../hosts/${host}/variables.nix) vaultwardenEnable;
+  tailscale = "${pkgs.tailscale}/bin/tailscale";
+  waitForTailscale = "${pkgs.bash}/bin/bash -c 'for i in {1..30}; do ${tailscale} status --self=true --peers=false >/dev/null 2>&1 && exit 0; sleep 1; done; exit 1'";
 in
 lib.mkIf vaultwardenEnable {
   services.vaultwarden = {
@@ -23,12 +26,14 @@ lib.mkIf vaultwardenEnable {
   systemd.services.vaultwarden-serve = {
     description = "Expose Vaultwarden via Tailscale Serve HTTPS";
     after = [ "tailscaled.service" "vaultwarden.service" ];
-    wants = [ "tailscaled.service" ];
+    requires = [ "tailscaled.service" ];
+    bindsTo = [ "vaultwarden.service" ];
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
-      ExecStart = "/run/current-system/sw/bin/tailscale serve --bg --https=443 http://127.0.0.1:8222";
+      ExecStartPre = waitForTailscale;
+      ExecStart = "${tailscale} serve --bg --https=443 http://127.0.0.1:8222";
     };
   };
 }

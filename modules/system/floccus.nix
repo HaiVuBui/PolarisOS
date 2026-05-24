@@ -7,6 +7,8 @@
 }:
 let
   inherit (import ../../hosts/${host}/variables.nix) floccusEnable;
+  tailscale = "${pkgs.tailscale}/bin/tailscale";
+  waitForTailscale = "${pkgs.bash}/bin/bash -c 'for i in {1..30}; do ${tailscale} status --self=true --peers=false >/dev/null 2>&1 && exit 0; sleep 1; done; exit 1'";
 in
 lib.mkIf floccusEnable {
   systemd.services.floccus-webdav = {
@@ -31,14 +33,14 @@ lib.mkIf floccusEnable {
       "tailscaled.service"
       "floccus-webdav.service"
     ];
-    wants = [ "tailscaled.service" ];
     requires = [ "tailscaled.service" ];
     bindsTo = [ "floccus-webdav.service" ];
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
-      ExecStart = "${pkgs.tailscale}/bin/tailscale serve --bg --https=443 --set-path=/floccus http://127.0.0.1:8333";
+      ExecStartPre = waitForTailscale;
+      ExecStart = "${tailscale} serve --bg --https=443 --set-path=/floccus http://127.0.0.1:8333";
     };
   };
 }
