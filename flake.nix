@@ -19,10 +19,14 @@
       url = "github:LotusInputMethod/fcitx5-lotus";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { nixpkgs, nix-flatpak, ... }@inputs:
+    { nixpkgs, nix-flatpak, nix-gaming, ... }@inputs:
     let
       system = "x86_64-linux";
       username = "hai";
@@ -52,6 +56,7 @@
             ./hosts/${host}
             nix-flatpak.nixosModules.nix-flatpak
             inputs.fcitx5-lotus.nixosModules.fcitx5-lotus
+            nix-gaming.nixosModules.pipewireLowLatency
           ];
         };
 

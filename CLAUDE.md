@@ -50,6 +50,35 @@ Modules under `modules/system/` and `modules/home/` are opt-in via imports in `h
 
 `scripts/sync.sh` uses `rsync` to copy from `dotfiles/` to `~/.config/`. Mutable configs (e.g., `~/.config/fish/cfg.fish`) can be edited live without rebuilding. The nvim config is a git submodule (`git@github.com:HaiVuBui/nvim.git`).
 
+### Lutris / gaming configs
+
+Lutris game YAMLs (`~/.local/share/lutris/games/*.yml`) are **not synced** — Lutris writes them live on every settings change. Do not add them to `scripts/sync.sh`.
+
+The PoE entry is `~/.local/share/lutris/games/poe-*.yml`. Key settings to preserve if recreating:
+
+```yaml
+system:
+  env:
+    DXVK_LOG_LEVEL: none
+    WINEDEBUG: -all
+    WINEESYNC: '0'
+    WINEFSYNC: '0'
+    WINENTSYNC: '1'              # ntsync — kernel 6.14+ required
+    __GL_MaxFramesAllowed: '1'   # NVIDIA 1-frame queue, reduces input lag
+    STAGING_SHARED_MEMORY: '1'
+    STAGING_WRITECOPY: '1'
+    MANGOHUD: '1'
+    MANGOHUD_DLSYM: '1'
+    DXVK_GPLASYNC_CACHE_PATH: /home/hai/.cache/dxvk-gplasync
+  gamemode: true
+wine:
+  esync: false
+  fsync: false
+  version: wine-ge-8-26-x86_64
+```
+
+In-game graphics settings: Renderer=Vulkan, Engine Multithreading=On, Dynamic Culling=On, Shadow Quality=Low, Texture Quality=High (not Ultra), VSync=Off.
+
 ### Key inputs
 
 - `nixpkgs` (unstable) — primary package source

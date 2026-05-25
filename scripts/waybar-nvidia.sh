@@ -23,14 +23,13 @@ fi
 
 case "${mode}" in
   util_temp)
-    read -r util temp < <(LC_ALL=C nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,noheader,nounits | head -n 1 | tr -d '\r' | tr -d ',')
-    if [ -z "${util}" ] || [ -z "${temp}" ]; then
+    read -r util < <(LC_ALL=C nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | head -n 1 | tr -d '\r')
+    if [ -z "${util}" ]; then
       echo "n/a"
       exit 0
     fi
     util="${util%.*}"
-    temp="${temp%.*}"
-    echo "${util}% ${temp}C"
+    echo "${util}%"
     ;;
   vram|*)
     read -r util mem_used mem_total < <(LC_ALL=C nvidia-smi --query-gpu=utilization.gpu,memory.used,memory.total --format=csv,noheader,nounits | head -n 1 | tr -d '\r' | tr -d ',')

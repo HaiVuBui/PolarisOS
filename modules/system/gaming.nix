@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   hardware.graphics = {
     enable = true;
@@ -24,6 +24,11 @@
         renice = 10;
         softrealtime = "auto";
       };
+      gpu = {
+        apply_gpu_optimisations = "accept-responsibility";
+        gpu_device = 0;
+        nv_powermizer_mode = 1;
+      };
     };
   };
 
@@ -34,16 +39,37 @@
     capSysNice = true;
   };
 
+  systemd.oomd = {
+    enable = true;
+    enableUserServices = true;
+  };
+
+  # NTSYNC — kernel-side Wine sync primitives, replaces esync/fsync
+  boot.kernelModules = [ "ntsync" ];
+
   environment.systemPackages = with pkgs; [
     gamescope
     libstrangle
     vulkan-tools
     dxvk
     vkd3d
+    mangohud
+    goverlay
+    lutris
+    winetricks
+    inputs.nix-gaming.packages.${pkgs.system}.wine-ge
   ];
 
   boot.kernel.sysctl = {
     "vm.max_map_count" = 2147483642;
     "net.core.default_qdisc" = "fq";
+    # Suppress kcompactd wakeups that cause micro-stutter in long sessions
+    "vm.compaction_proactiveness" = 0;
   };
+
+  security.pam.loginLimits = [
+    { domain = "*"; type = "soft"; item = "nofile"; value = "524288"; }
+    { domain = "*"; type = "hard"; item = "nofile"; value = "524288"; }
+  ];
+
 }
