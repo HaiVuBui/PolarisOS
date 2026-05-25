@@ -58,6 +58,7 @@ window#waybar {
 #clock,
 #custom-nixos,
 #custom-nvidia,
+#custom-temp,
 #battery,
 #pulseaudio,
 #network,
@@ -74,6 +75,7 @@ window#waybar {
 
 #tray {
     border-radius: 10px;
+    margin-left: 16px;
     margin-right: 10px;
 }
 
@@ -119,6 +121,11 @@ window#waybar {
 #custom-nvidia {
     color: @pine;
     border-radius: 0px;
+}
+
+#custom-temp {
+    border-radius: 10px;
+    margin-right: 5px;
 }
 
 #network {

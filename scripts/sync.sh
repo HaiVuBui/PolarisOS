@@ -34,6 +34,7 @@ APPS=(
   "yazi"
   "sioyek"
   "zathura"
+  "MangoHud"
 )
 
 echo ">>> Syncing Config Apps..."

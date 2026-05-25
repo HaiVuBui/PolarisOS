@@ -7,16 +7,16 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "custom/nixos",
         "clock",
-        "niri/workspaces"
+        "niri/workspaces",
+        "tray"
     ],
     "modules-center": ["niri/window"],
     "modules-right": [
-        "tray",
         "cpu",
         "custom/nvidia",
         "memory",
+        "custom/temp",
         "network",
         "battery",
         "pulseaudio",
@@ -59,18 +59,22 @@
         "spacing": 10
     },
 
-    "custom/nixos": {
-        "format": "<span font_desc='Symbols Nerd Font 12'></span>",
-        "tooltip": false
-    },
 
     "custom/nvidia": {
+        "exec-if": "command -v nvidia-smi",
         "exec": "bash /home/hai/PolarisOS/scripts/waybar-nvidia.sh",
         "interval": 10,
         "format": "<span font_desc='Symbols Nerd Font 12'>󰾲</span> {}",
         "tooltip": true,
         "tooltip-format": "GPU: {}",
         "on-click": "bash /home/hai/PolarisOS/scripts/waybar-nvidia.sh toggle"
+    },
+
+    "custom/temp": {
+        "exec": "bash /home/hai/PolarisOS/scripts/waybar-temp.sh",
+        "interval": 5,
+        "format": "<span font_desc='Symbols Nerd Font 12'>󰔏</span> {}",
+        "tooltip": false
     },
 
     "clock": {
@@ -166,19 +170,9 @@
     },
 
     "memory": {
-        "states": {
-            "c": 90, // critical
-            "h": 60, // high
-            "m": 30 // medium
-        },
         "interval": 10,
-        "unit": "GB",
-        "format": "<span font_desc='Symbols Nerd Font 12'>󰾆</span> {used}GB",
-        "format-m": "<span font_desc='Symbols Nerd Font 12'>󰾅</span> {used}GB",
-        "format-h": "<span font_desc='Symbols Nerd Font 12'>󰓅</span> {used}GB",
-        "format-c": "<span font_desc='Symbols Nerd Font 12'></span> {used}GB",
-        "format-alt": "<span font_desc='Symbols Nerd Font 12'>󰾆</span> {percentage}%",
-        "max-length": 10,
+        "format": "<span font_desc='Symbols Nerd Font 12'></span> {used}GB",
+        "format-alt": "<span font_desc='Symbols Nerd Font 12'></span> {percentage}%",
         "tooltip": true,
         "tooltip-format": "󰾆 RAM {percentage}%\n {used:0.1f} / {total:0.1f} GB"
     },
