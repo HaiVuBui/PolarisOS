@@ -5,5 +5,5 @@
     "command": "bash /home/hai/.claude/statusline-command.sh"
   },
   "effortLevel": "low",
-  "theme": "light-ansi"
+  "theme": "auto"
 }
