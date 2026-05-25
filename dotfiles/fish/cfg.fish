@@ -36,6 +36,7 @@ if status is-interactive
     abbr --add lzg lazygit
     abbr --add lzd lazydocker
     abbr --add chat claude
+    abbr --add s ssf
     abbr --add n nvim
     abbr --add rs rsync
     abbr --add c clear
@@ -135,6 +136,29 @@ if status is-interactive
 
         if test -n "$pick"
             echo "$pick"
+        end
+    end
+
+    # Fuzzy SSH (ssf)
+    function ssf
+        set -l cfg "$HOME/.ssh/config"
+        test -r "$cfg"; or begin; echo "No $cfg"; return 1; end
+
+        set -l entries (awk '
+            BEGIN{IGNORECASE=1}
+            /^[[:space:]]*Host[[:space:]]+/ {
+                if (host != "") print (user!="" ? user"@" : "") alias "\t" alias
+                alias=$2; host=$2; user=""
+            }
+            /^[[:space:]]*HostName[[:space:]]+/  { host=$2 }
+            /^[[:space:]]*User[[:space:]]+/      { user=$2 }
+            END { if (host != "") print (user!="" ? user"@" : "") alias "\t" alias }
+        ' "$cfg")
+
+        set -l pick (printf '%s\n' $entries | fzf --height=40% --reverse --prompt='ssh → ' --with-nth=1 --delimiter=\t)
+        if test -n "$pick"
+            set -l target (string split -f2 \t -- "$pick")
+            ssh "$target"
         end
     end
 

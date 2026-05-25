@@ -1,0 +1,15 @@
+Host MinasTirith
+    Hostname 100.80.171.91
+    User hai
+
+Host air3090
+    Hostname 100.67.77.92
+    User hai
+
+Host air3090
+    Hostname 100.67.77.92
+    User air
+
+Host air3070
+    Hostname 100.120.134.90
+    User air
