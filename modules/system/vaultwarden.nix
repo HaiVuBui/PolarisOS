@@ -17,7 +17,7 @@ lib.mkIf vaultwardenEnable {
     config = {
       ROCKET_ADDRESS = "127.0.0.1";
       ROCKET_PORT = 8222;
-      DOMAIN = "https://minastirith.tail364c4d.ts.net";
+      DOMAIN = "https://minastirith.tail364c4d.ts.net/vaultwarden";
       SIGNUPS_ALLOWED = false;
       WEBSOCKET_ENABLED = true;
     };
@@ -33,7 +33,7 @@ lib.mkIf vaultwardenEnable {
       Type = "oneshot";
       RemainAfterExit = true;
       ExecStartPre = waitForTailscale;
-      ExecStart = "${tailscale} serve --bg --https=443 http://127.0.0.1:8222";
+      ExecStart = "${tailscale} serve --bg --https=443 --set-path=/vaultwarden http://127.0.0.1:8222/vaultwarden";
     };
   };
 }
