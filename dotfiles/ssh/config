@@ -13,3 +13,8 @@ Host air3090
 Host air3070
     Hostname 100.120.134.90
     User air
+
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+  User git
