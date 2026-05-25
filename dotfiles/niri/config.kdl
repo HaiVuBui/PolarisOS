@@ -360,7 +360,7 @@ window-rule {
     open-floating true
     default-column-width { proportion 0.5; }
     default-window-height { proportion 0.6; }
-    opacity 0.85
+    opacity 0.99
     // geometry-corner-radius 15
     // clip-to-geometry true
     background-effect {
@@ -369,7 +369,7 @@ window-rule {
 }
 window-rule {
     match app-id="dev.zed.Zed"   
-    opacity 0.8
+    opacity 0.99
     background-effect {
       blur true
     }
