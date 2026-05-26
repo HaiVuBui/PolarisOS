@@ -14,6 +14,7 @@
     gnome.gnome-keyring.enable = true;
     upower.enable = true; # Power management (required for DMS battery monitoring)
     usbmuxd.enable = true;
+    udisks2.enable = true;
     cloudflare-warp.enable = true;
 
     smartd = {
@@ -28,5 +29,4 @@
       wireplumber.enable = true; # Enable WirePlumber session manager
     };
   };
-  environment.systemPackages = with pkgs; [ cloudflare-warp ];
 }

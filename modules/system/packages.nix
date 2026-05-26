@@ -9,11 +9,7 @@
     lazygit.enable = true;
     zoxide.enable = true;
     kdeconnect.enable = true;
-    firefox.enable = false; # Firefox is not installed by default
     niri = {
-      enable = true; # set this so desktop file is created
-    };
-    hyprland = {
       enable = true; # set this so desktop file is created
     };
     dconf.enable = true;

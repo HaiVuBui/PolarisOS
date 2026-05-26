@@ -10,39 +10,27 @@
     inputs.niri-scratchpad.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
-  # Portal config
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gnome
-      xdg-desktop-portal-gtk
-    ];
-
-    configPackages = [
-      pkgs.xdg-desktop-portal-gnome
-      pkgs.xdg-desktop-portal-gtk
-    ];
-
-    config = {
-      common = {
-        default = [
-          "gnome"
-          "gtk"
-        ];
-        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-        "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
-        "org.freedesktop.impl.portal.RemoteDesktop" = [ "gnome" ];
-      };
-    };
-
-  };
-
   # default pdf viewer
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
       "application/pdf" = [ "sioyek.desktop" ];
     };
+  };
+
+  # Polkit authentication agent — needed for GUI privilege prompts under niri
+  systemd.user.services.polkit-gnome = {
+    Unit = {
+      Description = "Polkit GNOME authentication agent";
+      BindsTo = "graphical-session.target";
+      After = "graphical-session.target";
+    };
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      Restart = "on-failure";
+    };
+    Install.WantedBy = [ "graphical-session.target" ];
   };
 
   # Enable XWayland satellite for X11 app support

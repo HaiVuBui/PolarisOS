@@ -29,7 +29,6 @@ in
     ./stylix.nix
     inputs.stylix.nixosModules.stylix
     ./system.nix
-    # ./thunar.nix
     ./user.nix
     ./nopass.nix
     ./kmscon.nix

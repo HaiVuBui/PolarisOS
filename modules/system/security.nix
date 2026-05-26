@@ -15,9 +15,9 @@
       #   })
       # '';
     };
-    # pam.services.swaylock = {
-    #   text = ''auth include login '';
-    # };
+    pam.services.hyprlock = {};
+    pam.services.greetd.enableGnomeKeyring = true;
+    pam.services.login.enableGnomeKeyring = true;
   };
 }
 
