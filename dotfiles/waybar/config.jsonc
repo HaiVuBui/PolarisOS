@@ -192,7 +192,7 @@
         "format-linked": "<span font_desc='Symbols Nerd Font 12'>󰈀</span> {ifname} (No IP)",
         "format-disconnected": "<span font_desc='Symbols Nerd Font 12'>󰖪</span>",
         "tooltip-format-disconnected": "Disconnected",
-        "format-alt": "<span foreground='#99ffdd'><span font_desc='Symbols Nerd Font 12'></span> {bandwidthDownBytes}</span> <span foreground='#ffcc66'><span font_desc='Symbols Nerd Font 12'></span> {bandwidthUpBytes}</span>",
+        "format-alt": "<span foreground='#56949f'><span font_desc='Symbols Nerd Font 12'></span> {bandwidthDownBytes}</span> <span foreground='#ea9d34'><span font_desc='Symbols Nerd Font 12'></span> {bandwidthUpBytes}</span>",
         "interval": 2
     }
 }
