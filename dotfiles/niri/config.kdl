@@ -763,6 +763,9 @@ binds {
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
+    Mod+Shift+S hotkey-overlay-title="Toggle screen record (region)" { spawn-sh "bash /home/hai/.config/scripts/screenrecord.sh region"; }
+    Mod+Alt+S hotkey-overlay-title="Toggle screen record (fullscreen)" { spawn-sh "bash /home/hai/.config/scripts/screenrecord.sh"; }
+
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
     // so they may, for example, forward the key presses as-is to a remote machine.
