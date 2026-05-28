@@ -13,7 +13,6 @@
     enable = true;
     users = [ "hai" ];
     package = pkgs.callPackage "${inputs.fcitx5-lotus}/nix/packages/fcitx5-lotus/default.nix" {
-      extra-cmake-modules = null;
       kdePackages = pkgs.kdePackages;
     };
   };
