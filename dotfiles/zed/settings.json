@@ -7,8 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "debugger": {
+    "button": false
+  },
   "format_on_save": "off",
   "collaboration_panel": {
+    "button": false,
     "dock": "right",
   },
   "git_panel": {
