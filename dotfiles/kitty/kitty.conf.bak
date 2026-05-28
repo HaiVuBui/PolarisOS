@@ -36,6 +36,6 @@ wayland_enable_ime no
 
 
 # BEGIN_KITTY_THEME
-# Flexoki (Light)
+# Rosé Pine Dawn
 include current-theme.conf
 # END_KITTY_THEME
