@@ -5,6 +5,9 @@
 DOTFILES_DIR="$(cd "$(dirname "$0")/.." && pwd)/dotfiles"
 CONFIG_DIR="$HOME/.config"
 
+echo ">>> Syncing up kitty..."
+rsync -aq "$CONFIG_DIR/kitty/" "$DOTFILES_DIR/kitty/"
+
 echo ">>> Syncing up zed..."
 rsync -aq "$CONFIG_DIR/zed/settings.json" "$DOTFILES_DIR/zed/"
 rsync -aq "$CONFIG_DIR/zed/keymap.json"   "$DOTFILES_DIR/zed/"

@@ -17,7 +17,8 @@ if status is-interactive
     # General
     abbr --add .. 'cd ..'
     abbr --add mkdir 'mkdir -p'
-    abbr --add csync 'cd ~/PolarisOS && bash ~/PolarisOS/scripts/sync.sh'
+    abbr --add syncdown 'cd ~/PolarisOS && bash ~/PolarisOS/scripts/sync.sh'
+    abbr --add syncup 'cd ~/PolarisOS && bash ~/PolarisOS/scripts/syncup.sh'
     abbr --add _ sudo
     abbr --add clean 'bash ~/.config/scripts/clean.sh'
     abbr --add ytm 'bash ~/.config/scripts/yt-music.sh'
@@ -142,7 +143,10 @@ if status is-interactive
     # Fuzzy SSH (ssf)
     function ssf
         set -l cfg "$HOME/.ssh/config"
-        test -r "$cfg"; or begin; echo "No $cfg"; return 1; end
+        test -r "$cfg"; or begin
+            echo "No $cfg"
+            return 1
+        end
 
         set -l entries (awk '
             BEGIN{IGNORECASE=1}
