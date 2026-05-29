@@ -11,9 +11,7 @@
         "niri/workspaces",
         "tray"
     ],
-    "modules-center": [
-        "niri/window"
-    ],
+    "modules-center": ["niri/window"],
     "modules-right": [
         "cpu",
         "custom/nvidia",
@@ -27,16 +25,22 @@
     ],
 
     "niri/window": {
-        "format": "<span font_desc='Symbols Nerd Font 12'></span>  {}"
+        "format": "<span font_desc='Symbols Nerd Font 12'></span>  {}"
     },
 
-    "niri/workspaces": {
+    // "niri/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "on-click": "activate"
+    // },
+
+  "niri/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate",
         "format": "{icon}",
         "format-icons": {
-            "stash": "",
+            "stash": "",
             "1": "1",
             "2": "2",
             "3": "3",
@@ -46,7 +50,7 @@
             "7": "7",
             "8": "8",
             "9": "9",
-            "default": ""
+            "default": ""
         }
     },
 
@@ -54,6 +58,7 @@
         "icon-size": 13,
         "spacing": 10
     },
+
 
     "custom/nvidia": {
         "exec-if": "command -v nvidia-smi",
@@ -73,7 +78,7 @@
     },
 
     "clock": {
-        "format": "{:%A  <span font_desc='Symbols Nerd Font 11'></span>  %B-%d-%Y  <span font_desc='Symbols Nerd Font 11'></span>  %I:%M:%S %p}",
+        "format": "{:%A  <span font_desc='Symbols Nerd Font 11'></span>  %B-%d-%Y  <span font_desc='Symbols Nerd Font 11'></span>  %I:%M:%S %p}",
         "interval": 1,
         "rotate": 0,
         "on-click": "bash /home/hai/PolarisOS/scripts/calendar.sh",
@@ -112,8 +117,8 @@
             "critical": 20
         },
         "format": "{icon} {capacity}%",
-        "format-charging": "<span font_desc='Symbols Nerd Font 12'></span> {capacity}%",
-        "format-plugged": "<span font_desc='Symbols Nerd Font 12'></span> {capacity}%",
+        "format-charging": "<span font_desc='Symbols Nerd Font 12'></span> {capacity}%",
+        "format-plugged": "<span font_desc='Symbols Nerd Font 12'></span> {capacity}%",
         "format-alt": "{time} {icon}",
         "format-icons": [
             "<span font_desc='Symbols Nerd Font 12'>󰂃</span>",
@@ -133,31 +138,31 @@
     "pulseaudio": {
         "format": "{icon}  {volume}%",
         "tooltip": false,
-        "format-muted": "<span font_desc='Symbols Nerd Font 12'></span>  Muted",
+        "format-muted": "<span font_desc='Symbols Nerd Font 12'></span>  Muted",
         "on-click": "pamixer -t",
         "on-scroll-up": "pamixer -i 1",
         "on-scroll-down": "pamixer -d 1",
         "scroll-step": 5,
         "format-icons": {
-            "headphone": "<span font_desc='Symbols Nerd Font 10'></span>",
-            "hands-free": "<span font_desc='Symbols Nerd Font 10'></span>",
-            "headset": "<span font_desc='Symbols Nerd Font 10'></span>",
-            "phone": "<span font_desc='Symbols Nerd Font 12'></span>",
-            "portable": "<span font_desc='Symbols Nerd Font 12'></span>",
-            "car": "<span font_desc='Symbols Nerd Font 12'></span>",
+            "headphone": "<span font_desc='Symbols Nerd Font 10'></span>",
+            "hands-free": "<span font_desc='Symbols Nerd Font 10'></span>",
+            "headset": "<span font_desc='Symbols Nerd Font 10'></span>",
+            "phone": "<span font_desc='Symbols Nerd Font 12'></span>",
+            "portable": "<span font_desc='Symbols Nerd Font 12'></span>",
+            "car": "<span font_desc='Symbols Nerd Font 12'></span>",
             "default": [
-                "<span font_desc='Symbols Nerd Font 12'></span>",
-                "<span font_desc='Symbols Nerd Font 12'></span>",
-                "<span font_desc='Symbols Nerd Font 12'></span>",
-                "<span font_desc='Symbols Nerd Font 12'></span>"
+                "<span font_desc='Symbols Nerd Font 12'></span>",
+                "<span font_desc='Symbols Nerd Font 12'></span>",
+                "<span font_desc='Symbols Nerd Font 12'></span>",
+                "<span font_desc='Symbols Nerd Font 12'></span>"
             ]
         }
     },
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": "<span font_desc='Symbols Nerd Font 10'></span> {volume}%",
-        "format-source-muted": "<span font_desc='Symbols Nerd Font 10'></span>  Muted",
+        "format-source": "<span font_desc='Symbols Nerd Font 10'></span> {volume}%",
+        "format-source-muted": "<span font_desc='Symbols Nerd Font 10'></span>  Muted",
         "on-click": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
@@ -166,10 +171,10 @@
 
     "memory": {
         "interval": 10,
-        "format": "<span font_desc='Symbols Nerd Font 12'></span> {used}GB",
-        "format-alt": "<span font_desc='Symbols Nerd Font 12'></span> {percentage}%",
+        "format": "<span font_desc='Symbols Nerd Font 12'></span> {used}GB",
+        "format-alt": "<span font_desc='Symbols Nerd Font 12'></span> {percentage}%",
         "tooltip": true,
-        "tooltip-format": "󰾆 RAM {percentage}%\n {used:0.1f} / {total:0.1f} GB"
+        "tooltip-format": "󰾆 RAM {percentage}%\n {used:0.1f} / {total:0.1f} GB"
     },
 
     "cpu": {
@@ -181,13 +186,13 @@
 
     "network": {
         "tooltip": true,
-        "format-wifi": "<span font_desc='Symbols Nerd Font 12'></span>  {essid}",
+        "format-wifi": "<span font_desc='Symbols Nerd Font 12'></span>  {essid}",
         "format-ethernet": "<span font_desc='Symbols Nerd Font 12'>󰈀</span>",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
         "format-linked": "<span font_desc='Symbols Nerd Font 12'>󰈀</span> {ifname} (No IP)",
         "format-disconnected": "<span font_desc='Symbols Nerd Font 12'>󰖪</span>",
         "tooltip-format-disconnected": "Disconnected",
-        "format-alt": "<span foreground='#56949f'><span font_desc='Symbols Nerd Font 12'></span> {bandwidthDownBytes}</span> <span foreground='#ea9d34'><span font_desc='Symbols Nerd Font 12'></span> {bandwidthUpBytes}</span>",
+        "format-alt": "<span foreground='#56949f'><span font_desc='Symbols Nerd Font 12'></span> {bandwidthDownBytes}</span> <span foreground='#ea9d34'><span font_desc='Symbols Nerd Font 12'></span> {bandwidthUpBytes}</span>",
         "interval": 2
     }
 }
