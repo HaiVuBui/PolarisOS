@@ -1,9 +1,9 @@
 {
-  "model": "opusplan",
+  "model": "sonnet",
   "statusLine": {
     "type": "command",
     "command": "bash /home/hai/.claude/statusline-command.sh"
   },
-  "effortLevel": "low",
+  "effortLevel": "high",
   "theme": "auto"
 }
