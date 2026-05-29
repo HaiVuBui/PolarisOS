@@ -4,6 +4,7 @@ in {
   # Styling Options
   stylix = {
     enable = true;
+    enableReleaseChecks = false;
     image = stylixImage;
     autoEnable = false;
     targets ={

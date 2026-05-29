@@ -41,7 +41,7 @@
 
   systemd.oomd = {
     enable = true;
-    enableUserServices = true;
+    enableUserSlices = true;
   };
 
   # NTSYNC — kernel-side Wine sync primitives, replaces esync/fsync
@@ -57,7 +57,7 @@
     goverlay
     lutris
     winetricks
-    inputs.nix-gaming.packages.${pkgs.system}.wine-ge
+    inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.wine-ge
   ];
 
   boot.kernel.sysctl = {

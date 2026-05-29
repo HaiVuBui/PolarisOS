@@ -24,6 +24,7 @@ in
         username = "${username}";
         homeDirectory = "/home/${username}";
         stateVersion = "25.11";
+        enableNixpkgsReleaseCheck = false;
       };
     };
   };
