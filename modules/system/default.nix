@@ -10,7 +10,7 @@ let
 in
 {
   imports = [
-    ./brave.nix
+    # ./brave.nix
     ./boot.nix
     ./firewall.nix
     ./flatpak.nix
