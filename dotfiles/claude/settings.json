@@ -4,6 +4,5 @@
     "type": "command",
     "command": "bash /home/hai/.claude/statusline-command.sh"
   },
-  "effortLevel": "high",
   "theme": "auto"
 }

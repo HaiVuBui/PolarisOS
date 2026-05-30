@@ -1,20 +1,14 @@
 {
-  "filesystem": {
-    "type": "stdio",
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/hai"],
-    "env": {}
-  },
-  "git": {
-    "type": "stdio",
-    "command": "uvx",
-    "args": ["mcp-server-git"],
-    "env": {}
-  },
   "fetch": {
     "type": "stdio",
-    "command": "uvx",
-    "args": ["mcp-server-fetch"],
+    "command": "mcp-server-fetch",
+    "args": [],
+    "env": {}
+  },
+  "time": {
+    "type": "stdio",
+    "command": "mcp-server-time",
+    "args": [],
     "env": {}
   }
 }

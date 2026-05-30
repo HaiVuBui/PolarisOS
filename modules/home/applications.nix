@@ -66,6 +66,8 @@
     opencode
     codeium
     claude-code
+    mcp-server-fetch
+    mcp-server-time
 
     #dependencies
     ffmpeg
