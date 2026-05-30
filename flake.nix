@@ -12,7 +12,10 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
     niri-scratchpad.url = "github:argosnothing/niri-scratchpad-rs";
     fcitx5-lotus = {
@@ -26,7 +29,12 @@
   };
 
   outputs =
-    { nixpkgs, nix-flatpak, nix-gaming, ... }@inputs:
+    {
+      nixpkgs,
+      nix-flatpak,
+      nix-gaming,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       username = "hai";
