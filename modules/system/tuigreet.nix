@@ -7,7 +7,7 @@
     settings = {
       default_session = {
         user = username;
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
       };
     };
   };
