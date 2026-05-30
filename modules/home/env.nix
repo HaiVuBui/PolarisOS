@@ -9,9 +9,10 @@ let
   inherit (import ../../hosts/${host}/variables.nix) cudaEnable;
 
   basePackages = with pkgs; [
-    # nix lsp
+    # nix
     nixd
     nixfmt
+    devenv
 
     # lua
     stylua
