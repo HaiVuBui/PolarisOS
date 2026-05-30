@@ -77,12 +77,5 @@
     in
     {
       inherit nixosConfigurations;
-
-      devShells.${system}.gpu = pkgs.mkShell {
-        packages = with pkgs; [ cudatoolkit ];
-        shellHook = ''
-          export LD_LIBRARY_PATH="${pkgs.cudatoolkit}/lib:/run/opengl-driver/lib:$LD_LIBRARY_PATH"
-        '';
-      };
     };
 }
