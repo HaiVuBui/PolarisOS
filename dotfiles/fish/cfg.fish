@@ -54,6 +54,7 @@ if status is-interactive
     # Navigation & Nix
     abbr --add os 'cd ~/PolarisOS'
     abbr --add ws 'cd ~/Workspace'
+    abbr --add hai 'cd ~/HaiSpace/'
     abbr --add np 'nix profile'
     abbr --add npa 'nix profile add nixpkgs#'
     abbr --add tm tmux
