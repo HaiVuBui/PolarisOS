@@ -1,6 +1,8 @@
 { host, ... }:
-let inherit (import ../../hosts/${host}/variables.nix) gitUsername gitEmail;
-in {
+let
+  inherit (import ../../hosts/${host}/variables.nix) gitUsername gitEmail;
+in
+{
   programs.git = {
     enable = true;
     settings = {
@@ -18,8 +20,7 @@ in {
       init.defaultBranch = "main"; # Set default new branches to 'main'
       log.date = "iso"; # ISO 8601 date format
       log.decorate = "full"; # Show branch/tag info in git log
-      merge.conflictStyle =
-        "diff3"; # Conflict resolution style for readable diffs
+      merge.conflictStyle = "diff3"; # Conflict resolution style for readable diffs
       push.default = "simple"; # Match modern push behavior
       user = {
         name = gitUsername;
@@ -37,6 +38,7 @@ in {
       "typings"
       ".env"
       ".vscode"
+      ".devenv"
     ];
   };
 }
