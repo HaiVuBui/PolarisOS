@@ -7,7 +7,6 @@
     gcc
     binutils
     gnumake
-    python3
 
     # build tools
     cmake
