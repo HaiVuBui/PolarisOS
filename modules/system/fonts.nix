@@ -22,8 +22,8 @@
   enable = true;
   defaultFonts = {
     monospace = [ "JetBrainsMono Nerd Font Mono" ];
-    serif = [ "Inter" ];
-    sansSerif = [ "Noto Serif" ];
+    serif = [ "Noto Serif" ];
+    sansSerif = [ "Inter" ];
   };
 };
 }

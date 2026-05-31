@@ -14,10 +14,11 @@ lib.mkIf vaultwardenEnable {
     enable = true;
     dbBackend = "sqlite";
     backupDir = "/var/backup/vaultwarden";
+    # On fresh install: echo 'DOMAIN=https://<host>.ts.net/vaultwarden' | sudo tee /etc/vaultwarden.env && sudo chmod 600 /etc/vaultwarden.env
+    environmentFile = "/etc/vaultwarden.env";
     config = {
       ROCKET_ADDRESS = "127.0.0.1";
       ROCKET_PORT = 8222;
-      DOMAIN = "https://minastirith.tail364c4d.ts.net/vaultwarden";
       SIGNUPS_ALLOWED = false;
       WEBSOCKET_ENABLED = true;
     };

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   systemd.services.archive-maintenance = {
     description = "Archive checker";
@@ -27,7 +27,7 @@
         set -eu
 
         notify() {
-          runuser -u hai -- env \
+          runuser -u ${username} -- env \
             XDG_RUNTIME_DIR=/run/user/1000 \
             DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
             notify-send "Archive maintenance finished" "$1" || true
@@ -50,7 +50,7 @@
           exit 1
         fi
 
-        if ! runuser -u hai -- rclone check --download "$snapshot" secret:/Archive; then
+        if ! runuser -u ${username} -- rclone check --download "$snapshot" secret:/Archive; then
           notify "rclone check failed or mismatched, see log"
           exit 1
         fi
