@@ -358,8 +358,8 @@ workspace "stash" {}
 window-rule {
     match app-id="^kitty$"   
     open-floating true
-    default-column-width { proportion 0.5; }
-    default-window-height { proportion 0.6; }
+    default-column-width { proportion 0.6; }
+    default-window-height { proportion 0.7; }
     opacity 0.99
     // geometry-corner-radius 15
     // clip-to-geometry true
