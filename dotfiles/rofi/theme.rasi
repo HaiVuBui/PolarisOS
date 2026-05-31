@@ -15,7 +15,7 @@
 
 	alt-fgd: #1e2326;
 
-	font: "Cartograph CF 12";
+	font: "Noto Serif 12";
 
 	foreground: @fgd;
 	background: @bg;
