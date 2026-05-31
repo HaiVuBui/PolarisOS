@@ -45,14 +45,14 @@
             "keyColor": "blue"
         },
         {
-            "type": "gpu",
-            "format": "{2}",
-            "key": "󰢮 GPU",
+            "type": "board",
+            "key": "󰻠 Board",
             "keyColor": "blue"
         },
         {
-            "type": "board",
-            "key": "󰻠 Board",
+            "type": "gpu",
+            "format": "{2}",
+            "key": "󰢮 GPU",
             "keyColor": "blue"
         },
         {
