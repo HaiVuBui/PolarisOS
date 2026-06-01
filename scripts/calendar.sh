@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-pkill -f '\.evercal-wrapped' || true
-evercal
+pkill -f '\.evercal-wrapped' || evercal
