@@ -4,8 +4,8 @@ let
   src = pkgs.fetchFromGitHub {
     owner = "HaiVuBui";
     repo = "EverCal";
-    rev = "33c91b20d3c5";
-    sha256 = "sha256-KoUqEaZA639BdDwbjBod6FLneDGbiTg5QZAZV7/hZ68";
+    rev = "6458be10eb25";
+    sha256 = "sha256-litR0pzxG3qEFRUiG7G8p/Cquh5Abyv5D6VNst0AsKM";
   };
 in
 pkgs.flutter.buildFlutterApplication rec {
