@@ -26,6 +26,10 @@
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Driver for the 06cb:009a fingerprint sensor on MovingCastle. Pins its own
+    # nixos-24.11 nixpkgs on purpose — the python-validity package does not build
+    # against unstable, which upstream explicitly does not support.
+    fingerprint-06cb-009a.url = "github:ahbnr/nixos-06cb-009a-fingerprint-sensor?ref=24.11";
   };
 
   outputs =
