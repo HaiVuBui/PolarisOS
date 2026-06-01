@@ -14,8 +14,13 @@ fi
 DIR="${1:-$DEFAULT_DIR}"
 
 TRANSITION_FPS=120
-TRANSITION_TYPE=outer
-TRANSITION_DURATION=3
+TRANSITION_DURATION=2
+
+_types=(grow outer)
+TRANSITION_TYPE=${_types[$RANDOM % ${#_types[@]}]}
+x="0.$(printf '%02d' $(( RANDOM % 100 )))"
+y="0.$(printf '%02d' $(( RANDOM % 100 )))"
+transition_extra=(--transition-pos "${x},${y}")
 MAX_ROWS=10
 
 usage() {
@@ -172,7 +177,8 @@ if [[ "$WALL_BACKEND" == "awww" ]]; then
   awww img "$selection" \
     --transition-fps "$TRANSITION_FPS" \
     --transition-type "$TRANSITION_TYPE" \
-    --transition-duration "$TRANSITION_DURATION"
+    --transition-duration "$TRANSITION_DURATION" \
+    "${transition_extra[@]}"
 else
   if ! swww query >/dev/null 2>&1; then
     if ! swww init >/dev/null 2>&1; then
@@ -186,5 +192,6 @@ else
   swww img "$selection" \
     --transition-fps "$TRANSITION_FPS" \
     --transition-type "$TRANSITION_TYPE" \
-    --transition-duration "$TRANSITION_DURATION"
+    --transition-duration "$TRANSITION_DURATION" \
+    "${transition_extra[@]}"
 fi
