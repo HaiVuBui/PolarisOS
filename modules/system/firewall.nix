@@ -7,5 +7,7 @@ in
     enable = true;
     trustedInterfaces = [ "tailscale0" ];
     allowedTCPPorts = lib.optionals jellyfinEnable [ 8096 ];
+    allowedTCPPortRanges = lib.mkForce [ ];
+    allowedUDPPortRanges = lib.mkForce [ ];
   };
 }
