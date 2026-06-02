@@ -20,7 +20,7 @@
     "dock": "right",
   },
   "icon_theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Zed (Default)",
     "dark": "Zed (Default)",
   },
@@ -36,7 +36,7 @@
   "buffer_font_size": 15,
   "theme": {
     "mode": "light",
-    "light": "Catppuccin Latte",
+    "light": "GitHub Light",
     "dark": "One Dark",
   },
   "project_panel": {
