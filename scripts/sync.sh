@@ -51,7 +51,7 @@ echo ">>> Syncing Individual Dotfiles..."
 rsync -aq "$DOTFILES_DIR/.vimrc" "$HOME/.vimrc"
 # rsync -aq "$DOTFILES_DIR/.p10k.zsh" "$HOME/.p10k.zsh"
 rsync -aq "$DOTFILES_DIR/fish/cfg.fish" "$CONFIG_DIR/fish/cfg.fish"
-rsync -aq "$DOTFILES_DIR/my-app.desktop" "$HOME/.local/share/applications/my-app.desktop"
+# rsync -aq "$DOTFILES_DIR/my-app.desktop" "$HOME/.local/share/applications/my-app.desktop"
 rsync -aq "$DOTFILES_DIR/ssh/config" "$HOME/.ssh/config"
 chmod 600 "$HOME/.ssh/config"
 mkdir -p "$CONFIG_DIR/opencode"
@@ -63,7 +63,7 @@ rsync -aq "$DOTFILES_DIR/claude/settings.json" "$HOME/.claude/settings.json"
 rsync -aq "$DOTFILES_DIR/claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
 rsync -aq "$DOTFILES_DIR/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
 tmp=$(mktemp)
-jq --slurpfile mcp "$DOTFILES_DIR/claude/mcp-servers.json" '.mcpServers = $mcp[0]' "$HOME/.claude.json" > "$tmp" && mv "$tmp" "$HOME/.claude.json"
+jq --slurpfile mcp "$DOTFILES_DIR/claude/mcp-servers.json" '.mcpServers = $mcp[0]' "$HOME/.claude.json" >"$tmp" && mv "$tmp" "$HOME/.claude.json"
 
 # ---------------------------------------------------------
 # 3. VS Code + Zed Settings
