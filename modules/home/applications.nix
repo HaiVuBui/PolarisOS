@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   home.packages = with pkgs; [
     # apps
@@ -44,7 +44,7 @@
     hyprlock
     # wlogout
     kdePackages.dolphin
-    (pkgs.callPackage ./packages/evercal.nix { inherit pkgs; }) # calendar
+    inputs.evercal.packages.${pkgs.stdenv.hostPlatform.system}.default # calendar
     nautilus
 
     # terminal ricing

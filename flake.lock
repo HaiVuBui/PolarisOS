@@ -68,6 +68,26 @@
         "type": "github"
       }
     },
+    "evercal": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780396437,
+        "narHash": "sha256-mTTmRqt7iPxlGv30FXkNdAXVdOrJ8Gcn5llqX/EbH90=",
+        "owner": "HaiVuBui",
+        "repo": "EverCal",
+        "rev": "330ea18a07110f0be1e2bdf7d8524ef9c52cb553",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HaiVuBui",
+        "repo": "EverCal",
+        "type": "github"
+      }
+    },
     "fcitx5-lotus": {
       "inputs": {
         "nixpkgs": [
@@ -531,6 +551,7 @@
     },
     "root": {
       "inputs": {
+        "evercal": "evercal",
         "fcitx5-lotus": "fcitx5-lotus",
         "fingerprint-06cb-009a": "fingerprint-06cb-009a",
         "home-manager": "home-manager",

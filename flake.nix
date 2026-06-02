@@ -17,6 +17,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
+    evercal = {
+      url = "github:HaiVuBui/EverCal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     niri-scratchpad.url = "github:argosnothing/niri-scratchpad-rs";
     fcitx5-lotus = {
       url = "github:LotusInputMethod/fcitx5-lotus";
