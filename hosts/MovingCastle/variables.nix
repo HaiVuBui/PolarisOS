@@ -5,7 +5,7 @@
   displayManager = "tui";
   stylixImage = ../../wallpapers/angel-warior.jpg;
   nopasswdSudo = true;
-  network = "nm";
+  network = "iwd";
   cores = 4;
   cudaEnable = false;
   gamingEnable = false;
