@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   hardware.graphics = {
     enable = true;
@@ -48,16 +48,10 @@
   boot.kernelModules = [ "ntsync" ];
 
   environment.systemPackages = with pkgs; [
-    gamescope
-    libstrangle
-    vulkan-tools
-    dxvk
-    vkd3d
     mangohud
     goverlay
     lutris
     winetricks
-    inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.wine-ge
   ];
 
   boot.kernel.sysctl = {

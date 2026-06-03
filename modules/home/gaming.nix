@@ -1,16 +1,7 @@
 { pkgs, config, ... }:
 {
   home.packages = with pkgs; [
-    lutris
-    bottles
-    heroic
-    wineWow64Packages.stagingFull
-    winetricks
-    protontricks
-    protonup-qt
     umu-launcher
-    mangohud
-    goverlay
   ];
 
   home.sessionVariables = {

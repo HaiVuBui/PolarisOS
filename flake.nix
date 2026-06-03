@@ -26,10 +26,7 @@
       url = "github:LotusInputMethod/fcitx5-lotus";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-gaming = {
-      url = "github:fufexan/nix-gaming";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-gaming.url = "github:fufexan/nix-gaming";
     # Driver for the 06cb:009a fingerprint sensor on MovingCastle. Pins its own
     # nixos-24.11 nixpkgs on purpose — the python-validity package does not build
     # against unstable, which upstream explicitly does not support.
