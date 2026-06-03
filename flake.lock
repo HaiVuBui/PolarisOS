@@ -75,11 +75,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780410428,
-        "narHash": "sha256-LLB7kAdz95YHNikNAXCw4Q46Z4UlkzHk3XBAGkHeyWA=",
+        "lastModified": 1780461323,
+        "narHash": "sha256-cDSPwsivGBH0NCdrqVFqig0fx1Z5ornkUogFhy5Rn8E=",
         "owner": "HaiVuBui",
         "repo": "EverCal",
-        "rev": "c87834fb5d5a1900b2bfebc44b36d666006c7d5b",
+        "rev": "2075778e1fc1b6c022fb87b7f812e9da154059e6",
         "type": "github"
       },
       "original": {
