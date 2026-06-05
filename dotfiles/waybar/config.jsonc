@@ -21,7 +21,8 @@
         "battery",
         "pulseaudio",
         "backlight",
-        "pulseaudio#microphone"
+        "pulseaudio#microphone",
+        "custom/notification"
     ],
 
     "niri/window": {
@@ -68,6 +69,27 @@
         "tooltip": true,
         "tooltip-format": "GPU: {}",
         "on-click": "bash /home/hai/PolarisOS/scripts/waybar-nvidia.sh toggle"
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span font_desc='Symbols Nerd Font 12' foreground='#f85552'>󱅫</span>",
+            "none": "<span font_desc='Symbols Nerd Font 12'>󰂚</span>",
+            "dnd-notification": "<span font_desc='Symbols Nerd Font 12' foreground='#f85552'>󰂛</span>",
+            "dnd-none": "<span font_desc='Symbols Nerd Font 12'>󰂛</span>",
+            "inhibited-notification": "<span font_desc='Symbols Nerd Font 12' foreground='#f85552'>󱅫</span>",
+            "inhibited-none": "<span font_desc='Symbols Nerd Font 12'>󰂚</span>",
+            "dnd-inhibited-notification": "<span font_desc='Symbols Nerd Font 12' foreground='#f85552'>󰂛</span>",
+            "dnd-inhibited-none": "<span font_desc='Symbols Nerd Font 12'>󰂛</span>"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
 
     "custom/temp": {

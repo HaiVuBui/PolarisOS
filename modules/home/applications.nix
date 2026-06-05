@@ -26,7 +26,7 @@
     pavucontrol # audio controller
     brightnessctl # light controller
     libnotify # For Notifications
-    mako # notifications daemon
+    swaynotificationcenter # notification daemon + center (history)
     playerctl # media controller
     pamixer
     tuigreet # greeter

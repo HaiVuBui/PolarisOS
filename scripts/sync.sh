@@ -26,7 +26,7 @@ APPS=(
   "rofi"
   "htop"
   "rmpc"
-  "mako"
+  "swaync"
   "lazygit"
   "lazydocker"
   "khal"

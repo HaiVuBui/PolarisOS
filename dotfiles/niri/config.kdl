@@ -289,6 +289,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
+spawn-at-startup "swaync"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
@@ -517,6 +518,7 @@ binds {
     // wallpaper picker
     Mod+Shift+w hotkey-overlay-title="change wallpaper" {spawn-sh "bash /home/hai/.config/scripts/wppicker.sh";}
     Mod+Shift+N hotkey-overlay-title="Open notes" { spawn "kitty" "-e" "fish" "-ic" "note"; }
+    Mod+Shift+M hotkey-overlay-title="Toggle notification center" { spawn "swaync-client" "-t" "-sw"; }
 
     Mod+Grave { spawn "niri-scratchpad" "target" "--spawn" "kitty" "appid" "kitty"; }
 
@@ -543,6 +545,16 @@ binds {
     F9 allow-when-locked=true {spawn-sh "rmpc seek +5";}
     Mod+n allow-when-locked=true {spawn-sh "rmpc next";}
     Mod+p allow-when-locked=true {spawn-sh "rmpc prev";}
+
+    // System-wide media control (any MPRIS player) via playerctl
+    XF86AudioPlay  allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioPause allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioNext  allow-when-locked=true { spawn-sh "playerctl next"; }
+    XF86AudioPrev  allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioStop  allow-when-locked=true { spawn-sh "playerctl stop"; }
+    Mod+Shift+space allow-when-locked=true hotkey-overlay-title="Media: play/pause" { spawn-sh "playerctl play-pause"; }
+    Mod+Shift+period allow-when-locked=true hotkey-overlay-title="Media: next" { spawn-sh "playerctl next"; }
+    Mod+Shift+comma allow-when-locked=true hotkey-overlay-title="Media: previous" { spawn-sh "playerctl previous"; }
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
