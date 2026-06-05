@@ -1,11 +1,16 @@
 { pkgs, config, ... }:
 
 {
+  dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-light";
+
   gtk = {
     enable = true;
     theme = {
-      name = "rose-pine-dawn";
-      package = pkgs.rose-pine-gtk-theme;
+      name = "catppuccin-latte-blue-standard";
+      package = pkgs.catppuccin-gtk.override {
+        variant = "latte";
+        accents = [ "blue" ];
+      };
     };
     iconTheme = {
       name = "Papirus-Dark";
@@ -14,8 +19,6 @@
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 0;
     };
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = 0;
-    };
+    gtk4.theme = config.gtk.theme;
   };
 }
