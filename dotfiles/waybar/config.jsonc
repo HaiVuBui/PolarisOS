@@ -9,7 +9,10 @@
     "modules-left": [
         "clock",
         "niri/workspaces",
-        "tray"
+        "tray",
+        "custom/prev",
+        "mpris",
+        "custom/next"
     ],
     "modules-center": ["niri/window"],
     "modules-right": [
@@ -24,6 +27,28 @@
         "pulseaudio#microphone",
         "custom/notification"
     ],
+
+    "mpris": {
+        "format": "<span font_desc='Symbols Nerd Font 12'>󰎆</span> {title}",
+        "format-paused": "<span font_desc='Symbols Nerd Font 12'>󰏤</span> <i>{title}</i>",
+        "max-length": 20,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl position 0",
+        "on-scroll-up": "playerctl position 5+",
+        "on-scroll-down": "playerctl position 5-"
+    },
+
+    "custom/prev": {
+        "exec": "playerctl metadata --format '{{title}}' 2>/dev/null | grep -q . && echo '<span font_desc=\"Symbols Nerd Font 12\">󰒮</span>' || echo ''",
+        "interval": 1,
+        "on-click": "playerctl position 5-"
+    },
+
+    "custom/next": {
+        "exec": "playerctl metadata --format '{{title}}' 2>/dev/null | grep -q . && echo '<span font_desc=\"Symbols Nerd Font 12\">󰒭</span>' || echo ''",
+        "interval": 1,
+        "on-click": "playerctl position 5+"
+    },
 
     "niri/window": {
         "format": "<span font_desc='Symbols Nerd Font 12'></span>  {}"
@@ -78,14 +103,10 @@
             "notification": "<span font_desc='Symbols Nerd Font 12' foreground='#f85552'>󱅫</span>",
             "none": "<span font_desc='Symbols Nerd Font 12'>󰂚</span>",
             "dnd-notification": "<span font_desc='Symbols Nerd Font 12' foreground='#f85552'>󰂛</span>",
-            "dnd-none": "<span font_desc='Symbols Nerd Font 12'>󰂛</span>",
-            "inhibited-notification": "<span font_desc='Symbols Nerd Font 12' foreground='#f85552'>󱅫</span>",
-            "inhibited-none": "<span font_desc='Symbols Nerd Font 12'>󰂚</span>",
-            "dnd-inhibited-notification": "<span font_desc='Symbols Nerd Font 12' foreground='#f85552'>󰂛</span>",
-            "dnd-inhibited-none": "<span font_desc='Symbols Nerd Font 12'>󰂛</span>"
+            "dnd-none": "<span font_desc='Symbols Nerd Font 12'>󰂛</span>"
         },
         "return-type": "json",
-        "exec-if": "which swaync-client",
+        "exec-if": "command -v swaync-client",
         "exec": "swaync-client -swb",
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
@@ -100,7 +121,7 @@
     },
 
     "clock": {
-        "format": "{:%A  <span font_desc='Symbols Nerd Font 11'></span>  %B-%d-%Y  <span font_desc='Symbols Nerd Font 11'></span>  %I:%M:%S %p}",
+    "format": "{:%A <span font_desc='Symbols Nerd Font 11'></span> %B-%d-%Y <span font_desc='Symbols Nerd Font 11'></span> %I:%M:%S %p}",
         "interval": 1,
         "rotate": 0,
         "on-click": "bash /home/hai/PolarisOS/scripts/calendar.sh",
@@ -158,9 +179,9 @@
     },
 
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
+    "format": "{icon} {volume}%",
         "tooltip": false,
-        "format-muted": "<span font_desc='Symbols Nerd Font 12'></span>  Muted",
+    "format-muted": "<span font_desc='Symbols Nerd Font 12'></span> Muted",
         "on-click": "pamixer -t",
         "on-scroll-up": "pamixer -i 1",
         "on-scroll-down": "pamixer -d 1",
@@ -184,7 +205,7 @@
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": "<span font_desc='Symbols Nerd Font 10'></span> {volume}%",
-        "format-source-muted": "<span font_desc='Symbols Nerd Font 10'></span>  Muted",
+    "format-source-muted": "<span font_desc='Symbols Nerd Font 10'></span> Muted",
         "on-click": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",

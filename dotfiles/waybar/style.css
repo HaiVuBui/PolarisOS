@@ -56,6 +56,9 @@ window#waybar {
 
 #window,
 #clock,
+#mpris,
+#custom-prev,
+#custom-next,
 #custom-nixos,
 #custom-nvidia,
 #custom-notification,
@@ -72,6 +75,25 @@ window#waybar {
     padding: 0px 10px;
     margin: 2px 0px;
     margin-top: 4px;
+}
+
+#mpris {
+    border-radius: 10px;
+    margin-left: 4px;
+    margin-right: 4px;
+    color: @text;
+}
+
+#custom-prev {
+    border-radius: 10px;
+    margin-left: 10px;
+    color: @text;
+}
+
+#custom-next {
+    border-radius: 10px;
+    margin-right: 10px;
+    color: @text;
 }
 
 #tray {
