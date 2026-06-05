@@ -15,7 +15,7 @@ in
     ./qt.nix
     ./gtk.nix
     ./env.nix
-    ./brave.nix
+    # ./brave.nix
     # ./zen.nix
     ./symlinks.nix
     ./direnv.nix
