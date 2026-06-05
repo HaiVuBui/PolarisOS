@@ -3,10 +3,10 @@
 STATE_FILE="/tmp/waybar-nvidia-mode"
 
 if [ "${1:-}" = "toggle" ]; then
-  if [ -f "${STATE_FILE}" ] && grep -q '^util_temp$' "${STATE_FILE}"; then
-    echo "vram" > "${STATE_FILE}"
+  if [ -f "${STATE_FILE}" ] && grep -q '^vram$' "${STATE_FILE}"; then
+    echo "percent" > "${STATE_FILE}"
   else
-    echo "util_temp" > "${STATE_FILE}"
+    echo "vram" > "${STATE_FILE}"
   fi
   exit 0
 fi
@@ -16,13 +16,13 @@ if ! command -v nvidia-smi >/dev/null 2>&1; then
   exit 0
 fi
 
-mode="vram"
+mode="percent"
 if [ -f "${STATE_FILE}" ]; then
   mode="$(cat "${STATE_FILE}" 2>/dev/null)"
 fi
 
 case "${mode}" in
-  util_temp)
+  percent)
     read -r util < <(LC_ALL=C nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | head -n 1 | tr -d '\r')
     if [ -z "${util}" ]; then
       echo "n/a"
