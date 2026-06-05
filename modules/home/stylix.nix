@@ -8,8 +8,8 @@ _: {
     ghostty.enable = false;
     vscode.enable = false;
     fish.enable = false;
-    qt.enable = true;
-    gtk.enable = true;
+    qt.enable = false;
+    gtk.enable = false;
   };
 }
 

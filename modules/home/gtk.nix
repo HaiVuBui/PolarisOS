@@ -2,6 +2,11 @@
 
 {
   gtk = {
+    enable = true;
+    theme = {
+      name = "rose-pine-dawn";
+      package = pkgs.rose-pine-gtk-theme;
+    };
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
