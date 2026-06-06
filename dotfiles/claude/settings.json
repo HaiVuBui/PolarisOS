@@ -4,5 +4,6 @@
     "type": "command",
     "command": "bash /home/hai/.claude/statusline-command.sh"
   },
-  "theme": "auto"
+  "theme": "auto",
+  "inputNeededNotifEnabled": false
 }
