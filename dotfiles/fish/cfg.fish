@@ -41,7 +41,8 @@ if status is-interactive
     abbr --add n nvim
     abbr --add rs rsync
     abbr --add c clear
-    abbr --add stl 'sudo systemctl-tui'
+    abbr --add stl systemctl-tui
+    abbr --add sstl 'sudo systemctl-tui'
     abbr --add zed zeditor
 
     # Git
