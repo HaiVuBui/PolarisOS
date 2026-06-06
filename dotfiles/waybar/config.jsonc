@@ -51,7 +51,8 @@
     },
 
     "niri/window": {
-        "format": "<span font_desc='Symbols Nerd Font 12'></span>  {}"
+        "format": "<span font_desc='Symbols Nerd Font 12'></span>  {}",
+        "max-length": 40,
     },
 
     // "niri/workspaces": {
