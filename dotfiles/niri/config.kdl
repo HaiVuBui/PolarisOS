@@ -361,7 +361,7 @@ window-rule {
     open-floating true
     default-column-width { proportion 0.6; }
     default-window-height { proportion 0.7; }
-    opacity 0.99
+    opacity 0.9
     // geometry-corner-radius 15
     // clip-to-geometry true
     background-effect {
