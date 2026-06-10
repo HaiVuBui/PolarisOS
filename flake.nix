@@ -16,7 +16,6 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
     evercal = {
       url = "github:HaiVuBui/EverCal";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +35,6 @@
   outputs =
     {
       nixpkgs,
-      nix-flatpak,
       nix-gaming,
       ...
     }@inputs:
@@ -47,16 +45,6 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [
-          (
-            final: prev:
-            lib.optionalAttrs prev.stdenv.hostPlatform.isi686 {
-              openldap = prev.openldap.overrideAttrs (_: {
-                doCheck = false;
-              });
-            }
-          )
-        ];
       };
 
       mkNixosConfig =
@@ -67,7 +55,6 @@
           specialArgs = { inherit inputs username host; };
           modules = [
             ./hosts/${host}
-            nix-flatpak.nixosModules.nix-flatpak
             inputs.fcitx5-lotus.nixosModules.fcitx5-lotus
             nix-gaming.nixosModules.pipewireLowLatency
           ];

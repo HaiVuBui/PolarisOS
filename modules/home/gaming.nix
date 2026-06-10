@@ -1,5 +1,5 @@
-{ pkgs, config, ... }:
-{
+{ pkgs, config, lib, osConfig, ... }:
+lib.mkIf osConfig.polaris.features.gaming {
   home.packages = with pkgs; [
     umu-launcher
   ];

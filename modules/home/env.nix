@@ -2,12 +2,11 @@
   pkgs,
   lib ? pkgs.lib,
   host,
+  osConfig,
   ...
 }:
 
 let
-  inherit (import ../../hosts/${host}/variables.nix) cudaEnable;
-
   basePackages = with pkgs; [
     # nix
     nixd
@@ -57,7 +56,7 @@ let
 
 in
 {
-  home.packages = basePackages ++ (lib.optionals cudaEnable (with pkgs; [ cudatoolkit ]));
+  home.packages = basePackages ++ (lib.optionals osConfig.polaris.features.cuda (with pkgs; [ cudatoolkit ]));
 
   home.sessionVariables = {
     FLAKE = "${host}";

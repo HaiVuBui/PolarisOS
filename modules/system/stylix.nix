@@ -1,13 +1,10 @@
-{ pkgs, host, ... }:
-let
-  inherit (import ../../hosts/${host}/variables.nix) stylixImage;
-in
+{ pkgs, config, ... }:
 {
   # Styling Options
   stylix = {
     enable = true;
     enableReleaseChecks = false;
-    image = stylixImage;
+    image = config.polaris.stylixImage;
     autoEnable = false;
     targets = {
       plymouth.enable = false;

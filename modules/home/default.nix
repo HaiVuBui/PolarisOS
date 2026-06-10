@@ -1,7 +1,4 @@
-{ host, lib, ... }:
-let
-  vars = import ../../hosts/${host}/variables.nix;
-in
+{ ... }:
 {
   imports = [
     ./fish.nix
@@ -15,8 +12,6 @@ in
     ./direnv.nix
     ./vdirsyncer.nix
     ./niri.nix
-  ]
-  ++ lib.optionals (vars.gamingEnable or false) [
     ./gaming.nix
   ];
 }

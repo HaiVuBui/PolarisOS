@@ -1,11 +1,8 @@
-{ lib, username, host, ... }:
-let
-  vars = import ../../hosts/${host}/variables.nix;
-  nopassEnabled = vars.nopasswdSudo or false;
-in {
+{ config, lib, username, ... }:
+{
   security.sudo = {
     enable = true;
-    extraRules = lib.optionals nopassEnabled [{
+    extraRules = lib.optionals config.polaris.nopasswdSudo [{
       users = [ username ];
       commands = [{
         command = "ALL";

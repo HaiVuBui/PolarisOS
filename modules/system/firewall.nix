@@ -1,12 +1,9 @@
-{ host, lib, ... }:
-let
-  inherit (import ../../hosts/${host}/variables.nix) jellyfinEnable;
-in
+{ config, lib, ... }:
 {
   networking.firewall = {
     enable = true;
     trustedInterfaces = [ "tailscale0" ];
-    allowedTCPPorts = lib.optionals jellyfinEnable [ 8096 ];
+    allowedTCPPorts = lib.optionals config.polaris.features.jellyfin [ 8096 ];
     allowedTCPPortRanges = lib.mkForce [ ];
     allowedUDPPortRanges = lib.mkForce [ ];
   };

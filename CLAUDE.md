@@ -22,23 +22,30 @@ There are no build checks, tests, or lint commands — changes are validated by 
 
 ```
 flake.nix                   # Entry point — defines both host systems
+modules/options.nix         # Typed `polaris.*` option set (host config surface)
 hosts/{host}/
-  default.nix               # Host-level imports and variables.nix values
+  default.nix               # Host-level imports + `polaris.*` values for this host
   hardware.nix              # Device-specific (UUIDs, drivers)
-  variables.nix             # Feature flags for this host
 modules/system/             # Shared NixOS system-level modules
 modules/home/               # Shared Home Manager user-level modules
 dotfiles/                   # App configs synced by sync.sh to ~/.config/
 ```
 
-### Host feature flags (`variables.nix`)
+### Host configuration (`polaris.*` options)
 
-Each host's `variables.nix` controls which features are enabled. Key flags:
-- `cudaEnable`, `gamingEnable`, `jellyfinEnable` — toggle entire subsystems
-- `displayManager` — `"tui"` or graphical
-- `nopasswdSudo` — passwordless sudo
-- `cores` — parallelism for Nix builds
-- `stylixImage` — wallpaper that drives the Stylix color scheme
+Per-host settings are a typed NixOS option set defined in `modules/options.nix` and
+set in each host's `default.nix` under the `polaris` attribute. Key options:
+- `polaris.features.{cuda,gaming,jellyfin,vaultwarden,floccus,archive}` — toggle subsystems
+- `polaris.network` — `"iwd"` or `"nm"`
+- `polaris.displayManager` — `"tui"` or `"graphical"`
+- `polaris.nopasswdSudo` — passwordless sudo
+- `polaris.cores` — Nix build cores per job (`0` = all)
+- `polaris.git.{username,email}` — git identity and system user description
+- `polaris.stylixImage` — wallpaper that drives the Stylix color scheme
+
+System modules read these via `config.polaris.*`; Home Manager modules read them via
+`osConfig.polaris.*`. Feature modules are always imported and gate their own bodies
+with `lib.mkIf config.polaris.features.<name>` rather than being conditionally imported.
 
 MovingCastle has no CUDA/gaming; MinasTirith has NVIDIA drivers, CUDA, Jellyfin, and gaming packages.
 
@@ -85,4 +92,3 @@ In-game graphics settings: Renderer=Vulkan, Engine Multithreading=On, Dynamic Cu
 - `home-manager` — user environment
 - `stylix` — unified theming across all apps
 - `niri` (git) — Wayland compositor, installed from upstream
-- `nix-flatpak` — declarative Flatpak management

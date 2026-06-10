@@ -1,5 +1,5 @@
-{ pkgs, username, ... }:
-{
+{ config, lib, pkgs, username, ... }:
+lib.mkIf config.polaris.features.archive {
   systemd.services.archive-maintenance = {
     description = "Archive checker";
     after = [ "network-online.target" ];

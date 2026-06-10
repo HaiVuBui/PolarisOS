@@ -1,16 +1,15 @@
 {
-  host,
+  config,
   lib,
   pkgs,
   username,
   ...
 }:
 let
-  inherit (import ../../hosts/${host}/variables.nix) floccusEnable;
   tailscale = "${pkgs.tailscale}/bin/tailscale";
   waitForTailscale = "${pkgs.bash}/bin/bash -c 'for i in {1..30}; do ${tailscale} status --self=true --peers=false >/dev/null 2>&1 && exit 0; sleep 1; done; exit 1'";
 in
-lib.mkIf floccusEnable {
+lib.mkIf config.polaris.features.floccus {
   systemd.services.floccus-webdav = {
     description = "rclone WebDAV server for floccus bookmark sync";
     after = [ "network-online.target" ];

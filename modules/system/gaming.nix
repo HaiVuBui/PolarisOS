@@ -1,5 +1,5 @@
-{ pkgs, ... }:
-{
+{ config, lib, pkgs, ... }:
+lib.mkIf config.polaris.features.gaming {
   hardware.graphics = {
     enable = true;
     enable32Bit = true;

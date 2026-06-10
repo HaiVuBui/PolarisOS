@@ -1,21 +1,8 @@
-{ host, ... }:
-let
-  inherit (import ../../hosts/${host}/variables.nix) gitUsername gitEmail;
-in
+{ osConfig, ... }:
 {
   programs.git = {
     enable = true;
     settings = {
-      alias = {
-        # br = "branch --sort=-committerdate";
-        # co = "checkout";
-        # df = "diff";
-        # com = "commit -a";
-        # gs = "stash";
-        # gp = "pull";
-        # lg = "log --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Creset %s %C(green)(%cr)%C(bold blue) <%an>%Creset' --abbrev-commit";
-        # st = "status";
-      };
       credential.helper = "cache --timeout=7200";
       init.defaultBranch = "main"; # Set default new branches to 'main'
       log.date = "iso"; # ISO 8601 date format
@@ -23,8 +10,8 @@ in
       merge.conflictStyle = "diff3"; # Conflict resolution style for readable diffs
       push.default = "simple"; # Match modern push behavior
       user = {
-        name = gitUsername;
-        email = gitEmail;
+        name = osConfig.polaris.git.username;
+        email = osConfig.polaris.git.email;
       };
     };
     ignores = [

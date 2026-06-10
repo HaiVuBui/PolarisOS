@@ -1,15 +1,14 @@
 {
-  host,
+  config,
   lib,
   pkgs,
   ...
 }:
 let
-  inherit (import ../../hosts/${host}/variables.nix) vaultwardenEnable;
   tailscale = "${pkgs.tailscale}/bin/tailscale";
   waitForTailscale = "${pkgs.bash}/bin/bash -c 'for i in {1..30}; do ${tailscale} status --self=true --peers=false >/dev/null 2>&1 && exit 0; sleep 1; done; exit 1'";
 in
-lib.mkIf vaultwardenEnable {
+lib.mkIf config.polaris.features.vaultwarden {
   services.vaultwarden = {
     enable = true;
     dbBackend = "sqlite";

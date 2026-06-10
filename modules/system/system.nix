@@ -1,10 +1,8 @@
-{ host, username, ... }:
-let
-  inherit (import ../../hosts/${host}/variables.nix) consoleKeyMap;
-in
+{ config, username, ... }:
 {
   nix = {
     settings = {
+      cores = config.polaris.cores;
       download-buffer-size = 200000000;
       auto-optimise-store = true;
       experimental-features = [

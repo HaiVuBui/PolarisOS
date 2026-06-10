@@ -1,13 +1,13 @@
 {
+  config,
   host,
   lib,
   pkgs,
   ...
 }:
 let
-  vars = import ../../hosts/${host}/variables.nix;
-  isNm = vars.network == "nm";
-  isIwd = vars.network == "iwd";
+  isNm = config.polaris.network == "nm";
+  isIwd = config.polaris.network == "iwd";
 in
 lib.mkMerge [
   {

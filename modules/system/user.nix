@@ -1,13 +1,11 @@
 {
+  config,
   pkgs,
   inputs,
   username,
   host,
   ...
 }:
-let
-  inherit (import ../../hosts/${host}/variables.nix) gitUsername;
-in
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
@@ -31,7 +29,7 @@ in
   users.mutableUsers = true;
   users.users.${username} = {
     isNormalUser = true;
-    description = "${gitUsername}";
+    description = config.polaris.git.username;
     extraGroups = [
       "adbusers"
       "docker" # access to docker as non-root
