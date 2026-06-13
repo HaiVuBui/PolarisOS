@@ -45,6 +45,7 @@
     # wlogout
     kdePackages.dolphin
     inputs.evercal.packages.${pkgs.stdenv.hostPlatform.system}.default # calendar
+    inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
     nautilus
 
     # terminal ricing
