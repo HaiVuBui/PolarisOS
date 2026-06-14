@@ -1,10 +1,16 @@
 # Global Claude Instructions
 
 ## System
-- NixOS (PolarisOS) with two machines: MovingCastle (Intel dev) and MinasTirith (NVIDIA/gaming)
+- NixOS: any tool needed can be find via nix-shell, nix profile, for just simply as the user
+- GPU: nvivia 1080ti
 - Shell: fish. Suggest fish-compatible syntax for interactive commands; POSIX sh is fine for scripts
-- Rebuild: `nh os switch` — this is how NixOS config changes are applied
 - Editor: neovim, terminal: kitty, compositor: niri (Wayland)
+
+## Tooling
+- Use `rtk` wrappers for token-heavy commands: `rtk ls`, `rtk tree`, `rtk read`, `rtk git`, `rtk grep`, `rtk find`, `rtk diff`, `rtk log`, `rtk test`, `rtk err`. They proxy the native command with token-optimized output. A PreToolUse hook blocks the raw commands.
+
+## Agents
+- For reading, searching, or summarizing files, delegate to the `reader` agent.
 
 ## Response style
 - Terse and direct. No preamble, no trailing summaries

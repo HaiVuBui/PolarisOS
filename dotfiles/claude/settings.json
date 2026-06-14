@@ -8,6 +8,17 @@
   "inputNeededNotifEnabled": false,
   "preferredNotifChannel": "notifications_disabled",
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/hai/.claude/hooks/rtk-guard.sh"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [

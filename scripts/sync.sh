@@ -57,6 +57,8 @@ rsync -aq "$DOTFILES_DIR/opencode/opencode.jsonc" "$CONFIG_DIR/opencode/opencode
 mkdir -p "$CONFIG_DIR/opencode/skills"
 rsync -aq --delete "$DOTFILES_DIR/opencode/skills/" "$CONFIG_DIR/opencode/skills/"
 rsync -aq --delete "$DOTFILES_DIR/claude/skills/" "$HOME/.claude/skills/"
+rsync -aq --delete "$DOTFILES_DIR/claude/agents/" "$HOME/.claude/agents/"
+rsync -aq --delete "$DOTFILES_DIR/claude/hooks/" "$HOME/.claude/hooks/"
 rsync -aq "$DOTFILES_DIR/claude/settings.json" "$HOME/.claude/settings.json"
 rsync -aq "$DOTFILES_DIR/claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
 rsync -aq "$DOTFILES_DIR/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"

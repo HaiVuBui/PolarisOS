@@ -10,5 +10,11 @@
     "command": "mcp-server-time",
     "args": [],
     "env": {}
+  },
+  "vexp": {
+    "type": "stdio",
+    "command": "vexp",
+    "args": ["mcp"],
+    "env": {}
   }
 }

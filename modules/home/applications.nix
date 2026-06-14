@@ -67,6 +67,7 @@
     opencode
     codeium
     claude-code
+    rtk # token-killer CLI proxy
     mcp-server-fetch
     mcp-server-time
 
