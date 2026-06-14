@@ -1,10 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
-## What this repo is
-
-PolarisOS is a declarative NixOS configuration managing two machines: **MovingCastle** (Intel dev machine) and **MinasTirith** (NVIDIA server/gaming). It uses NixOS + Home Manager with Nix flakes.
+PolarisOS is a declarative NixOS configuration managing two machines: **MovingCastle** (Intel dev machine) and **MinasTirith** (NVIDIA server/gaming). Uses NixOS + Home Manager with Nix flakes.
 
 ## Key commands
 
@@ -16,7 +12,7 @@ nh clean all                  # Clean old generations (keeps last 3 + 4 days)
 ./scripts/clean.sh            # Clean Nix store, optimize, defrag Btrfs
 ```
 
-There are no build checks, tests, or lint commands — changes are validated by `nh os switch` succeeding.
+No build checks, tests, or lint — changes are validated by `nh os switch` succeeding.
 
 ## Architecture
 
@@ -33,8 +29,7 @@ dotfiles/                   # App configs synced by sync.sh to ~/.config/
 
 ### Host configuration (`polaris.*` options)
 
-Per-host settings are a typed NixOS option set defined in `modules/options.nix` and
-set in each host's `default.nix` under the `polaris` attribute. Key options:
+Typed options defined in `modules/options.nix`, set per-host in `hosts/{host}/default.nix` under `polaris`. Key options:
 - `polaris.features.{cuda,gaming,jellyfin,vaultwarden,floccus,archive}` — toggle subsystems
 - `polaris.network` — `"iwd"` or `"nm"`
 - `polaris.displayManager` — `"tui"` or `"graphical"`
@@ -43,23 +38,21 @@ set in each host's `default.nix` under the `polaris` attribute. Key options:
 - `polaris.git.{username,email}` — git identity and system user description
 - `polaris.stylixImage` — wallpaper that drives the Stylix color scheme
 
-System modules read these via `config.polaris.*`; Home Manager modules read them via
-`osConfig.polaris.*`. Feature modules are always imported and gate their own bodies
-with `lib.mkIf config.polaris.features.<name>` rather than being conditionally imported.
+System modules read these via `config.polaris.*`; Home Manager modules via `osConfig.polaris.*`. Feature modules are always imported and gate their bodies with `lib.mkIf config.polaris.features.<name>`.
 
 MovingCastle has no CUDA/gaming; MinasTirith has NVIDIA drivers, CUDA, Jellyfin, and gaming packages.
 
 ### Module pattern
 
-Modules under `modules/system/` and `modules/home/` are opt-in via imports in `hosts/{host}/default.nix`. Home Manager config lives entirely under `modules/home/` and is integrated as a NixOS module (not standalone).
+Modules under `modules/system/` and `modules/home/` are opt-in via imports in `hosts/{host}/default.nix`. Home Manager runs as a NixOS module (not a standalone flake output).
 
 ### Dotfiles sync
 
-`scripts/sync.sh` uses `rsync` to copy from `dotfiles/` to `~/.config/`. Mutable configs (e.g., `~/.config/fish/cfg.fish`) can be edited live without rebuilding. The nvim config is a git submodule (`git@github.com:HaiVuBui/nvim.git`).
+`scripts/sync.sh` rsyncs `dotfiles/` to `~/.config/`. Mutable configs (e.g., `~/.config/fish/cfg.fish`) can be edited live without rebuilding. The nvim config is a git submodule (`git@github.com:HaiVuBui/nvim.git`).
 
-### Lutris / gaming configs
+### Gaming configs
 
-Lutris game YAMLs (`~/.local/share/lutris/games/*.yml`) are **not synced** — Lutris writes them live on every settings change. Do not add them to `scripts/sync.sh`.
+Lutris game YAMLs (`~/.local/share/lutris/games/*.yml`) are **not synced** — Lutris rewrites them on every settings change. Do not add them to `scripts/sync.sh`.
 
 The PoE entry is `~/.local/share/lutris/games/poe-*.yml`. Key settings to preserve if recreating:
 
@@ -84,7 +77,7 @@ wine:
   version: wine-ge-8-26-x86_64
 ```
 
-In-game graphics settings: Renderer=Vulkan, Engine Multithreading=On, Dynamic Culling=On, Shadow Quality=Low, Texture Quality=High (not Ultra), VSync=Off.
+In-game: Renderer=Vulkan, Engine Multithreading=On, Dynamic Culling=On, Shadow Quality=Low, Texture Quality=High (not Ultra), VSync=Off.
 
 ### Key inputs
 
