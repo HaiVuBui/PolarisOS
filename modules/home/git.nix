@@ -26,6 +26,7 @@
       ".env"
       ".vscode"
       ".devenv"
+      ".vexp"
     ];
   };
 }
