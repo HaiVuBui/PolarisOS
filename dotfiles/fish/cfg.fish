@@ -44,6 +44,8 @@ if status is-interactive
     abbr --add stl systemctl-tui
     abbr --add sstl 'sudo systemctl-tui'
     abbr --add zed zeditor
+    abbr --add prxon 'warp-cli connect'
+    abbr --add prxoff 'warp-cli disconnect'
 
     # Git
     abbr --add ga 'git add'
