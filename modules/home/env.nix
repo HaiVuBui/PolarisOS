@@ -49,6 +49,7 @@ let
     # latex
     texlab
     texliveFull
+    tex-fmt
 
     #marp
     marp-cli
@@ -56,7 +57,8 @@ let
 
 in
 {
-  home.packages = basePackages ++ (lib.optionals osConfig.polaris.features.cuda (with pkgs; [ cudatoolkit ]));
+  home.packages =
+    basePackages ++ (lib.optionals osConfig.polaris.features.cuda (with pkgs; [ cudatoolkit ]));
 
   home.sessionVariables = {
     FLAKE = "${host}";
