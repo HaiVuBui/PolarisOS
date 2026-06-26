@@ -20,7 +20,7 @@ lib.mkIf config.polaris.features.floccus {
       User = username;
       # idempotent — creates secret:Floccus/ if it doesn't exist yet
       ExecStartPre = "-${pkgs.rclone}/bin/rclone mkdir secret:Floccus";
-      ExecStart = "${pkgs.rclone}/bin/rclone serve webdav secret:Floccus --addr 127.0.0.1:8333 --vfs-cache-mode minimal";
+      ExecStart = "${pkgs.rclone}/bin/rclone serve webdav secret:Floccus --addr 127.0.0.1:8333 --baseurl /floccus --vfs-cache-mode minimal";
       Restart = "on-failure";
       RestartSec = "5s";
     };
@@ -39,7 +39,9 @@ lib.mkIf config.polaris.features.floccus {
       Type = "oneshot";
       RemainAfterExit = true;
       ExecStartPre = waitForTailscale;
-      ExecStart = "${tailscale} serve --bg --https=443 --set-path=/floccus http://127.0.0.1:8333";
+      # forward the /floccus path unstripped so rclone's --baseurl matches the
+      # WebDAV Destination header on MOVE (otherwise the prefix mismatch → 403)
+      ExecStart = "${tailscale} serve --bg --https=443 --set-path=/floccus http://127.0.0.1:8333/floccus";
     };
   };
 }
