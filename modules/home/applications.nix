@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     # apps
     obsidian
+    anydesk
     firefox
     vesktop
     teams-for-linux
