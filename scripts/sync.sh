@@ -32,7 +32,7 @@ APPS=(
   "khal"
   "btop"
   "yazi"
-  "sioyek"
+  # "sioyek"
   "zathura"
   "MangoHud"
 )
