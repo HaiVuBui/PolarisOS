@@ -12,6 +12,7 @@
     expat
     libxml2
     libffi
+    libxcrypt-legacy
   ];
 }
 
