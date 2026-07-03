@@ -509,6 +509,8 @@ binds {
 
     Mod+Backspace hotkey-overlay-title="Exit menu" { spawn-sh "bash /home/hai/.config/scripts/logout.sh"; }
 
+    Mod+Shift+D hotkey-overlay-title="Dictionary lookup (highlighted word)" { spawn-sh "bash /home/hai/.config/scripts/dict.sh"; }
+
     // applications launcher
     Mod+A hotkey-overlay-title="Applications launcher" { spawn-sh "rofi -show drun -theme-str 'window { width: 30%; }' "; }
 
