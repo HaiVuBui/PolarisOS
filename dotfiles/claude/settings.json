@@ -1,5 +1,6 @@
 {
-  "model": "sonnet",
+  "model": "opus",
+  "effortLevel": "low",
   "statusLine": {
     "type": "command",
     "command": "bash /home/hai/.claude/statusline-command.sh"
