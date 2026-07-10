@@ -1,0 +1,11 @@
+{
+  "model": "Gemini 3.5 Flash (High)",
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/hai/.gemini/antigravity-cli/statusline-command.sh",
+    "enabled": true
+  },
+  "trustedWorkspaces": [
+    "/home/hai/PolarisOS"
+  ]
+}

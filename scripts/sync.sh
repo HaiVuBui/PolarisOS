@@ -66,6 +66,13 @@ tmp=$(mktemp)
 jq --slurpfile mcp "$DOTFILES_DIR/claude/mcp-servers.json" '.mcpServers = $mcp[0]' "$HOME/.claude.json" >"$tmp" && mv "$tmp" "$HOME/.claude.json"
 
 # ---------------------------------------------------------
+# 2.1 Antigravity CLI
+# ---------------------------------------------------------
+echo ">>> Syncing Antigravity CLI..."
+mkdir -p "$HOME/.gemini/antigravity-cli"
+rsync -aq "$DOTFILES_DIR/antigravity/" "$HOME/.gemini/antigravity-cli/"
+
+# ---------------------------------------------------------
 # 3. VS Code + Zed Settings
 # ---------------------------------------------------------
 echo ">>> Syncing VS Code..."
