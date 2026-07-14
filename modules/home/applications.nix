@@ -8,6 +8,7 @@
     vesktop
     teams-for-linux
     zed-editor
+    antigravity
     qbittorrent
     zathura
     (pkgs.symlinkJoin {
