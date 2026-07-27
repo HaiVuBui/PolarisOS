@@ -8,7 +8,7 @@
     vesktop
     teams-for-linux
     zed-editor
-    antigravity
+    antigravity-ide
     qbittorrent
     zathura
     (pkgs.symlinkJoin {
@@ -70,7 +70,6 @@
     codeium
     claude-code
     antigravity-cli
-    rtk # token-killer CLI proxy
     mcp-server-fetch
     mcp-server-time
 

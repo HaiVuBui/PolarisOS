@@ -23,6 +23,7 @@
         homeDirectory = "/home/${username}";
         stateVersion = "25.11";
         enableNixpkgsReleaseCheck = false;
+        pointerCursor.enable = true;
       };
     };
   };
