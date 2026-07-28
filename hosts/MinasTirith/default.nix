@@ -18,6 +18,7 @@
       cuda = true;
       gaming = true;
       jellyfin = true;
+      qbittorrent = true;
       vaultwarden = true;
       floccus = true;
       archive = true;

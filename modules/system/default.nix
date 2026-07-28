@@ -12,6 +12,7 @@
     ./network.nix
     ./keyboard.nix
     ./jellyfin.nix
+    ./qbittorrent.nix
     ./packages.nix
     ./tuigreet.nix
     ./security.nix
