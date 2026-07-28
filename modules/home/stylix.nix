@@ -1,9 +1,5 @@
-{ pkgs, ... }: {
+{ ... }: {
   stylix.enableReleaseChecks = false;
-  gtk.iconTheme = {
-    package = pkgs.tela-icon-theme;
-    name = "Tela-light";
-  };
   stylix.targets = {
     waybar.enable = false;
     rofi.enable = false;
