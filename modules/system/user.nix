@@ -35,6 +35,7 @@
       "adbusers"
       "docker" # access to docker as non-root
       "gamemode" # allow GameMode priority optimizations
+      "input" # DMS Caps Lock OSD support
       "libvirtd" # Virt manager/QEMU access
       "lp"
       "networkmanager"

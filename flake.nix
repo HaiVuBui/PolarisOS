@@ -16,6 +16,10 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     evercal = {
       url = "github:HaiVuBui/EverCal";
       inputs.nixpkgs.follows = "nixpkgs";

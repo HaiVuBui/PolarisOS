@@ -17,7 +17,7 @@ rsync -aq --delete "$DOTFILES_DIR/aerc/" "$CONFIG_DIR/aerc/" --exclude 'accounts
 # ---------------------------------------------------------
 APPS=(
   "hypr"
-  "niri"
+  # "niri"
   "nvim"
   "kitty"
   "tmux"
