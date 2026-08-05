@@ -10,7 +10,7 @@
     git.username = "HaiVuBui";
     git.email = "buivuhai1105@gmail.com";
     displayManager = "tui";
-    network = "iwd";
+    network = "nm";
     cores = 6;
     nopasswdSudo = true;
     stylixImage = ../../wallpapers/angel-warior.jpg;
