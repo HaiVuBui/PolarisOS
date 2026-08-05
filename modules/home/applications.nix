@@ -117,6 +117,9 @@
     magic-wormhole
     gh
     calibre
+    waypipe
+    xhost
+    ookla-speedtest
   ];
   # ++ (with pkgs-unstable; [ ]);
 }
