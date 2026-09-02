@@ -19,7 +19,6 @@ lib.mkIf config.polaris.features.vaultwarden {
       ROCKET_ADDRESS = "127.0.0.1";
       ROCKET_PORT = 8222;
       SIGNUPS_ALLOWED = false;
-      WEBSOCKET_ENABLED = true;
     };
   };
 
@@ -34,6 +33,7 @@ lib.mkIf config.polaris.features.vaultwarden {
       RemainAfterExit = true;
       ExecStartPre = waitForTailscale;
       ExecStart = "${tailscale} serve --bg --https=443 --set-path=/vaultwarden http://127.0.0.1:8222/vaultwarden";
+      ExecStop = "${tailscale} serve --https=443 --set-path=/vaultwarden off";
     };
   };
 }
