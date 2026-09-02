@@ -52,7 +52,6 @@ in
       jellyfin = mkEnableOption "the Jellyfin media server";
       qbittorrent = mkEnableOption "the qBittorrent-nox download service";
       vaultwarden = mkEnableOption "Vaultwarden exposed via Tailscale Serve";
-      floccus = mkEnableOption "Floccus WebDAV bookmark sync via Tailscale Serve";
       archive = mkEnableOption "the monthly /Archive Btrfs healthcheck";
     };
   };

@@ -19,7 +19,6 @@
       gaming = false;
       jellyfin = false;
       vaultwarden = false;
-      floccus = false;
       archive = false;
     };
   };
