@@ -65,13 +65,9 @@
 
     #AI shits
     codex
-    gemini-cli
     opencode
     codeium
     claude-code
-    antigravity-cli
-    mcp-server-fetch
-    mcp-server-time
 
     #dependencies
     ffmpeg
