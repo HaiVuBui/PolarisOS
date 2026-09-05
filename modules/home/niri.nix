@@ -12,35 +12,12 @@
   # Install Niri and related Wayland utilities
   home.packages = with pkgs; [
     niri
-    waybar
+    # waybar
     udiskie
     xwayland-satellite
-    awww
+    # awww
     inputs.niri-scratchpad.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
-
-  # default pdf viewer
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      "application/pdf" = [ "sioyek.desktop" ];
-    };
-  };
-
-  # Polkit authentication agent — needed for GUI privilege prompts under niri
-  systemd.user.services.polkit-gnome = {
-    Unit = {
-      Description = "Polkit GNOME authentication agent";
-      BindsTo = "graphical-session.target";
-      After = "graphical-session.target";
-    };
-    Service = {
-      Type = "simple";
-      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-      Restart = "on-failure";
-    };
-    Install.WantedBy = [ "graphical-session.target" ];
-  };
 
   # Enable XWayland satellite for X11 app support
   systemd.user.services.xwayland-satellite = {

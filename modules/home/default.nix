@@ -10,7 +10,7 @@
     ./env.nix
     ./symlinks.nix
     ./direnv.nix
-    ./vdirsyncer.nix
+    # ./vdirsyncer.nix
     ./niri.nix
     ./gaming.nix
   ];

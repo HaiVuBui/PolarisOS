@@ -7,6 +7,7 @@
 
   xdg.mime.defaultApplications = {
     "text/html" = "helium.desktop";
+    "application/pdf" = "helium.desktop";
     "x-scheme-handler/http" = "helium.desktop";
     "x-scheme-handler/https" = "helium.desktop";
     "x-scheme-handler/about" = "helium.desktop";

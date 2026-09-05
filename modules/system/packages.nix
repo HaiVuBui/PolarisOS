@@ -16,10 +16,6 @@
     seahorse.enable = true;
     fuse.userAllowOther = true;
     mtr.enable = true;
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
     nh = {
       enable = true;
       clean.enable = true;
@@ -32,14 +28,14 @@
     with pkgs;
     [
       # essentials
-      brightnessctl # light controller
+      # brightnessctl # light controller (laptop only)
       vim # editor
-      tuigreet # greeter
+      # tuigreet # greeter (greetd references it by store path)
       zip
       unzip
-      fish
+      # fish # programs.fish.enable
       git # distributed version control system
-      htop # monitors tool
+      htop # monitors tool (btop in home.packages)
       curl # download tool
       wget # download tool
       tmux

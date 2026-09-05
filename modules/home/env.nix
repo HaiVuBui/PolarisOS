@@ -34,25 +34,25 @@ let
     uv
 
     # Haskell
-    ormolu
-    haskell-language-server
+    # ormolu
+    # haskell-language-server
 
     # Go
-    gopls
-    gofumpt
+    # gopls
+    # gofumpt
 
     # rust
-    clippy
-    rustfmt
-    rust-analyzer
+    # clippy
+    # rustfmt
+    # rust-analyzer
 
     # latex
-    texlab
-    texliveFull
-    tex-fmt
+    # texlab
+    # texliveFull
+    # tex-fmt
 
     #marp
-    marp-cli
+    # marp-cli
   ];
 
 in
