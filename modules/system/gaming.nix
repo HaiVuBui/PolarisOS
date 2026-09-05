@@ -39,24 +39,18 @@ lib.mkIf config.polaris.features.gaming {
     capSysNice = true;
   };
 
-  systemd.oomd = {
-    enable = true;
-    enableUserSlices = true;
-  };
+  systemd.oomd.enable = true;
 
   # NTSYNC — kernel-side Wine sync primitives, replaces esync/fsync
   boot.kernelModules = [ "ntsync" ];
 
   environment.systemPackages = with pkgs; [
-    mangohud
-    goverlay
     lutris
     winetricks
   ];
 
   boot.kernel.sysctl = {
     "vm.max_map_count" = 2147483642;
-    "net.core.default_qdisc" = "fq";
     # Suppress kcompactd wakeups that cause micro-stutter in long sessions
     "vm.compaction_proactiveness" = 0;
   };
