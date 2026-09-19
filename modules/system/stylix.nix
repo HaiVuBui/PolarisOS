@@ -47,4 +47,6 @@
       dark = "Mignon-pastel-dark";
     };
   };
+
+  environment.systemPackages = [ pkgs.morewaita-icon-theme ];
 }
