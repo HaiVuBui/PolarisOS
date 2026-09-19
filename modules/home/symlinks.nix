@@ -11,5 +11,8 @@
 
     # "Wallpapers".source =
     #   config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/PolarisOS/wallpapers";
+
+    "service/systemd-user".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/systemd/user";
   };
 }
