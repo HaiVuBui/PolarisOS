@@ -408,20 +408,10 @@ window-rule {
 }
 
 window-rule {
-    match app-id="brave-browser"  
+    match app-id="brave-origin"
     default-column-width { proportion 0.66667; }
     open-maximized-to-edges false
     open-fullscreen false
-    opacity 0.99
-    border {
-        off
-    }
-    geometry-corner-radius 5
-    clip-to-geometry true
-}
-
-window-rule {
-    match app-id="helium"  
     opacity 0.99
     border {
         off
@@ -502,7 +492,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Mod+P { spawn-sh "/home/hai/.nix-profile/bin/caelestia shell drawers toggle launcher";}
-    Mod+Shift+b { spawn "helium";}
+    Mod+Shift+b { spawn "brave-origin";}
     // Mod+Shift+c { spawn "kitty" "-e" "nvim"; }
     Mod+Shift+c { spawn "zeditor"; }
 

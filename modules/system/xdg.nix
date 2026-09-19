@@ -6,12 +6,12 @@
   xdg.mime.enable = true;
 
   xdg.mime.defaultApplications = {
-    "text/html" = "helium.desktop";
-    "application/pdf" = "helium.desktop";
-    "x-scheme-handler/http" = "helium.desktop";
-    "x-scheme-handler/https" = "helium.desktop";
-    "x-scheme-handler/about" = "helium.desktop";
-    "x-scheme-handler/unknown" = "helium.desktop";
+    "text/html" = "brave-origin.desktop";
+    "application/pdf" = "brave-origin.desktop";
+    "x-scheme-handler/http" = "brave-origin.desktop";
+    "x-scheme-handler/https" = "brave-origin.desktop";
+    "x-scheme-handler/about" = "brave-origin.desktop";
+    "x-scheme-handler/unknown" = "brave-origin.desktop";
   };
 
   xdg.portal = {
