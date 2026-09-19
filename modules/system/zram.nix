@@ -2,8 +2,7 @@ _: {
   zramSwap = {
     enable = true;
     algorithm = "zstd"; # High compression, very fast.
-    memoryPercent =
-      100; # Use up to 100% of RAM size for the compressed block (don't worry, it doesn't reserve it upfront).
+    memoryPercent = 50; # Larger costs CPU time on compression under memory pressure.
   };
 
   # zram-tuned (CachyOS): swap to compressed RAM eagerly, no readahead
