@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     # apps
-    # obsidian
+    obsidian
     # anydesk
     # firefox
     # vesktop
