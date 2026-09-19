@@ -40,7 +40,6 @@
     # wlogout
     # kdePackages.dolphin
     # inputs.evercal.packages.${pkgs.stdenv.hostPlatform.system}.default # calendar
-    brave-origin
     # nautilus
 
     # terminal ricing

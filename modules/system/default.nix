@@ -6,6 +6,7 @@
   imports = [
     ../options.nix
     ./boot.nix
+    ./brave.nix
     ./firewall.nix
     ./fonts.nix
     ./hardware.nix
