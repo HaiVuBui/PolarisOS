@@ -24,6 +24,16 @@ lib.mkMerge [
       dns = "systemd-resolved";
     };
     environment.systemPackages = [ pkgs.networkmanagerapplet ];
+
+    # keep nm-connection-editor, drop the tray applet: /etc/xdg wins over the
+    # package's own autostart entry in XDG_CONFIG_DIRS
+    environment.etc."xdg/autostart/nm-applet.desktop".text = ''
+      [Desktop Entry]
+      Type=Application
+      Name=NetworkManager Applet
+      Exec=nm-applet
+      Hidden=true
+    '';
   })
 
   (lib.mkIf isIwd {
