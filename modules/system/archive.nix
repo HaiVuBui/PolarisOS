@@ -26,10 +26,12 @@ lib.mkIf config.polaris.features.archive {
       ExecStart = "${pkgs.writeShellScript "archive-maintenance" ''
         set -eu
 
+        uid=$(id -u ${username})
+
         notify() {
           runuser -u ${username} -- env \
-            XDG_RUNTIME_DIR=/run/user/1000 \
-            DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
+            XDG_RUNTIME_DIR=/run/user/$uid \
+            DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus \
             notify-send "Archive maintenance finished" "$1" || true
         }
 

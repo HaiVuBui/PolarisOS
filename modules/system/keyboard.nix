@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, username, ... }:
 
 {
   i18n.inputMethod = {
@@ -11,7 +11,7 @@
 
   services.fcitx5-lotus = {
     enable = true;
-    users = [ "hai" ];
+    users = [ username ];
     package = pkgs.callPackage "${inputs.fcitx5-lotus}/nix/packages/fcitx5-lotus/default.nix" {
       kdePackages = pkgs.kdePackages;
     };
