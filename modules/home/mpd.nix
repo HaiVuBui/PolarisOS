@@ -18,6 +18,9 @@
     '';
   };
 
+  # mpd speaks no MPRIS of its own, so nothing on the bar can see or seek it
+  services.mpd-mpris.enable = true;
+
   home.packages = with pkgs; [
     mpc
   ];
