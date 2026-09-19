@@ -42,9 +42,9 @@
     };
     icons = {
       enable = true;
-      package = pkgs.tela-icon-theme;
-      light = "Tela-light";
-      dark = "Tela-dark";
+      package = pkgs.callPackage ./mignon-icon-theme.nix { };
+      light = "Mignon-pastel-light";
+      dark = "Mignon-pastel-dark";
     };
   };
 }
