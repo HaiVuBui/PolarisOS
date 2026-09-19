@@ -53,6 +53,8 @@ lib.mkIf config.polaris.features.gaming {
     "vm.max_map_count" = 2147483642;
     # Suppress kcompactd wakeups that cause micro-stutter in long sessions
     "vm.compaction_proactiveness" = 0;
+    # Split-lock traps stall some Wine/Proton games
+    "kernel.split_lock_mitigate" = 0;
   };
 
   security.pam.loginLimits = [

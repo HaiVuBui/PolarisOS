@@ -17,6 +17,16 @@
     udisks2.enable = true;
     cloudflare-warp.enable = true;
 
+    scx = {
+      enable = true;
+      scheduler = "scx_lavd";
+    };
+    ananicy = {
+      enable = true;
+      package = pkgs.ananicy-cpp;
+      rulesProvider = pkgs.ananicy-rules-cachyos;
+    };
+
     smartd = {
       enable = true;
       autodetect = true;
