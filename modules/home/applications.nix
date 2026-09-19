@@ -3,8 +3,8 @@
   home.packages = with pkgs; [
     # apps
     obsidian
-    # vesktop
-    # teams-for-linux
+    vesktop
+    teams-for-linux
     (pkgs.symlinkJoin {
       name = "sioyek";
       paths = [ pkgs.sioyek ];
