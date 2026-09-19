@@ -35,7 +35,7 @@
     # GUI tools
     # waybar
     # tofi
-    # rofi # dms spawner
+    rofi # dms spawner
     # hyprlock # dms ipc call lock lock
     # wlogout
     # kdePackages.dolphin
