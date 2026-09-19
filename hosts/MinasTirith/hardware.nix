@@ -43,10 +43,10 @@
       options = [ "subvol=SNAPSHOTS" "compress=zstd:3" "noatime" "nofail" ];
     };
 
-  fileSystems."/home/hai/Storage" =
-    { device = "/dev/disk/by-uuid/e973dce2-7d2e-412f-ba99-722ed58dbd55";
+  fileSystems."/Storage" =
+    { device = "/dev/disk/by-uuid/b751ecfe-de9f-4e4b-9e77-d5ec67cec64f";
       fsType = "btrfs";
-      options = [ "subvol=STORAGE" "compress=zstd:3" "noatime" "nofail" ];
+      options = [ "compress=zstd:3" "noatime" "nofail" ];
     };
 
   fileSystems."/boot" =
