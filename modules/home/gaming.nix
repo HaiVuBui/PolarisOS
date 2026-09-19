@@ -6,9 +6,6 @@ lib.mkIf osConfig.polaris.features.gaming {
 
   home.sessionVariables = {
     WINEDEBUG = "-all";
-    WINEESYNC = "0";
-    WINEFSYNC = "0";
-    WINENTSYNC = "1";
     DXVK_LOG_LEVEL = "none";
     __GL_SHADER_DISK_CACHE = "1";
     __GL_SHADER_DISK_CACHE_SIZE = "10737418240";
