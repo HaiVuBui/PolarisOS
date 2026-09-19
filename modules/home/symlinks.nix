@@ -9,7 +9,7 @@
     # "GrandArchive/Papers".source =
     #   config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/Papers";
 
-    "Wallpapers".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/PolarisOS/wallpapers";
+    # "Wallpapers".source =
+    #   config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/PolarisOS/wallpapers";
   };
 }
