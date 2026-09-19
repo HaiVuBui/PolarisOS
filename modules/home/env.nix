@@ -47,9 +47,9 @@ let
     # rust-analyzer
 
     # latex
-    # texlab
-    # texliveFull
-    # tex-fmt
+    texlab
+    texliveFull
+    tex-fmt
 
     #marp
     # marp-cli

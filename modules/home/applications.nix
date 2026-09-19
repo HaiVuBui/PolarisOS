@@ -60,7 +60,7 @@
     # codex
     # opencode
     # codeium
-    # claude-code
+    claude-code
 
     #dependencies
     ffmpeg
