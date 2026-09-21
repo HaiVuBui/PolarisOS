@@ -9,8 +9,8 @@
 let
   basePackages = with pkgs; [
     # nix
-    nixd
-    nixfmt
+    # nixd
+    # nixfmt
     devenv
 
     # lua
@@ -25,7 +25,7 @@ let
 
     # Python
     basedpyright
-    black
+    # black
     (pkgs.buildFHSEnv {
       name = "pixi";
       runScript = "pixi";
