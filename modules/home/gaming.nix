@@ -7,9 +7,6 @@ lib.mkIf osConfig.polaris.features.gaming {
   home.sessionVariables = {
     WINEDEBUG = "-all";
     DXVK_LOG_LEVEL = "none";
-    __GL_SHADER_DISK_CACHE = "1";
-    __GL_SHADER_DISK_CACHE_SIZE = "10737418240";
-    __GL_SHADER_DISK_CACHE_PATH = "${config.xdg.cacheHome}/nv-shaders";
   };
 
   programs.mangohud = {
