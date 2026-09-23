@@ -16,6 +16,7 @@ lib.mkIf config.polaris.features.archive {
       pkgs.btrfs-progs
       pkgs.coreutils
       pkgs.gnugrep
+      pkgs.gnused
       pkgs.libnotify
       pkgs.rclone
       pkgs.util-linux
@@ -57,7 +58,50 @@ lib.mkIf config.polaris.features.archive {
           exit 1
         fi
 
-        notify "Archive is safe"
+        # Keep 12 months, then one per year. The archive-* glob matters:
+        # /snapshots also holds the ARCHIVE, SNAPSHOTS and STORAGE subvolumes.
+        cutoff=$(date -d "12 months ago" +%Y%m%d)
+        pruned=0
+        kept=0
+        years=""
+
+        for snap in $(printf '%s\n' /snapshots/archive-* | sort -r); do
+          [ -d "$snap" ] || continue
+
+          kept=$((kept + 1))
+          if [ "$kept" -le 3 ]; then
+            continue
+          fi
+
+          stamp=$(basename "$snap" \
+            | sed -nE 's/^archive-([0-9]{4})-([0-9]{2})-([0-9]{2})_.*/\1\2\3/p')
+          [ -n "$stamp" ] || continue
+
+          year=''${stamp%????}
+
+          if [ "$stamp" -ge "$cutoff" ]; then
+            case " $years " in *" $year "*) ;; *) years="$years $year" ;; esac
+            continue
+          fi
+
+          # Newest first, so the first survivor of a year is the one kept.
+          case " $years " in
+            *" $year "*)
+              if btrfs subvolume delete "$snap"; then
+                pruned=$((pruned + 1))
+              fi
+              ;;
+            *)
+              years="$years $year"
+              ;;
+          esac
+        done
+
+        if [ "$pruned" -gt 0 ]; then
+          notify "Archive is safe. Pruned $pruned old snapshots."
+        else
+          notify "Archive is safe"
+        fi
       ''}";
     };
   };
