@@ -30,7 +30,7 @@
     ./virtualization.nix
     ./nix.nix
     ./nix-ld.nix
-    ./zram.nix
+    ./swap.nix
     ./xdg.nix
     ./systemEnv.nix
     ./gaming.nix
