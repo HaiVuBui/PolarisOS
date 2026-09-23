@@ -21,6 +21,7 @@
       qbittorrent = true;
       vaultwarden = true;
       archive = true;
+      ollama = true;
     };
   };
 }

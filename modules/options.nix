@@ -46,6 +46,12 @@ in
 
     nopasswdSudo = mkEnableOption "passwordless sudo for the primary user";
 
+    logModel = mkOption {
+      type = types.str;
+      default = "muse-glimmer:30b";
+      description = "Model for batch summaries (journal, scrub). Speed does not matter.";
+    };
+
     features = {
       cuda = mkEnableOption "the CUDA toolkit";
       gaming = mkEnableOption "the gaming subsystem (Steam, gamemode, gamescope)";
@@ -53,6 +59,7 @@ in
       qbittorrent = mkEnableOption "the qBittorrent-nox download service";
       vaultwarden = mkEnableOption "Vaultwarden exposed via Tailscale Serve";
       archive = mkEnableOption "the monthly /Archive Btrfs healthcheck";
+      ollama = mkEnableOption "the Ollama server for local models";
     };
   };
 }

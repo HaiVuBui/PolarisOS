@@ -13,6 +13,7 @@
     ./network.nix
     ./keyboard.nix
     ./jellyfin.nix
+    ./ollama.nix
     ./qbittorrent.nix
     ./packages.nix
     ./tuigreet.nix
