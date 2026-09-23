@@ -14,6 +14,7 @@
     ./keyboard.nix
     ./jellyfin.nix
     ./ollama.nix
+    ./llm-log-processing.nix
     ./qbittorrent.nix
     ./packages.nix
     ./tuigreet.nix

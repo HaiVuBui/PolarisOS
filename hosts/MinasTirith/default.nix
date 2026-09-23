@@ -22,6 +22,7 @@
       vaultwarden = true;
       archive = true;
       ollama = true;
+      llmLogProcessing = true;
     };
   };
 }
