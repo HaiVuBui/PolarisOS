@@ -15,6 +15,7 @@
     ./jellyfin.nix
     ./ollama.nix
     ./llm-log-processing.nix
+    ./scrub.nix
     ./qbittorrent.nix
     ./packages.nix
     ./tuigreet.nix

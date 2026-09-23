@@ -60,6 +60,7 @@ in
       vaultwarden = mkEnableOption "Vaultwarden exposed via Tailscale Serve";
       archive = mkEnableOption "the monthly /Archive Btrfs healthcheck";
       ollama = mkEnableOption "the Ollama server for local models";
+      scrub = mkEnableOption "the weekly btrfs scrub of all local filesystems";
       llmLogProcessing = mkEnableOption "the LLM journal triage report";
     };
   };

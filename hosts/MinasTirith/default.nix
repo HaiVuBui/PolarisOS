@@ -23,6 +23,7 @@
       archive = true;
       ollama = true;
       llmLogProcessing = true;
+      scrub = true;
     };
   };
 }
